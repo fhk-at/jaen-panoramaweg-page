@@ -1,5 +1,5 @@
 import {ChevronDownIcon} from '@chakra-ui/icons'
-import {Box, Text, Container} from '@chakra-ui/react'
+import {Box, Text, Container, Center} from '@chakra-ui/react'
 import {StaticImage} from 'gatsby-plugin-image'
 
 import React from 'react'
@@ -12,7 +12,20 @@ interface Props {
 const HeroSection = ({button1}: Props): JSX.Element => {
   return (
     <>
-      <Box as="section" id="hero" height="100vh" width="100vw">
+      <Box
+        as="section"
+        id="hero"
+        height="100%"
+        width="100%"
+        position="relative">
+        <Box
+          bg="#9C27B01A"
+          width="100vw"
+          height="100vh"
+          position="absolute"
+          top="0"
+          left="0"
+        />
         <StaticImage
           className="herobackground"
           imgClassName="herobackgroundimg"
@@ -21,23 +34,24 @@ const HeroSection = ({button1}: Props): JSX.Element => {
           title="background"
         />
         <Container
-          centerContent
-          size="sm"
-          marginTop="20vh"
-          className="herocontainer">
+          position="absolute"
+          top="0"
+          left="0"
+          paddingTop="35vh"
+          marginLeft="37.5vw"
+          marginRight="37.5vw">
           <StaticImage
             className="logoBG"
             imgClassName="logo"
             src="../../../images/logo_white.png"
             alt="logo-white"
             title="logo-white"
-            as="span"
           />
           <Box
+            ml="5vw"
             mt="1"
             as="button"
-            position="relative"
-            borderRadius="25px"
+            borderRadius="30px"
             width="8vw"
             height="5.5vh"
             backgroundColor="white"
@@ -46,8 +60,7 @@ const HeroSection = ({button1}: Props): JSX.Element => {
             alignContent="center"
             zIndex={10}
             display="flex"
-            paddingTop="4"
-            paddingRight="1">
+            paddingTop="5">
             <ChevronDownIcon w={6} h={6} />
             <Text>{button1}</Text>
           </Box>

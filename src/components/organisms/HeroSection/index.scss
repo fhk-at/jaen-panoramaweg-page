@@ -1,14 +1,11 @@
 #hero {
   .logoBG {
-    position: relative;
     max-width: 100%;
     .logo {
       position: relative;
       z-index: 10;
-      margin: auto;
       max-width: 80%;
       object-fit: contain;
-      z-index: inherit;
     }
   }
 
