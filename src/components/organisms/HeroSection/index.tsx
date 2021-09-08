@@ -15,8 +15,11 @@ const HeroSection = ({button1}: Props): JSX.Element => {
       <Box
         as="section"
         id="hero"
-        height="100%"
+        height="100vh"
         width="100%"
+        display="flex"
+        justifyContent="center"
+        alignContent="center"
         position="relative">
         <Box
           bg="#9C27B01A"
@@ -33,13 +36,7 @@ const HeroSection = ({button1}: Props): JSX.Element => {
           alt="background"
           title="background"
         />
-        <Container
-          position="absolute"
-          top="0"
-          left="0"
-          paddingTop="35vh"
-          marginLeft="37.5vw"
-          marginRight="37.5vw">
+        <Container>
           <StaticImage
             className="logoBG"
             imgClassName="logo"
