@@ -1,20 +1,10 @@
-.navbar {
-  box-shadow: none;
-  padding: 2rem 5rem !important;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-
-  .navbar-brand {
-    height: 5rem;
-    max-width: 50%;
-
-    img {
-      height: 100%;
-    }
+.navbarlogodiv {
+  margin-top: 3.1vh;
+  margin-left: 4.1vw;
+  width: 17rem;
+  max-width: 50%;
+  .navbarlogoimg {
+    width: 100%;
   }
 }
 

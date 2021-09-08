@@ -2,62 +2,52 @@
 //> React
 // Contains all the functionality necessary to define React components
 // import React from "react";
-import {useState} from 'react'
+import {Box, Spacer, Flex, HStack, Heading} from '@chakra-ui/react'
+import {Link} from 'gatsby'
+import {StaticImage} from 'gatsby-plugin-image'
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBNavItem
-  // MDBNavLink,
-  // MDBContainer,
-} from 'mdbreact'
-
 // Style
 import './index.scss'
 //#endregion
 
 //#region > Components
 const Navbar = (): JSX.Element => {
-  const [isCollapse, toggleCollapse] = useState(false)
-
-  const overlay = (
-    <div
-      id="sidenav-overlay"
-      style={{backgroundColor: 'transparent'}}
-      onClick={() => toggleCollapse(!isCollapse)}
-    />
-  )
-
   return (
-    <section id="navbar">
-      <MDBNavbar color="white" light expand="md">
-        <MDBNavbarBrand href="/" className="py-0 font-weight-bold">
-          <img src="../../../images/logo_short.png" />
-        </MDBNavbarBrand>
-        <MDBNavbarToggler onClick={() => toggleCollapse(!isCollapse)} />
-        <MDBCollapse id="mainNavbarCollapse" isOpen={isCollapse} navbar>
-          <MDBNavbarNav right>
-            <MDBNavItem className="clickable">
-              <span className="font-weight-bold mx-3 lead">Immobilie</span>
-            </MDBNavItem>
-            <MDBNavItem className="clickable">
-              <span className="font-weight-bold mx-3 lead">Lage</span>
-            </MDBNavItem>
-            <MDBNavItem className="clickable">
-              <span className="font-weight-bold mx-3 lead">Baufortschritt</span>
-            </MDBNavItem>
-            <MDBNavItem className="clickable">
-              <span className="font-weight-bold mx-3 lead">Kontakt</span>
-            </MDBNavItem>
-          </MDBNavbarNav>
-        </MDBCollapse>
-      </MDBNavbar>
-      {isCollapse && overlay}
-    </section>
+    <Box
+      as="section"
+      id="navbar"
+      height="15vh"
+      width="100vw"
+      zIndex="15"
+      backgroundColor="whiteAlpha.800"
+      position="absolute"
+      top="0"
+      left="0">
+      <Flex fontWeight="bold">
+        <Link to="/">
+          <StaticImage
+            src="../../../images/logo_short.png"
+            title="logo"
+            alt="logo"
+            className="navbarlogodiv"
+            imgClassName="navbarlogoimg"
+          />
+        </Link>
+        <Spacer />
+        <HStack
+          pr="4.2vw"
+          spacing="8"
+          pt="3.3vh"
+          fontSize="1.4rem"
+          fontWeight="bold">
+          <Link to="">Immobilie</Link>
+          <Link to="">Lage</Link>
+          <Link to="">Baufortschritt</Link>
+          <Link to="/kontakt/">Kontakt</Link>
+        </HStack>
+      </Flex>
+    </Box>
   )
 }
 //#endregion
