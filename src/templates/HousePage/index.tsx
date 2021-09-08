@@ -30,6 +30,7 @@ import {
   Wrap,
   AspectRatio
 } from '@chakra-ui/react'
+import {Link} from 'gatsby'
 //#endregion
 
 //#region > Components
@@ -41,7 +42,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
   const [filters, setFilters] = React.useState<any>({
     sizeFilter: 0,
     roomFilter: 1,
-    hasFilter: false
+    hasFilter: false,
+    availableFilter: false
   })
 
   const handleValueChange = (val: number, stateName: string) => {
@@ -72,22 +74,29 @@ const HousePage: JaenTemplate = (): JSX.Element => {
     }
   }
   return (
-    <Box as="section" id="housepage">
+    <Box
+      as="section"
+      id="housepage"
+      minH="100vh"
+      paddingTop="15vh"
+      overflow="hidden"
+      paddingBottom="12vh">
+      <Navbar />
       <Container
         centerContent
         maxW="80vw"
         borderBottom="1px"
         borderColor="panoramaweg.lightgray"
-        pb="3"
-        mb="2">
-        <Heading as="h3">
+        pb="12"
+        mb="7">
+        <Heading mb="0">
           <fields.TextField
             fieldName="housetitle"
             initValue="Housetitle"
             rtf={false}
           />
         </Heading>
-        <Text fontSize="1.75rem">
+        <Text fontSize="1.5rem" marginBottom="10">
           <fields.TextField
             fieldName="houseteaser"
             initValue="houseteaser"
@@ -95,29 +104,28 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           />
         </Text>
         <Flex>
-          <AspectRatio ratio={16 / 10} width="22vw">
+          <AspectRatio ratio={16 / 10} minWidth="22vw">
             <fields.ImageField
               fieldName="houseimg"
               initValue={{
-                src: '../../images/content.placeholder.jpg',
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
                 alt: 'houseimg',
                 title: 'houseimg'
               }}
             />
           </AspectRatio>
 
-          <Container maxW="35vw" ml="10">
+          <Container maxW="35vw" ml="10" fontSize="1.1rem">
             <fields.TextField
               fieldName="houserichtext"
               initValue="houserichtext"
             />
           </Container>
         </Flex>
-        <hr />
       </Container>
 
-      <Container centerContent maxW="33vw">
-        <Text fontSize="1.25rem" fontWeight="lighter">
+      <Container centerContent maxW="40vw">
+        <Text fontWeight="light" fontSize="1.75rem">
           <fields.TextField
             fieldName="houseadtext"
             initValue="houseadtext"
@@ -182,14 +190,17 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             borderColor="panoramaweg.lightgray"
             padding="1vh"
             height="7vh">
-            <Text>Verfügbarkeit</Text>
+            <Text>Verfügbar</Text>
             <Center marginTop="1">
-              <Checkbox />
+              <Checkbox
+                onChange={() =>
+                  setFilters({availableFilter: !filters.availableFilter})
+                }
+              />
             </Center>
           </Box>
         </HStack>
       </Container>
-      <Center mt="3"></Center>
       <fields.IndexField
         onRender={page => {
           function cleanFieldValues(value: string, type: string) {
@@ -204,70 +215,80 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           for (const child of page.children) {
             const fields = child.page.fields || {}
 
-            const image = fields?.apartmentrightimg?.content?.src || ''
+            const richtext =
+              fields?.apartmentrichtextright?.content?.text ||
+              '<p>No content found<p/>'
+            const image =
+              fields?.apartmentrightimg?.content?.src ||
+              'https://i.ibb.co/J2jzkBx/placeholder.jpg'
             const size = fields?.apartmentsize?.content?.text || '<p>0</p>'
             const rooms = fields?.apartmentrooms?.content?.text || '<p>1</p>'
+            const available =
+              fields?.apartmentavailable?.content?.option || 'Verfügbar'
+            console.log(available)
             let slug = child?.page?.slug
 
             const formatedSlug = slug.replace('top', 'Top ')
             const cleanedSize = cleanFieldValues(size, 'size')
             const cleanedRooms = cleanFieldValues(rooms, 'rooms')
-            // console.log('rooms', rooms)
+            const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
+            const link = window.location.pathname + slug + '/'
+            console.log(link)
             findMinMax(cleanedRooms, cleanedSize)
 
             if (
               parseInt(cleanedSize) < filters.sizeFilter ||
-              parseInt(cleanedRooms) < filters.roomFilter
+              parseInt(cleanedRooms) < filters.roomFilter ||
+              (filters.availableFilter && available === 'Verkauft')
             ) {
               filter.push(cards.length)
-              console.log('hi')
             }
 
             cards.push(
               <>
-                <Box
-                  width="30vw"
-                  border="1px"
-                  borderColor="panoramaweg.lightgray"
-                  height="24.25vh"
-                  paddingTop="5"
-                  borderRadius="25px">
-                  <Flex>
-                    <AspectRatio ml="5" ratio={16 / 10} w="40vw">
-                      <Image w="20vw" src={image}></Image>
-                    </AspectRatio>
+                <Link to={link}>
+                  <Box
+                    width="30vw"
+                    border="1px"
+                    borderColor="panoramaweg.lightgray"
+                    height="24.25vh"
+                    paddingTop="5"
+                    borderRadius="25px">
+                    <Flex>
+                      <AspectRatio ml="5" ratio={16 / 10} w="40vw">
+                        <Image w="20vw" src={image}></Image>
+                      </AspectRatio>
 
-                    <Container>
-                      <Heading>{formatedSlug}</Heading>
-                      <Text>Wohnungsgröße: {cleanedSize}m²</Text>
-                      <Progress
-                        value={parseInt(cleanedSize)}
-                        max={maxSize}
-                        colorScheme="greenwhite"
-                        borderRadius="25px"
-                        size="sm"
-                      />
-                      <Text>Zimmer: {cleanedRooms}</Text>
-                      <Progress
-                        value={parseInt(cleanedRooms)}
-                        max={maxRooms}
-                        colorScheme="greenwhite"
-                        borderRadius="25px"
-                        size="sm"
-                      />
-                      <Text>
-                        Diese schöne Wohnung liegt im Süden mit Fenstern auf
-                        alle Seiten. Werden Sie von der Sonne bei Panoramablick
-                        wachgeküsst.
-                      </Text>
-                    </Container>
-                  </Flex>
-                </Box>
+                      <Container>
+                        <Heading>{formatedSlug}</Heading>
+                        <Text>Wohnungsgröße: {cleanedSize}m²</Text>
+                        <Progress
+                          value={parseInt(cleanedSize)}
+                          max={maxSize}
+                          colorScheme="greenwhite"
+                          borderRadius="25px"
+                          size="sm"
+                        />
+                        <Text>Zimmer: {cleanedRooms}</Text>
+                        <Progress
+                          value={parseInt(cleanedRooms)}
+                          max={maxRooms}
+                          colorScheme="greenwhite"
+                          borderRadius="25px"
+                          size="sm"
+                        />
+                        <Text mt="1" noOfLines={4}>
+                          {cleanedRichtext}
+                        </Text>
+                      </Container>
+                    </Flex>
+                  </Box>
+                </Link>
               </>
             )
           }
           return (
-            <Wrap spacing="5" justify="center">
+            <Wrap spacing="5" justify="center" mt="5" mb="10">
               {cards.map((component, index) => {
                 return (
                   <Box
@@ -281,6 +302,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           )
         }}
       />
+      <Footer />
     </Box>
   )
 }
