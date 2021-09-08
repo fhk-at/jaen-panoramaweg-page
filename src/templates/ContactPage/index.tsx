@@ -59,7 +59,7 @@ const sendMail = async (formData: any) => {
     {
       url: '/jaen-email',
       values: {
-        git_remote: 'fhk-at/wg-st-jakob-ros-front',
+        git_remote: 'emailwerk/jaen-panoramaweg-page',
         form_first_name: formData.fname,
         form_last_name: formData.lname,
         telephone: formData.telephone,
