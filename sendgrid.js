@@ -14,13 +14,13 @@ const msg = {
   subject: 'Hello world',
   text: 'Hello plain world!',
   html: `<p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p> 
-    <h1>Kundenanfrage ${process.env.PAYLOAD.subject}</h1> 
-    <p><b>Projekt:</b> ${process.env.PAYLOAD.from_project_link}</p>
-    <p><b>Kunde:</b> ${process.env.PAYLOAD.form_first_name} ${process.env.PAYLOAD.form_last_name}</p> 
-    <p><b>Kontakt E-Mail:</b> ${process.env.PAYLOAD.from_email}</p> 
-    <p><b>Kontakt Telefon-Nr.:</b> ${process.env.PAYLOAD.form_telephone}</p> 
+    <h1>Kundenanfrage ${process.env.SUBJECT}</h1> 
+    <p><b>Projekt:</b> ${process.env.PROJECT_LINK}</p>
+    <p><b>Kunde:</b> ${process.env.FIRST_NAME} ${process.env.LAST_NAME}</p> 
+    <p><b>Kontakt E-Mail:</b> ${process.env.EMAIL}</p> 
+    <p><b>Kontakt Telefon-Nr.:</b> ${process.env.TELEPHONE}</p> 
     <p><b>Nachricht:</b></p>
-    <p>${process.env.PAYLOAD.html_message}</p>`
+    <p>${process.env.MESSAGE}</p>`
   // attachments: [
   //   {
   //     content: data.toString('base64'),
