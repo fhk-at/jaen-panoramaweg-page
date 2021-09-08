@@ -20,7 +20,7 @@ import {
 } from '@chakra-ui/react'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {fields} from '@snek-at/jaen-pages'
-import {Footer, Navbar} from '../../molecules'
+import Footer from '../../components/molecules/Footer'
 
 import {useFormik} from 'formik'
 
@@ -29,6 +29,7 @@ import './index.scss'
 import {BifrostBridge} from '@snek-at/bridge'
 import {useToast} from '@chakra-ui/react'
 import gql from 'graphql-tag'
+import {Navbar} from '../../components/molecules'
 //#endregion
 
 //#region > Bi-Stack
@@ -62,9 +63,10 @@ const sendMail = async (formData: any) => {
         git_remote: 'emailwerk/jaen-panoramaweg-page',
         form_first_name: formData.fname,
         form_last_name: formData.lname,
-        telephone: formData.telephone,
+        form_telephone: formData.telephone,
         subject: formData.subject,
         from_email: formData.email,
+        from_project_link: window.location.href,
         html_message: formData.message
       }
     }
@@ -98,7 +100,7 @@ const ContactPage: JaenTemplate = () => {
       lname: '',
       email: '',
       telephone: '',
-      subject: 'TopImmo Contact',
+      subject: 'Panoramaweg',
       message: ''
     },
     onSubmit: values => {
@@ -108,14 +110,21 @@ const ContactPage: JaenTemplate = () => {
       telephone: Yup.string().phone('AT').required(),
       email: Yup.string().email().required(),
       fname: Yup.string().required(),
-      lname: Yup.string().required()
+      lname: Yup.string().required(),
+      message: Yup.string().required()
     })
   })
 
   return (
-    <Box as="section" id="contactpage">
+    <Box
+      as="section"
+      id="contactpage"
+      overflow="hidden"
+      minH="100vh"
+      paddingTop="15vh">
+      <Navbar />
       <Container centerContent maxW="40vw">
-        <Flex>
+        <Flex fontSize="1.5rem">
           <Heading mr="1">Sie sind an</Heading>
           <Badge colorScheme="greenwhite" borderRadius="25px" pl="3" pr="3">
             <Text marginTop="2" fontSize="xl">
@@ -124,14 +133,17 @@ const ContactPage: JaenTemplate = () => {
           </Badge>
           <Heading ml="1">interessiert?</Heading>
         </Flex>
-        <Text>
-          <fields.TextField fieldName="contactsubheading" />
+        <Text fontSize="1.5rem" fontWeight="thin">
+          <fields.TextField
+            fieldName="contactsubheading"
+            initValue="Kontaktieren Sie uns und und wir melden uns bei Ihnen!"
+          />
         </Text>
       </Container>
-      <Container width="70vw" centerContent>
+      <Container width="70vw" centerContent mb="5" mt="10">
         <Flex>
           <Box w="30vw" mr="5">
-            <Heading as="h3" w="35vw">
+            <Heading fontSize="1.5rem" w="35vw" mb="7">
               Kontaktformular
             </Heading>
             <form onSubmit={formik.handleSubmit}>
@@ -193,9 +205,15 @@ const ContactPage: JaenTemplate = () => {
                   value={formik.values.telephone}
                 />
               </FormControl>
-              <FormControl id="message" mb="5">
+              <FormControl
+                id="message"
+                mb="5"
+                isInvalid={formik.errors.message && formik.touched.message}>
+                <FormErrorMessage>
+                  Bitte schreiben Sie uns eine Nachricht.
+                </FormErrorMessage>
                 <Textarea
-                  placeholder="Notiz"
+                  placeholder="Nachricht"
                   borderRadius="25px"
                   size="lg"
                   onChange={formik.handleChange}
@@ -214,19 +232,22 @@ const ContactPage: JaenTemplate = () => {
             </form>
           </Box>
           <Box w="30vw" h="40vh">
-            <Heading>
+            <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"
                 initValue="Wer sind wir?"
               />
             </Heading>
-            <fields.TextField
-              fieldName="contactrightrichtext"
-              initValue="Fill me"
-            />
+            <Text fontSize="lg" mt="5">
+              <fields.TextField
+                fieldName="contactrightrichtext"
+                initValue="Fill me"
+              />
+            </Text>
           </Box>
         </Flex>
       </Container>
+      <Footer />
     </Box>
   )
 }
