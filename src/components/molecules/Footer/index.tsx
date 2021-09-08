@@ -6,73 +6,57 @@
 // import { Link } from "react-router-dom";
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import { MDBFooter, MDBContainer } from "mdbreact";
+import {Box, Container, Flex, HStack, Text} from '@chakra-ui/react'
+
+import {HiHeart} from '@react-icons/all-files/hi/HiHeart'
+import {BiCopyright} from '@react-icons/all-files/bi/BiCopyright'
+import {IconContext} from '@react-icons/all-files'
+import {Link} from 'gatsby'
 
 //> CSS
-import "./index.scss";
+import './index.scss'
 //#endregion
-
 //#region > Components
 const Footer = (): JSX.Element => {
   return (
-    <MDBFooter className="font-small">
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          <div>
-            &copy; {new Date().getFullYear()} Copyright: TOP Immo W.M.
-            Treuhand GmbH
-            <p className="my-2 font-weight-bold">
-              Made with
-              <i
-                className="fas fa-heart pulse blue-text ml-1 mr-1"
-                aria-hidden="true"
-              ></i>
-              by
-              <a
-                href="https://www.inspiremedia.at"
-                target="_blank"
-                className="ml-1 blue-text"
-                rel="noopener noreferrer"
-              >
-                InspireMedia GmbH
-              </a>
-              .
-            </p>
-          </div>
-          <div>
-            <small>
-              <a
-                href="https://www.top-immo.org/about"
-                target="_blank"
-                className="text-dark"
-              >
-                Impressum
-              </a>
-              <span className="pl-2 pr-2">·</span>
-              <a
-                href="https://www.top-immo.org/privacy"
-                target="_blank"
-                className="text-dark"
-              >
-                Datenschutz
-              </a>
-              {process.env.REACT_APP_VERSION && (
-                <>
-                  <span className="pl-2 pr-2">·</span>
-                  Version v{process.env.REACT_APP_VERSION}
-                </>
-              )}
-            </small>
-          </div>
-        </MDBContainer>
-      </div>
-    </MDBFooter>
-  );
+    <Box
+      backgroundColor="panoramaweg.lightgray"
+      w="100vw"
+      h="12vh"
+      position="absolute"
+      bottom="0">
+      <Container w="100vw" centerContent color="panoramaweg.dark" pt="6">
+        <Flex>
+          <IconContext.Provider value={{style: {marginTop: '3'}}}>
+            <BiCopyright />
+          </IconContext.Provider>
+          <Text>2021 Copyright: TOP Immo W.M. Trehand GmbH</Text>
+        </Flex>
+        <Flex fontWeight="bold" mt="2">
+          <Text>Made with</Text>
+          <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
+            <HiHeart />
+          </IconContext.Provider>
+          <Text>by</Text>
+          <Text ml="1" color="blue.400">
+            InspireMedia GmbH
+          </Text>
+          <Text>.</Text>
+        </Flex>
+        <Flex fontSize="xs">
+          <HStack spacing="5" mt="2">
+            <Link to="">Impressum</Link>
+            <Link to="">Datenschutz</Link>
+          </HStack>
+        </Flex>
+      </Container>
+    </Box>
+  )
 }
 //#endregion
 
 //#region > Exports
-export default Footer;
+export default Footer
 //#endregion
 
 /**
