@@ -5,7 +5,9 @@ import React from 'react'
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 
-import {Footer, Navbar} from '../../components/molecules'
+import Footer from '../../components/molecules/Footer'
+import {Navbar} from '../../components/molecules'
+
 //> CSS
 import './index.scss'
 
@@ -53,7 +55,13 @@ const ApartmentPage: JaenTemplate = () => {
   breadcrumbs = format(breadcrumbs)
 
   return (
-    <Box as="section" id="apartmentpage">
+    <Box
+      as="section"
+      id="apartmentpage"
+      minH="100vh"
+      overflow="hidden"
+      paddingTop="15vh">
+      <Navbar />
       <Center mb="5">
         <Breadcrumb
           backgroundColor="panoramaweg.lightgray"
@@ -83,41 +91,83 @@ const ApartmentPage: JaenTemplate = () => {
             initValue="Penthouse"
           />
         </Text>
-        <Badge
-          textTransform="none"
-          variant="solid"
-          color="white"
-          backgroundColor="panoramaweg.green"
-          fontSize="0.8rem"
-          paddingTop="3"
-          paddingBottom="3"
-          paddingLeft="8"
-          paddingRight="8">
-          Verfügbar
-        </Badge>
+        <fields.ChoiceField
+          fieldName="apartmentavailable"
+          initValue="Verfügbar"
+          options={['Verfügbar', 'Verkauft']}
+          onRenderPopover={(selection, options, select) => {
+            return (
+              <Box>
+                {options.map((option, key) => {
+                  return (
+                    <Button
+                      disabled={option === selection}
+                      onClick={() => select(option)}
+                      textTransform="none"
+                      variant="solid"
+                      color="white"
+                      backgroundColor={
+                        option === 'Verfügbar' ? '#77bd43' : '#f61a42'
+                      }
+                      fontSize="0.8rem"
+                      paddingTop="3"
+                      paddingBottom="3"
+                      paddingLeft="8"
+                      paddingRight="8"
+                      _hover={
+                        option === 'Verfügbar'
+                          ? {bg: '#6bab3c'}
+                          : {bg: '#DD173B'}
+                      }>
+                      {option}
+                    </Button>
+                  )
+                })}
+              </Box>
+            )
+          }}
+          onRender={selection => {
+            return (
+              <Badge
+                textTransform="none"
+                variant="solid"
+                color="white"
+                backgroundColor={
+                  selection === 'Verfügbar' ? '#77bd43' : '#f61a42'
+                }
+                fontSize="0.8rem"
+                paddingTop="3"
+                paddingBottom="3"
+                paddingLeft="8"
+                paddingRight="8">
+                {selection}
+              </Badge>
+            )
+          }}
+        />
       </Container>
       <Container centerContent>
         <VStack spacing="7">
           <HStack spacing="7">
             <Box
-              borderColor="panoramaweg.lightgray"
               border="1px"
+              borderColor="panoramaweg.lightgray"
               borderRadius="25px"
               h="40vh"
               w="27.5vw">
               <Box padding="4">
                 <VStack spacing="5">
                   <Container centerContent>
-                    <Text>Wohnungsgröße</Text>
+                    <Text fontSize="1.1rem">Wohnungsgröße</Text>
                     <Flex>
-                      <Box fontWeight="bold" fontSize="xl">
+                      <Box fontSize="1.5rem" fontWeight="bold">
                         <fields.TextField
                           fieldName="apartmentsize"
                           initValue="0"
                           rtf={false}
                         />
                       </Box>
-                      <Text fontWeight="bold" ml="1" fontSize="xl">
+                      <Text ml="1" fontSize="1.5rem" fontWeight="bold">
                         m²
                       </Text>
                     </Flex>
@@ -129,26 +179,22 @@ const ApartmentPage: JaenTemplate = () => {
                     </Text>
                   </Container>
                   <Container centerContent>
-                    <Text>Preis</Text>
-                    <Flex>
-                      <Box fontWeight="bold" fontSize="xl">
-                        <fields.TextField
-                          fieldName="apartmentprice"
-                          initValue="0"
-                          rtf={false}
-                        />
-                      </Box>
-                      <Text ml="1" fontWeight="bold" fontSize="xl">
-                        €
-                      </Text>
+                    <Text fontSize="1.1rem">Preis</Text>
+                    <Flex fontSize="1.5rem" fontWeight="bold">
+                      <fields.TextField
+                        fieldName="apartmentprice"
+                        initValue="0"
+                        rtf={false}
+                      />
+                      <Text ml="1">€</Text>
                     </Flex>
                     <Text fontSize="xs" color="gray">
                       inkl. Provision
                     </Text>
                   </Container>
                   <Container centerContent>
-                    <Text>Wohnungstyp</Text>
-                    <Box fontWeight="bold" fontSize="xl" mb="3">
+                    <Text fontSize="1.1rem">Wohnungstyp</Text>
+                    <Box fontSize="1.5rem" fontWeight="bold" mb="3">
                       <fields.TextField
                         fieldName="apartmenttype"
                         initValue="Penthouse"
@@ -171,35 +217,43 @@ const ApartmentPage: JaenTemplate = () => {
                 </Container>
               </Box>
             </Box>
-            <Box h="40.5vh" w="27.5vw">
+            <Box h="40vh" w="27.5vw">
               <fields.ImageField
                 fieldName="apartmentrightimg"
-                initValue={{src: '', title: 'rightimg', alt: 'rightimg'}}
+                initValue={{
+                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                  title: 'rightimg',
+                  alt: 'rightimg'
+                }}
                 borderRadius="25px"
-                border="1px"
-                borderColor="panoramaweg.lightgray"
+                h="40vh"
+                w="27.5vw"
+                objec
               />
             </Box>
           </HStack>
           <HStack spacing="7">
-            <Box
-              borderRadius="25px"
-              h="40.5vh"
-              w="27.5vw"
-              boxSizing="border-box">
+            <Box borderRadius="25px" h="40vh" w="27.5vw">
               <fields.ImageField
                 fieldName="apartmentleftimg"
-                initValue={{src: '', title: 'leftimg', alt: 'lefttimg'}}
+                initValue={{
+                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                  title: 'leftimg',
+                  alt: 'lefttimg'
+                }}
                 borderRadius="25px"
+                height="40vh"
+                width="27.5vw"
+                objectFit="fill"
               />
             </Box>
             <Box
-              borderColor="panoramaweg.lightgray"
               border="1px"
+              borderColor="panoramaweg.lightgray"
               borderRadius="25px"
               h="40vh"
               w="27.5vw">
-              <Box padding="4">
+              <Box padding="4" fontSize="1.1rem">
                 <fields.TextField
                   fieldName="apartmentrichtextright"
                   initValue="apartmentrichtextright"
@@ -213,12 +267,14 @@ const ApartmentPage: JaenTemplate = () => {
         pb="2"
         maxW="58vw"
         mt="12"
-        borderColor="panoramaweg.lightgray"
-        borderBottom="1px">
-        <fields.TextField
-          fieldName="apartmentbottomrichtext"
-          initValue="apartmentbottomrichtext"
-        />
+        borderBottom="1px"
+        borderColor="panoramaweg.lightgray">
+        <Text fontSize="1.1rem" fontWeight="light">
+          <fields.TextField
+            fieldName="apartmentbottomrichtext"
+            initValue="apartmentbottomrichtext"
+          />
+        </Text>
         <Button
           leftIcon={<DownloadIcon color="white" />}
           backgroundColor="gray.600"
@@ -226,11 +282,12 @@ const ApartmentPage: JaenTemplate = () => {
           borderRadius="25px"
           textColor="white"
           fontSize="sm"
-          fontWeight="light">
+          fontWeight="light"
+          mt="3">
           Bau und Ausstattungsbeschreibung
         </Button>
       </Container>
-      <Container as="div" centerContent mt="5">
+      <Container as="div" centerContent mt="5" mb="10">
         <Heading>Interessiert?</Heading>
         <Button
           backgroundColor="panoramaweg.green"
@@ -242,7 +299,7 @@ const ApartmentPage: JaenTemplate = () => {
           Kontaktiere uns
         </Button>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </Box>
   )
 }
