@@ -1,48 +1,31 @@
-const path = require("path")
-require('source-map-support').install()
-require('ts-node').register({compilerOptions: {esModuleInterop: true}})
+const path = require('path')
+
+const siteMetadata = require('./site-metadata')
 
 module.exports = {
-  siteMetadata: {
-    title: "Jason’s Blog Theme — It’s SICK",
-    description: `
-      This is a blog theme. The description will be showed in SEO results on pages
-      without their own descriptions.
-    `,
-    siteUrl: "https://example.com",
-    image: "https://lengstorf.com/images/jason-lengstorf.jpg",
-    author: {
-      name: "Your Name",
-      minibio: `
-        This bio is shown at the bottom of each blog post. It supports
-        <strong>custom HTML</strong> if you’re into that sort of thing.
-      `,
-    },
-    organization: {
-      name: "Example, Inc.",
-      url: "https://example.com",
-      logo: "https://lengstorf.com/android-chrome-512x512.png",
-    },
-    social: {
-      twitter: "@jlengstorf",
-      fbAppID: "",
-    },
-    categories: [
-      {
-        slug: "test",
-        name: "Test Category",
-      },
-    ],
-  },
+  siteMetadata,
   plugins: [
-    "@snek-at/jaen",
+    '@snek-at/jaen',
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: "@snek-at/jaen-pages",
+      resolve: '@snek-at/jaen-pages',
       options: {
         templates: {
-          SamplePage: path.resolve("src/templates/SamplePage.tsx"),
-        },
-      },
+          HousePage: path.resolve('src/templates/HousePage/index.tsx'),
+          ApartmentPage: path.resolve('src/templates/ApartmentPage/index.tsx'),
+          ContactPage: path.resolve('src/templates/ContactPage/index.tsx')
+        }
+      }
     },
-  ],
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        resetCSS: false,
+        isUsingColorMode: true
+      }
+    }
+  ]
 }

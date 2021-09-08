@@ -1,0 +1,27 @@
+#hero {
+  .logoBG {
+    position: relative;
+    max-width: 100%;
+    .logo {
+      position: relative;
+      z-index: 10;
+      margin: auto;
+      max-width: 80%;
+      object-fit: contain;
+      z-index: inherit;
+    }
+  }
+
+  .herobackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    .herobackgroundimg {
+      position: absolute;
+      z-index: -1;
+      object-fit: 'cover';
+    }
+  }
+}
