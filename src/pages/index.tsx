@@ -2,7 +2,6 @@
 // Contains all the functionality necessary to define React components
 import {fields} from '@snek-at/jaen-pages'
 import PartnerCard from '../components/blocks/PartnerCard'
-
 //> CSS
 import './index.scss'
 
@@ -14,7 +13,7 @@ import ImageTopSection from '../components/organisms/ImageTopSection'
 import MapSection from '../components/organisms/MapSection'
 import PartnerSection from '../components/organisms/PartnerSection'
 
-// import {Footer} from '../components/molecules/index'
+import {Footer, Navbar} from '../components/molecules'
 import {Box, Text} from '@chakra-ui/react'
 
 //#endregion
@@ -23,8 +22,8 @@ import {Box, Text} from '@chakra-ui/react'
 const IndexPage = () => {
   return (
     <Box as="section" id="homepage" overflow="hidden">
-      {/* <Navbar /> */}
-      {/* <HeroSection
+      <Navbar />
+      <HeroSection
         button1={
           <fields.TextField
             fieldName="herobutton1"
@@ -32,7 +31,7 @@ const IndexPage = () => {
             rtf={false}
           />
         }
-      /> */}
+      />
       <ImageTopSection
         img1={
           <fields.ImageField
@@ -165,7 +164,7 @@ const IndexPage = () => {
         alt="Panoramaweg Logo"
         title="Panoramaweg Logo"
       /> */}
-      {/* <Footer /> */}
+      <Footer />
     </Box>
   )
 }
