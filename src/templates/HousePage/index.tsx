@@ -28,7 +28,8 @@ import {
   Image,
   Progress,
   Wrap,
-  AspectRatio
+  AspectRatio,
+  Button
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
 //#endregion
@@ -46,7 +47,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
     availableFilter: false
   })
 
-  const handleValueChange = (val: number, stateName: string) => {
+  const handleValueChange = (val: any, stateName: string) => {
     setFilters({
       [stateName]: val,
       hasFilter: true
@@ -54,11 +55,13 @@ const HousePage: JaenTemplate = (): JSX.Element => {
   }
 
   const disableFilter = () => {
-    setFilters({filterRooms: 1, filterSize: 0, hasFilter: false})
+    setFilters({
+      filterRooms: 1,
+      filterSize: 0,
+      availableFilter: false,
+      hasFilter: false
+    })
   }
-
-  const disableFilterReset =
-    filters.roomFilter === 1 && filters.sizeFilter === 0
 
   const findMinMax = (rooms: string, size: string) => {
     let parsedSize = parseInt(size)
@@ -193,8 +196,9 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             <Text>Verfügbar</Text>
             <Center marginTop="1">
               <Checkbox
+                isChecked={filters.availableFilter}
                 onChange={() =>
-                  setFilters({availableFilter: !filters.availableFilter})
+                  handleValueChange(!filters.availableFilter, 'availableFilter')
                 }
               />
             </Center>
@@ -225,7 +229,6 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             const rooms = fields?.apartmentrooms?.content?.text || '<p>1</p>'
             const available =
               fields?.apartmentavailable?.content?.option || 'Verfügbar'
-            console.log(available)
             let slug = child?.page?.slug
 
             const formatedSlug = slug.replace('top', 'Top ')
@@ -248,18 +251,18 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               <>
                 <Link to={link}>
                   <Box
-                    width="30vw"
+                    width="25vw"
                     border="1px"
                     borderColor="panoramaweg.lightgray"
-                    height="24.25vh"
-                    paddingTop="5"
+                    padding="5"
+                    paddingRight="0"
                     borderRadius="25px">
                     <Flex>
-                      <AspectRatio ml="5" ratio={16 / 10} w="40vw">
-                        <Image w="20vw" src={image}></Image>
+                      <AspectRatio ratio={16 / 10} w="20vw">
+                        <Image src={image}></Image>
                       </AspectRatio>
 
-                      <Container>
+                      <Container size="lg">
                         <Heading>{formatedSlug}</Heading>
                         <Text>Wohnungsgröße: {cleanedSize}m²</Text>
                         <Progress
@@ -268,6 +271,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                           colorScheme="greenwhite"
                           borderRadius="25px"
                           size="sm"
+                          width="100%"
                         />
                         <Text>Zimmer: {cleanedRooms}</Text>
                         <Progress
@@ -276,6 +280,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                           colorScheme="greenwhite"
                           borderRadius="25px"
                           size="sm"
+                          width="100%"
                         />
                         <Text mt="1" noOfLines={4}>
                           {cleanedRichtext}
@@ -302,6 +307,15 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           )
         }}
       />
+      <Container centerContent>
+        <Button
+          colorScheme="greenwhite"
+          borderRadius="25px"
+          display={filters.hasFilter ? 'static' : 'none'}
+          onClick={() => disableFilter()}>
+          Filter deaktivieren
+        </Button>
+      </Container>
       <Footer />
     </Box>
   )

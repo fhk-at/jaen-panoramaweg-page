@@ -12,7 +12,7 @@ import {Navbar} from '../../components/molecules'
 import './index.scss'
 
 //> SNEK
-import {fields, useOptions} from '@snek-at/jaen-pages'
+import {fields} from '@snek-at/jaen-pages'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {
   Badge,
@@ -25,21 +25,22 @@ import {
   Container,
   Flex,
   Heading,
-  HStack,
   Text,
-  VStack
+  VStack,
+  Wrap
 } from '@chakra-ui/react'
-import {CopyIcon, DownloadIcon} from '@chakra-ui/icons'
+import {DownloadIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
-import {withRedux} from '@snek-at/jaen/src/store/withRedux'
 import ApartmentHidden from '../../components/organisms/ApartmentHidden'
-import {resetWarningCache} from 'prop-types'
 
 const ApartmentPage: JaenTemplate = () => {
   const url = window.location.href
   let breadcrumbs = url.split('/')
 
-  breadcrumbs = breadcrumbs.slice(3)
+  breadcrumbs = breadcrumbs.slice(
+    breadcrumbs.length - 3,
+    breadcrumbs.length - 1
+  )
 
   function format(value: string[]) {
     value[0] = value[0].replace('haus', 'haus ')
@@ -60,7 +61,8 @@ const ApartmentPage: JaenTemplate = () => {
       id="apartmentpage"
       minH="100vh"
       overflow="hidden"
-      paddingTop="15vh">
+      paddingTop="15vh"
+      paddingBottom="12vh">
       <Navbar />
       <Center mb="5">
         <Breadcrumb
@@ -146,122 +148,118 @@ const ApartmentPage: JaenTemplate = () => {
           }}
         />
       </Container>
-      <Container centerContent>
-        <VStack spacing="7">
-          <HStack spacing="7">
-            <Box
-              border="1px"
-              borderColor="panoramaweg.lightgray"
-              borderRadius="25px"
-              h="40vh"
-              w="27.5vw">
-              <Box padding="4">
-                <VStack spacing="5">
-                  <Container centerContent>
-                    <Text fontSize="1.1rem">Wohnungsgröße</Text>
-                    <Flex>
-                      <Box fontSize="1.5rem" fontWeight="bold">
-                        <fields.TextField
-                          fieldName="apartmentsize"
-                          initValue="0"
-                          rtf={false}
-                        />
-                      </Box>
-                      <Text ml="1" fontSize="1.5rem" fontWeight="bold">
-                        m²
-                      </Text>
-                    </Flex>
-                    <>
-                      <ApartmentHidden />
-                    </>
-                    <Text color="gray" fontSize="xs">
-                      exkl. Balkon
-                    </Text>
-                  </Container>
-                  <Container centerContent>
-                    <Text fontSize="1.1rem">Preis</Text>
-                    <Flex fontSize="1.5rem" fontWeight="bold">
+      <Container maxW="70%">
+        <Wrap spacing="7" justify="center">
+          <Box
+            border="1px"
+            borderColor="panoramaweg.lightgray"
+            borderRadius="25px"
+            h="40vh"
+            w="587px">
+            <Box padding="4">
+              <VStack spacing="5">
+                <Container centerContent>
+                  <Text fontSize="1.1rem">Wohnungsgröße</Text>
+                  <Flex>
+                    <Box fontSize="1.5rem" fontWeight="bold">
                       <fields.TextField
-                        fieldName="apartmentprice"
+                        fieldName="apartmentsize"
                         initValue="0"
                         rtf={false}
                       />
-                      <Text ml="1">€</Text>
-                    </Flex>
-                    <Text fontSize="xs" color="gray">
-                      inkl. Provision
-                    </Text>
-                  </Container>
-                  <Container centerContent>
-                    <Text fontSize="1.1rem">Wohnungstyp</Text>
-                    <Box fontSize="1.5rem" fontWeight="bold" mb="3">
-                      <fields.TextField
-                        fieldName="apartmenttype"
-                        initValue="Penthouse"
-                      />
                     </Box>
-                  </Container>
-                </VStack>
-                <Container centerContent>
-                  <Button
-                    backgroundColor="panoramaweg.green"
-                    _hover={{bg: '#6bab3c'}}
-                    color="white"
-                    borderRadius="25px"
-                    size="lg"
-                    fontSize="xs"
-                    paddingLeft="8"
-                    paddingRight="8">
-                    Kontakt
-                  </Button>
+                    <Text ml="1" fontSize="1.5rem" fontWeight="bold">
+                      m²
+                    </Text>
+                  </Flex>
+                  <>
+                    <ApartmentHidden />
+                  </>
+                  <Text color="gray" fontSize="xs">
+                    exkl. Balkon
+                  </Text>
                 </Container>
-              </Box>
+                <Container centerContent>
+                  <Text fontSize="1.1rem">Preis</Text>
+                  <Flex fontSize="1.5rem" fontWeight="bold">
+                    <fields.TextField
+                      fieldName="apartmentprice"
+                      initValue="0"
+                      rtf={false}
+                    />
+                    <Text ml="1">€</Text>
+                  </Flex>
+                  <Text fontSize="xs" color="gray">
+                    inkl. Provision
+                  </Text>
+                </Container>
+                <Container centerContent>
+                  <Text fontSize="1.1rem">Wohnungstyp</Text>
+                  <Box fontSize="1.5rem" fontWeight="bold" mb="3">
+                    <fields.TextField
+                      fieldName="apartmenttype"
+                      initValue="Penthouse"
+                    />
+                  </Box>
+                </Container>
+              </VStack>
+              <Container centerContent>
+                <Button
+                  backgroundColor="panoramaweg.green"
+                  _hover={{bg: '#6bab3c'}}
+                  color="white"
+                  borderRadius="25px"
+                  size="lg"
+                  fontSize="xs"
+                  paddingLeft="8"
+                  paddingRight="8">
+                  Kontakt
+                </Button>
+              </Container>
             </Box>
-            <Box h="40vh" w="27.5vw">
-              <fields.ImageField
-                fieldName="apartmentrightimg"
-                initValue={{
-                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                  title: 'rightimg',
-                  alt: 'rightimg'
-                }}
-                borderRadius="25px"
-                h="40vh"
-                w="27.5vw"
-                objec
-              />
-            </Box>
-          </HStack>
-          <HStack spacing="7">
-            <Box borderRadius="25px" h="40vh" w="27.5vw">
-              <fields.ImageField
-                fieldName="apartmentleftimg"
-                initValue={{
-                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                  title: 'leftimg',
-                  alt: 'lefttimg'
-                }}
-                borderRadius="25px"
-                height="40vh"
-                width="27.5vw"
-                objectFit="fill"
-              />
-            </Box>
-            <Box
-              border="1px"
-              borderColor="panoramaweg.lightgray"
+          </Box>
+          <Box h="40vh" w="587px">
+            <fields.ImageField
+              fieldName="apartmentrightimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'rightimg',
+                alt: 'rightimg'
+              }}
               borderRadius="25px"
               h="40vh"
-              w="27.5vw">
-              <Box padding="4" fontSize="1.1rem">
-                <fields.TextField
-                  fieldName="apartmentrichtextright"
-                  initValue="apartmentrichtextright"
-                />
-              </Box>
+              w="587px"
+              objec
+            />
+          </Box>
+          <Box borderRadius="25px" h="40vh" w="587px">
+            <fields.ImageField
+              fieldName="apartmentleftimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'leftimg',
+                alt: 'lefttimg'
+              }}
+              borderRadius="25px"
+              height="40vh"
+              width="587px"
+              objectFit="fill"
+            />
+          </Box>
+          <Box
+            border="1px"
+            borderColor="panoramaweg.lightgray"
+            borderRadius="25px"
+            h="40vh"
+            w="587px">
+            <Box padding="4" fontSize="1.1rem">
+              <fields.TextField
+                fieldName="apartmentrichtextright"
+                initValue="apartmentrichtextright"
+              />
             </Box>
-          </HStack>
-        </VStack>
+          </Box>
+        </Wrap>
       </Container>
       <Container
         pb="2"

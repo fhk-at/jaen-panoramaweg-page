@@ -1,98 +1,85 @@
 //#region > Imports
 //> React
 // Contains all the functionality necessary to define React components
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-import {
-  MDBContainer,
- // MDBLightbox,
-} from "mdbreact";
 
 //> SNEK
-import {ConnectedPageType, SimpleRichTextField, ImageField, SimpleTextField} from '@snek-at/jaen'
-
+import {fields} from '@snek-at/jaen-pages'
 
 //> Components
-import ImageLeftSection from "../../organisms/ImageLeftSection";
+import ImageLeftSection from '../../components/organisms/ImageLeftSection'
 //> CSS
 
-import { Footer, Navbar} from "../../molecules";
+import {Footer, Navbar} from '../../components/molecules'
 
-import "./index.scss";
+import './index.scss'
+import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {Box} from '@chakra-ui/layout'
+import {Container, Heading, Text} from '@chakra-ui/react'
 //#endregion
-
 
 //#endregion
 
 //#region > Components
 
-
-const BlogPage: ConnectedPageType = () => {
-{/*
-const Gallery = {
-  images: [
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg1"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg2"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg3"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg4"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg5"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg6"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg7"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg8"}}/>,
-    },
-    {
-      img: <ImageField fieldOptions={{fieldName: "bloggalleryimg9"}}/>,
-    },
-  ],
-}; */}
-
-return (
-  <>
+const BlogPage: JaenTemplate = () => {
+  return (
+    <Box as="section" id="blogpage" pb="12vh" pt="15vh" minH="100vh">
       <Navbar />
-      <section className="blogPage">
-        <MDBContainer className="text-center">
-          <h2 className="mb-1"><SimpleTextField name={"blogsimpletext1"}/></h2>
-          <p className="lead"><SimpleTextField name={"blogsimpletext2"}/></p>
-          <div className="my-5">
-          <SimpleRichTextField name={"blogrichtext1"}/>
-          </div>
-        </MDBContainer>
+      <Container maxW="70vw" centerContent fontSize="1.1rem">
+        <Heading fontSize="1.75rem">
+          <fields.TextField
+            fieldName="blogheading"
+            initValue="Überschrift"
+            rtf={false}
+          />
+        </Heading>
+        <Text fontSize="1.5rem" mb="5">
+          <fields.TextField
+            fieldName="blogsubheading"
+            initValue="vom 01.01.2022"
+            rtf={false}
+          />
+        </Text>
+        <Text mb="5">
+          <fields.TextField fieldName="blogrichtext" initValue="Fill me" />
+        </Text>
         <ImageLeftSection
-          className="my-5"
-          head={<SimpleTextField name="blogimagelefthead1" />}
-          img1={<ImageField fieldOptions={{fieldName: "blogimageleftimg1"}}/>}
-          text1={<SimpleRichTextField name={"blogimagelefttext1"}/>}
+          imgleftimg={
+            <fields.ImageField
+              fieldName="blogimgleftimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'blogimgleftimg',
+                alt: 'blogimgleftimg'
+              }}
+              width="20vw"
+            />
+          }
+          imgleftheading={
+            <fields.TextField
+              fieldName="blogimgleftheading"
+              initValue="Unterüberschrift"
+              rtf={false}
+            />
+          }
+          imgleftrichtext={
+            <fields.TextField
+              fieldName="blogimgleftrichtext"
+              initValue="Fill me"
+            />
+          }
         />
-        {/* <MDBLightbox md="4" images={Gallery.images} className="mb-5"/> */}
-      </section>
+      </Container>
       <Footer />
-  </>
-  );
+    </Box>
+  )
 }
 //#endregion
 
-
-
-BlogPage.PageType = 'BlogPage'
-BlogPage.ChildPages = [BlogPage]
+BlogPage.TemplateName = 'BlogPage'
 
 //#region > Exports
-export default BlogPage;
+export default BlogPage
 //#endregion
 
 /**

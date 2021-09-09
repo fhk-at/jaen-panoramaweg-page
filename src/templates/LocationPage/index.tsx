@@ -3,39 +3,60 @@
 // Contains all the functionality necessary to define React components
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {ConnectedPageType, ImageField, SimpleTextField, SimpleRichTextField} from '@snek-at/jaen'
+import {fields} from '@snek-at/jaen-pages'
 
 //> Components
-import ImageTopSection from "../../organisms/ImageTopSection";
-import { Footer, Navbar} from "../../molecules";
+import ImageTopSection from '../../components/organisms/ImageTopSection'
+import {Footer, Navbar} from '../../components/molecules'
 
 //> CSS
-import "./index.scss";
+import './index.scss'
+import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {Box} from '@chakra-ui/layout'
 //#endregion
 
 //#region > Components
-const LocationPage: ConnectedPageType = () => {
+const LocationPage: JaenTemplate = () => {
   return (
-    <>
+    <Box
+      as="section"
+      id="locationpage"
+      paddingBottom="12vh"
+      overflow="hidden"
+      paddingTop="15vh">
       <Navbar />
-        <div className="locationPage">
-          <ImageTopSection
-            head1={<SimpleTextField name="locationhead1"/>}
-            img1={<ImageField fieldOptions={{fieldName: "locationimage1"}}/>}
-            text1={<SimpleRichTextField name="locationtext1" />}
+      <ImageTopSection
+        head1={
+          <fields.TextField
+            fieldName="locationhead"
+            initValue="locationheading"
+            rtf={false}
           />
-        </div>
+        }
+        img1={
+          <fields.ImageField
+            fieldName="locationimage"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              title: 'locationimg',
+              alt: 'locationimg'
+            }}
+          />
+        }
+        text1={
+          <fields.TextField fieldName="locationrichtext" initValue="Fill me" />
+        }
+      />
       <Footer />
-    </>
-  );
+    </Box>
+  )
 }
 
-LocationPage.PageType = 'LocationPage'
-LocationPage.ChildPages = [LocationPage]
+LocationPage.TemplateName = 'LocationPage'
 //#endregion
 
 //#region > Exports
-export default LocationPage;
+export default LocationPage
 //#endregion
 
 /**

@@ -3,40 +3,58 @@
 // Contains all the functionality necessary to define React components
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {ConnectedPageType, ImageField, SimpleRichTextField, SimpleTextField} from '@snek-at/jaen'
 
 //> Components
-import ImageTopSection from "../../organisms/ImageTopSection";
-import { Footer, Navbar} from "../../molecules";
+import ImageTopSection from '../../components/organisms/ImageTopSection'
+import {Footer, Navbar} from '../../components/molecules'
 
 //> CSS
-import "./index.scss";
+import './index.scss'
+import {fields, JaenTemplate} from '@snek-at/jaen-pages'
+import {Box} from '@chakra-ui/react'
 //#endregion
 
 //#region > Components
-const ImmoPage: ConnectedPageType = () => {
+const ImmoPage: JaenTemplate = () => {
   return (
-    <>
+    <Box
+      as="section"
+      id="immopage"
+      overflow="hidden"
+      paddingTop="15"
+      paddingBottom="12"
+      minH="100vh">
       <Navbar />
-      <div className="immoPage">
       <ImageTopSection
-        head1={<SimpleTextField name="immohead1"/>}
-        img1={<ImageField fieldOptions={{fieldName: "immoimg"}}/>}
-        text1={<SimpleRichTextField name="immotext1"/>}
+        head1={
+          <fields.TextField
+            fieldName="immohead1"
+            initValue="Überschrift"
+            rtf={false}
+          />
+        }
+        img1={
+          <fields.ImageField
+            fieldName="immoimg"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              title: 'immoimg',
+              alt: 'immoimg'
+            }}
+          />
+        }
+        text1={<fields.TextField fieldName="immotext1" initValue="Fill me" />}
       />
-      </div>
       <Footer />
-    </>
-  );
+    </Box>
+  )
 }
 
-
-ImmoPage.PageType = 'ImmoPage'
-ImmoPage.ChildPages = [ImmoPage]
+ImmoPage.TemplateName = 'ImmoPage'
 //#endregion
 
 //#region > Exports
-export default ImmoPage;
+export default ImmoPage
 //#endregion
 
 /**
