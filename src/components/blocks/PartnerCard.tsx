@@ -7,25 +7,26 @@
  * Use of this source code is governed by an EUPL-1.2 license that can be found
  * in the LICENSE file at https://snek.at/license
  */
-import {fields, blocks} from '@snek-at/jaen-pages'
-import {JaenImage} from '@snek-at/jaen-pages/src/containers/JaenImage'
+import {Box} from '@chakra-ui/react'
+import {fields, JaenBlock} from '@snek-at/jaen-pages'
 
-type CardBlockFields = {img: JaenImage}
-
-const PartnerCard: blocks.BC<CardBlockFields> = (values: any) => {
+const PartnerCard: JaenBlock = () => {
   return (
-    <div className="m-1" style={{width: 250}}>
-      {values.img}
-    </div>
+    <Box>
+      <fields.ImageField
+        fieldName="partnerblockimg"
+        initValue={{
+          src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+          title: 'partner',
+          alt: 'partner'
+        }}
+        width="250"
+      />
+    </Box>
   )
 }
 
-PartnerCard.BlockType = 'CardBlock'
-PartnerCard.BlockFields = {
-  img: fields.ImageField
-}
-PartnerCard.defaultValues = {
-  img: {src: '', title: 'partner', alt: 'partner'}
-}
+PartnerCard.BlockName = 'PartnerCard'
+PartnerCard.BlockDisplayName = 'PartnerCard'
 
 export default PartnerCard
