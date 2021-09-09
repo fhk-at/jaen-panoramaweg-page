@@ -6,7 +6,12 @@ module.exports = {
   siteMetadata,
   plugins: [
     '@snek-at/jaen',
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('node-sass')
+      }
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -16,7 +21,10 @@ module.exports = {
         templates: {
           HousePage: path.resolve('src/templates/HousePage/index.tsx'),
           ApartmentPage: path.resolve('src/templates/ApartmentPage/index.tsx'),
-          ContactPage: path.resolve('src/templates/ContactPage/index.tsx')
+          ContactPage: path.resolve('src/templates/ContactPage/index.tsx'),
+          LocationPage: path.resolve('src/tempates/LocationPage/index.tsx'),
+          BlogPage: path.resolve('src/templates/BlogPAge/index.tsx'),
+          ImmoPage: path.resolve('src/templates/ImmoPage/index.tsx')
         }
       }
     },
