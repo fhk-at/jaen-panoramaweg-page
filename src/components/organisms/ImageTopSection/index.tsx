@@ -24,8 +24,12 @@ const ImageTopSection = ({head1, img1, text1}: Props): JSX.Element => {
     <Container maxWidth="100vw" centerContent mt="5">
       {/* <img src={img} alt={head} className="img-fluid mb-3" /> */}
       {img1}
-      <Heading mb="3">{head1}</Heading>
-      <Text w="50vw">{text1}</Text>
+      <Heading fontSize="1.75rem" mt="3" mb="3">
+        {head1}
+      </Heading>
+      <Text w="50vw" fontSize="1.1rem">
+        {text1}
+      </Text>
     </Container>
   )
 }

@@ -45,19 +45,17 @@ const HeroSection = ({button1}: Props): JSX.Element => {
             title="logo-white"
           />
           <Box
-            ml="5vw"
-            mt="1"
+            margin="auto"
             as="button"
+            marginTop="2rem"
+            padding="1rem"
             borderRadius="30px"
-            width="8vw"
-            height="5.5vh"
             backgroundColor="white"
             color="black"
             justifyContent="center"
             alignContent="center"
             zIndex={10}
-            display="flex"
-            paddingTop="5">
+            display="flex">
             <ChevronDownIcon w={6} h={6} />
             <Text>{button1}</Text>
           </Box>

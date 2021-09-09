@@ -36,7 +36,9 @@ Props): JSX.Element => {
           {subhead1}
         </Text>
       </Container>
-      <Wrap justify="center">{partners1}</Wrap>
+      <Wrap justify="center" spacing="5">
+        {partners1}
+      </Wrap>
     </Box>
   )
 }
