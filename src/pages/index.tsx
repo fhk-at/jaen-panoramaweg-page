@@ -1,6 +1,6 @@
 //#region > Imports
 // Contains all the functionality necessary to define React components
-import {fields} from '@snek-at/jaen-pages'
+import {BlockContainer, fields} from '@snek-at/jaen-pages'
 import PartnerCard from '../components/blocks/PartnerCard'
 //> CSS
 import './index.scss'
@@ -8,7 +8,7 @@ import './index.scss'
 // import BlogSection from '../../organisms/BlogSection'
 //> Components
 import HeroSection from '../components/organisms/HeroSection'
-// import HousesSection from '../components/HousesSection'
+import HousesSection from '../components/organisms/HousesSection'
 import ImageTopSection from '../components/organisms/ImageTopSection'
 import MapSection from '../components/organisms/MapSection'
 import PartnerSection from '../components/organisms/PartnerSection'
@@ -21,7 +21,7 @@ import {Box, Text} from '@chakra-ui/react'
 //#region > Components
 const IndexPage = () => {
   return (
-    <Box as="section" id="homepage" overflow="hidden">
+    <Box as="section" id="homepage" overflow="hidden" paddingBottom="12vh">
       <Navbar />
       <HeroSection
         button1={
@@ -41,8 +41,6 @@ const IndexPage = () => {
               alt: 'placeholder',
               title: 'placeholder'
             }}
-            // imageClassName="img-fluid mb-3"
-            // imageStyle={{width: '800px', objectFit: 'cover'}}
           />
         }
         head1={
@@ -62,23 +60,23 @@ const IndexPage = () => {
         }
       />
       <MapSection />
-      {/* <HousesSection
-        head1={
+      <HousesSection
+        househead={
           <fields.TextField
             fieldName="homehousehead"
-            initValue=""
+            initValue="Überschrift"
             rtf={false}
           />
         }
-        subhead1={
+        housesubhead={
           <fields.TextField
             fieldName="homehousesubhead"
-            initVlaue=""
+            initValue="Unterüberschrift"
             rtf={false}
           />
         }
-      /> */}
-      {/* <PartnerSection
+      />
+      <PartnerSection
         // container
         // partners={[
         //   require('../../../common/img/content/placeholder.jpg'),
@@ -91,25 +89,10 @@ const IndexPage = () => {
         // background="#e9eef0"
         // className="py-3"
         partners1={
-          <fields.StreamField
+          <BlockContainer
             reverseOrder={false}
-            fieldName={'partners1'}
+            fieldName="partnerstream"
             blocks={[PartnerCard]}
-            initValue={{
-              0: {
-                typeName: 'PartnerCard',
-                fields: {
-                  img: {
-                    _type: 'FileBlock',
-                    initialImage: {
-                      src: 'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
-                      alt: 'partner',
-                      title: 'partner'
-                    }
-                  }
-                }
-              }
-            }}
           />
         }
         head1={
@@ -126,7 +109,7 @@ const IndexPage = () => {
             rtf={false}
           />
         }
-      /> */}
+      />
 
       {
         <fields.IndexField
