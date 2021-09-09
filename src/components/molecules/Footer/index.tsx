@@ -21,11 +21,11 @@ const Footer = (): JSX.Element => {
   return (
     <Box
       backgroundColor="panoramaweg.lightgray"
-      w="100vw"
+      w="100%"
       h="12vh"
       position="absolute"
       bottom="0">
-      <Container w="100vw" centerContent color="panoramaweg.dark" pt="6">
+      <Container w="100%" centerContent color="panoramaweg.dark" pt="6">
         <Flex>
           <IconContext.Provider value={{style: {marginTop: '3'}}}>
             <BiCopyright />

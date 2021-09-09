@@ -42,8 +42,8 @@ const Navbar = (): JSX.Element => {
           fontSize="1.4rem"
           fontWeight="bold">
           <Link to="">Immobilie</Link>
-          <Link to="">Lage</Link>
-          <Link to="">Baufortschritt</Link>
+          <Link to="/lage/">Lage</Link>
+          <Link to="/fortschritt/">Baufortschritt</Link>
           <Link to="/kontakt/">Kontakt</Link>
         </HStack>
       </Flex>
