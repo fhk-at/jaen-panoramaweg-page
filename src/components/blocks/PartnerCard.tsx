@@ -20,7 +20,8 @@ const PartnerCard: JaenBlock = () => {
           title: 'partner',
           alt: 'partner'
         }}
-        width="250"
+        width="250px"
+        height="200px"
       />
     </Box>
   )
