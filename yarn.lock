@@ -3137,10 +3137,10 @@
     "@chakra-ui/react" "^1.6.6"
     gatsby "^3.12.0"
 
-"@snek-at/jaen-pages@^2.0.0-beta.23":
-  version "2.0.0-beta.23"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.23.tgz#d2d74822869aac731561fc731658c4c8401cf003"
-  integrity sha512-oiBWtM2Nij/trJGpfYy0if/CTnzN7u5YDRRkoLNY7m6sOmNNqHFT3hxl0q7mhtIvVlLjrDUJeWeZatBdVA1YSw==
+"@snek-at/jaen-pages@^2.0.0-beta.26":
+  version "2.0.0-beta.26"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.26.tgz#c731104ae338ab585b970cc3445b88632c9d92d8"
+  integrity sha512-F8PnsRo8IN3up2YkvP7GkyOXd7qb4WtJSggvTMcChswGO10whYkK6vy+hJSjk3VF2xAPhCQEK6fuPtiVZqLRvw==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.6.6"
@@ -3152,8 +3152,8 @@
     "@react-icons/all-files" "^4.1.0"
     "@reduxjs/toolkit" "^1.6.1"
     "@snek-at/gatsby-plugin-chakra-ui" "1.0.0-beta.4"
-    "@snek-at/jaen" "^2.0.0-beta.13"
-    "@snek-at/jaen-shared-ui" "2.0.0-beta.10"
+    "@snek-at/jaen" "^2.0.0-beta.17"
+    "@snek-at/jaen-shared-ui" "2.0.0-beta.12"
     "@snek-at/snek-finder" "^1.0.0-beta.11"
     deepmerge "^4.2.2"
     electron "^14.0.0"
@@ -3174,10 +3174,10 @@
     react-redux "^7.2.4"
     uuid "^8.3.2"
 
-"@snek-at/jaen-shared-ui@2.0.0-beta.10":
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-shared-ui/-/jaen-shared-ui-2.0.0-beta.10.tgz#5362d429fd2a5432b1e1bd6971e9cb6a20f6cc8a"
-  integrity sha512-u7NRXWbahcxO0MNITwBsTZVADztXeoiIgM+3ZHLL+YFJHM5g6dNxRgMPtppE0fRjoEuvEOyLH7Nxo8qUwLK+1g==
+"@snek-at/jaen-shared-ui@2.0.0-beta.12":
+  version "2.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-shared-ui/-/jaen-shared-ui-2.0.0-beta.12.tgz#4712fa405b14388b7b08159166ff85e628af2a9b"
+  integrity sha512-qrWBQ+jFwSKB8JUNUR7cW38CqMhBjeuhJiKrWn3LT4pXpibBCLazL8rgX6S/tM+8P1QB1QMcjOlUsry0DdEKcw==
   dependencies:
     "@atlaskit/tree" "^8.4.0"
     "@chakra-ui/icons" "^1.0.15"
@@ -3195,50 +3195,15 @@
     react-analytics-charts "^1.2.12"
     react-use-analytics-api "^1.4.16"
 
-"@snek-at/jaen-shared-ui@2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-shared-ui/-/jaen-shared-ui-2.0.0-beta.7.tgz#be466cb876e5aa22aa65ab1374cbcd8c200c9e0a"
-  integrity sha512-uw4S2kwxjqcq7EaavWFFADeJFSIJt/wPRG9lJpfYbys7F1m+3pliDw+g/AduX8ZbhlUEX8uEPomaqOfvniFFlQ==
-  dependencies:
-    "@atlaskit/tree" "^8.4.0"
-    "@chakra-ui/icons" "^1.0.15"
-    "@chakra-ui/react" "^1.6.6"
-    "@emotion/react" "^11"
-    "@emotion/styled" "^11"
-    "@fortawesome/fontawesome-svg-core" "^1.2.36"
-    "@fortawesome/free-regular-svg-icons" "^5.15.4"
-    "@fortawesome/react-fontawesome" "^0.1.15"
-    "@react-icons/all-files" "^4.1.0"
-    "@snek-at/react-lottie" "1.0.0-beta.3"
-    "@snek-at/snek-finder" "1.0.0-beta.11"
-    framer-motion "^4.1.17"
-    react "^17.0.2"
-    react-analytics-charts "^1.2.12"
-    react-use-analytics-api "^1.4.16"
-
-"@snek-at/jaen@^2.0.0-beta.13":
-  version "2.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.13.tgz#77ba7d3eaf41cab17e3fe1a9efdebfcc55374ebb"
-  integrity sha512-4r8HuujO79HUYAAEwaXxW5Ia5JPUQDH+wOAsX6n9FbKq3rDOQcUjbnw2X2IYOVRz9mOfxymXJIZFAvh77Ks//Q==
+"@snek-at/jaen@^2.0.0-beta.17":
+  version "2.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.17.tgz#d3a2ada0c8e86ef9bef55a0690e68cd64a9f216a"
+  integrity sha512-/2fSl98vpIfXxIp5Hs/63pPwQsYPFNMdHKu9VLz8NrRNfEulMvsl+nqulGFetg5CN896yepFKR0bRKxg00hyIg==
   dependencies:
     "@chakra-ui/react" "^1.6.7"
     "@loadable/component" "^5.15.0"
     "@snek-at/bridge" "^1.0.0"
-    "@snek-at/jaen-shared-ui" "2.0.0-beta.7"
-    gatsby-alias-imports "^1.0.6"
-    gatsby-plugin-compile-es6-packages "^2.1.1"
-    gatsby-plugin-emotion "^6.13.0"
-    react "^17.0.2"
-
-"@snek-at/jaen@^2.0.0-beta.15":
-  version "2.0.0-beta.15"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.15.tgz#5e9595aee36feacaabaca2f14a72d212e906ad28"
-  integrity sha512-0SBIMsKlCR4i/77m+eDmTVsPDiJf9TGmZOixbTSmO1pAX9qO7G8c5/wSH3N80j3UDYkH01Txxei7G2L4UNJ76g==
-  dependencies:
-    "@chakra-ui/react" "^1.6.7"
-    "@loadable/component" "^5.15.0"
-    "@snek-at/bridge" "^1.0.0"
-    "@snek-at/jaen-shared-ui" "2.0.0-beta.10"
+    "@snek-at/jaen-shared-ui" "2.0.0-beta.12"
     gatsby-alias-imports "^1.0.6"
     gatsby-plugin-compile-es6-packages "^2.1.1"
     gatsby-plugin-emotion "^6.13.0"

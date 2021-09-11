@@ -23,7 +23,7 @@ module.exports = {
           ApartmentPage: path.resolve('src/templates/ApartmentPage/index.tsx'),
           ContactPage: path.resolve('src/templates/ContactPage/index.tsx'),
           LocationPage: path.resolve('src/tempates/LocationPage/index.tsx'),
-          BlogPage: path.resolve('src/templates/BlogPAge/index.tsx'),
+          BlogPage: path.resolve('src/templates/BlogPage/index.tsx'),
           ImmoPage: path.resolve('src/templates/ImmoPage/index.tsx')
         }
       }
