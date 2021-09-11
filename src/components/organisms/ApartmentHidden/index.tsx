@@ -11,7 +11,7 @@ const ApartmentHidden = () => {
         <Text>Zimmer: </Text>
         <fields.TextField
           fieldName="apartmentrooms"
-          initValue="<p>4</p>"
+          initValue="<p>0</p>"
           rtf={false}
         />
       </Flex>

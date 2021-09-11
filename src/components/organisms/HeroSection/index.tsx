@@ -1,9 +1,11 @@
 import {ChevronDownIcon} from '@chakra-ui/icons'
-import {Box, Text, Container, Center} from '@chakra-ui/react'
-import {StaticImage} from 'gatsby-plugin-image'
+import {Box, Text, Container} from '@chakra-ui/react'
+
+import HeroHidden from '../../molecules/HeroHidden'
 
 import React from 'react'
 import './index.scss'
+import {fields} from '@snek-at/jaen-pages'
 //#region > Components
 interface Props {
   button1: React.ReactNode
@@ -21,30 +23,37 @@ const HeroSection = ({button1}: Props): JSX.Element => {
         justifyContent="center"
         alignContent="center"
         position="relative">
-        <Box
-          bg="#9C27B01A"
-          width="100vw"
-          height="100vh"
+        <HeroHidden />
+        <fields.ImageField
+          fieldName="herobackground"
+          initValue={{
+            src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+            title: 'herobackground',
+            alt: 'herobackground'
+          }}
           position="absolute"
           top="0"
           left="0"
-        />
-        <StaticImage
-          className="herobackground"
-          imgClassName="herobackgroundimg"
-          src="../../../images/bg.jpg"
-          alt="background"
-          title="background"
+          width="100vw"
+          height="100vh"
         />
         <Container>
-          <StaticImage
-            className="logoBG"
-            imgClassName="logo"
-            src="../../../images/logo_white.png"
-            alt="logo-white"
-            title="logo-white"
+          <fields.ImageField
+            fieldName="herologo"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              title: 'Logo',
+              alt: 'Logo'
+            }}
+            margin="auto"
+            position="relative"
+            zIndex="10"
+            width="80%"
+            objectFit="contain"
+            marginTop="40vh"
           />
           <Box
+            position="relative"
             margin="auto"
             as="button"
             marginTop="2rem"

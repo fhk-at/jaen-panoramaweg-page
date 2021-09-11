@@ -4,41 +4,28 @@
 // import React from "react";
 // React Router
 // import { Link } from "react-router-dom";
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-import {
-  // MDBBadge,
-  // MDBBtn,
-  // MDBCard,
-  // MDBCardBody,
-  // MDBCardImage,
-  // MDBCol,
-  MDBContainer,
-  MDBIcon,
-  // MDBProgress,
-  // MDBRow,
-  MDBStep,
-  MDBStepper,
-} from "mdbreact";
 
 //> CSS
-import "./index.scss";
+import {Container, Heading, Text, Box, Image, Wrap} from '@chakra-ui/react'
+import {fields} from '@snek-at/jaen-pages'
+import {Link} from 'gatsby'
+import './index.scss'
 //> Images
 // import logoImg from "../../../common/img/agency-small.png";
 //#endregion
 
 //#region > Components
 interface Props {
-  head1: React.ReactNode
-  subhead1: React.ReactNode
+  bloghead: React.ReactNode
+  blogsubhead: React.ReactNode
 }
 
-const BlogSection = ({ head1, subhead1 }: Props): JSX.Element => {
+const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
   return (
-    <MDBContainer className="blog-section text-center my-5">
-      <h2>{head1}</h2>
-      <p className="lead mb-0">{subhead1}</p>
-      <MDBStepper>
+    <Container centerContent maxW="70vw">
+      <Heading fontSize="1.5rem">{bloghead}</Heading>
+      <Text fontSize="1.1rem">{blogsubhead}</Text>
+      {/* <MDBStepper>
         <MDBStep className="done">
           <span className="step-item">
             <span className="circle green">
@@ -71,27 +58,71 @@ const BlogSection = ({ head1, subhead1 }: Props): JSX.Element => {
             <span className="label">Fertigstellung</span>
           </span>
         </MDBStep>
-      </MDBStepper>
-      {/* <MDBRow className="flex-center">
-        {entries1 &&
-          entries1.map((entry) => {
-            return (
-              <MDBCol lg="4" className="mb-2">
-                <MDBCard className="border">
-                  <MDBCardImage src={entry.src} />
-                  <MDBCardBody>
-                    <p className="lead font-weight-bold mb-1">{entry.head}</p>
-                    <p className="mb-0">
-                      {entry.text} <a href="/status/2022-01-01">weiterlesen</a>.
-                    </p>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            );
-          })}
-      </MDBRow> */}
-    </MDBContainer>
-  );
+      </MDBStepper> */}
+
+      <fields.IndexField
+        fieldName="blogindex"
+        fixedSlug="SitePage /blog/"
+        onRender={page => {
+          function removePTags(value: string) {
+            return value.substring(3, value.length - 4)
+          }
+
+          const children = page?.children
+          const cards = []
+
+          for (const child of children) {
+            const slug = child?.page?.slug
+            const fields = child?.page?.fields
+            const heading = removePTags(
+              fields?.bloghead?.content?.text || '<p>No content available</p>'
+            )
+            const text = removePTags(
+              fields?.blogrichtext?.content?.text ||
+                '<p>No content available</p>'
+            )
+            const img =
+              fields?.blogimgleftimg?.content?.src ||
+              'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+
+            console.log(slug)
+
+            cards.push(
+              <Link to={'/' + slug + '/'}>
+                <Box
+                  border="1px"
+                  borderColor="panoramaweg.lightgray"
+                  borderRadius="25px"
+                  boxSizing="border-box"
+                  width="425px">
+                  <Image
+                    src={img}
+                    height="285px"
+                    width="425px"
+                    borderTopRadius="25px"
+                  />
+                  <Box padding="5">
+                    <Heading fontSize="1.5rem">{heading}</Heading>
+                    <Text noOfLines={3} fomtSize="1.1rem">
+                      {text}
+                    </Text>
+                  </Box>
+                </Box>
+              </Link>
+            )
+          }
+
+          return (
+            <Wrap justify="center" spacing="5" marginTop="5">
+              {cards.map((card, key) => {
+                return <Box key={key}>{card}</Box>
+              })}
+            </Wrap>
+          )
+        }}
+      />
+    </Container>
+  )
 }
 
 export default BlogSection

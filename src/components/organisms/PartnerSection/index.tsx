@@ -30,15 +30,13 @@ Props): JSX.Element => {
       as="section"
       id="partnersection"
       backgroundColor="panoramaweg.lightgray">
-      <Container centerContent width="100vw">
-        <Heading as="h2">{head1}</Heading>
-        <Text mb="5" fontWeight="bold">
-          {subhead1}
-        </Text>
+      <Container centerContent width="100vw" fontSize="1.1rem">
+        <Heading as="h2" fontSize="1.5rem">
+          {head1}
+        </Heading>
+        <Text mb="5">{subhead1}</Text>
       </Container>
-      <Wrap justify="center" spacing="5">
-        {partners1}
-      </Wrap>
+      {partners1}
     </Box>
   )
 }
