@@ -12,6 +12,7 @@ import HousesSection from '../components/organisms/HousesSection'
 import ImageTopSection from '../components/organisms/ImageTopSection'
 import MapSection from '../components/organisms/MapSection'
 import PartnerSection from '../components/organisms/PartnerSection'
+import BlogSection from '../components/organisms/BlogSection'
 
 import {Footer, Navbar} from '../components/molecules'
 import {Box, Text} from '@chakra-ui/react'
@@ -37,7 +38,7 @@ const IndexPage = () => {
           <fields.ImageField
             fieldName="imagetopimg1"
             initValue={{
-              src: '',
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
               alt: 'placeholder',
               title: 'placeholder'
             }}
@@ -77,71 +78,46 @@ const IndexPage = () => {
         }
       />
       <PartnerSection
-        // container
-        // partners={[
-        //   require('../../../common/img/content/placeholder.jpg'),
-        //   require('../../../common/img/content/placeholder.jpg'),
-        //   require('../../../common/img/content/placeholder.jpg'),
-        //   require('../../../common/img/content/placeholder.jpg')
-        // ]}
-        // head="Unsere Partner"
-        // subhead="Wir bauen auf Vertrauen."
-        // background="#e9eef0"
-        // className="py-3"
         partners1={
           <BlockContainer
             reverseOrder={false}
-            fieldName="partnerstream"
+            name="partnerblocks"
             blocks={[PartnerCard]}
+            wrap={true}
+            wrapProps={{justify: 'center', spacing: '5'}}
           />
         }
         head1={
           <fields.TextField
             fieldName="head1"
-            initValue="partnerhead"
+            initValue="Unsere Partner"
             rtf={false}
           />
         }
         subhead1={
           <fields.TextField
             fieldName="subhead1"
-            initValue="partnersubhead"
+            initValue="Wir bauen auf Vertrauen."
             rtf={false}
           />
         }
       />
-
-      {
-        <fields.IndexField
-          // fixedSlug={'blog'}
-          onRender={(page: any) => {
-            for (const child of page.children) {
-              console.log(child)
-            }
-            return (
-              <Box>
-                <Text>Hello World</Text>
-              </Box>
-            )
-          }}
-        />
-      }
-      {/* <BlogSection
-        head1="Neues von der Baustelle"
-        subhead1="Wir halten Sie am Laufenden."
-        entries1={[
-          {
-            src: require('../../../common/img/content/placeholder.jpg'),
-            head: 'Baustart',
-            text: `Trotz der Moderne genießen Sie im Projekt Panoramaweg höchste Bauqualität, eingebettet ...`
-          },
-          {
-            src: require('../../../common/img/content/placeholder.jpg'),
-            head: 'Fundament gelegt',
-            text: `Trotz der Moderne genießen Sie im Projekt Panoramaweg höchste Bauqualität, eingebettet ...`
-          }
-        ]}
-      /> */}
+      <BlogSection
+        bloghead={
+          <fields.TextField
+            fieldName="bloghead"
+            initValue="Neues von der Baustelle"
+            rtf={false}
+          />
+        }
+        blogsubhead={
+          <fields.TextField
+            fieldName="blogsubhead"
+            initValue="Wir halten Sie am Laufenden."
+            rtf={false}
+          />
+        }
+      />
       {/* <StaticImage
         src="../images/logo.png"
         alt="Panoramaweg Logo"
