@@ -258,10 +258,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                     paddingRight="0"
                     borderRadius="25px">
                     <Flex>
-                      <AspectRatio ratio={16 / 10} w="20vw">
-                        <Image src={image}></Image>
-                      </AspectRatio>
-
+                      <Image src={image} w="230px" />
                       <Container size="lg">
                         <Heading>{formatedSlug}</Heading>
                         <Text>Wohnungsgröße: {cleanedSize}m²</Text>

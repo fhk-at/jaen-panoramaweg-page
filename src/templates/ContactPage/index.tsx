@@ -23,11 +23,9 @@ import {fields} from '@snek-at/jaen-pages'
 import Footer from '../../components/molecules/Footer'
 
 import {useFormik} from 'formik'
-
 //> CSS
 import './index.scss'
 import {BifrostBridge} from '@snek-at/bridge'
-import {useToast} from '@chakra-ui/react'
 import gql from 'graphql-tag'
 import {Navbar} from '../../components/molecules'
 //#endregion
@@ -66,7 +64,7 @@ const sendMail = async (formData: any) => {
         form_telephone: formData.telephone,
         subject: formData.subject,
         from_email: formData.email,
-        from_project_link: window.location.href,
+        from_project_link: formData.url,
         html_message: formData.message
       }
     }
@@ -92,7 +90,19 @@ const sendMail = async (formData: any) => {
 
 //#region > Components
 const ContactPage: JaenTemplate = () => {
-  const top = 'TOP 10'
+  // const top = useSelector((state: RootState) => state.lastVisited)
+
+  const query = window.location.search || ''
+  const urlParams = new URLSearchParams(query)
+  let url = window.location.href
+  let top = urlParams.get('top') || ''
+  let house = urlParams.get('house') || ''
+
+  url = url.substring(0, url.indexOf('?'))
+  if (top !== '' && house !== '') {
+    url = url.replace('/kontakt/', '/' + house + '/' + top + '/')
+  }
+  top = top.replace('top', 'Top ')
 
   const formik = useFormik({
     initialValues: {
@@ -101,7 +111,8 @@ const ContactPage: JaenTemplate = () => {
       email: '',
       telephone: '',
       subject: 'Panoramaweg',
-      message: ''
+      message: '',
+      url: url
     },
     onSubmit: values => {
       sendMail(values)
@@ -124,15 +135,21 @@ const ContactPage: JaenTemplate = () => {
       paddingTop="15vh">
       <Navbar />
       <Container centerContent maxW="40vw">
-        <Flex fontSize="1.5rem">
-          <Heading mr="1">Sie sind an</Heading>
-          <Badge colorScheme="greenwhite" borderRadius="25px" pl="3" pr="3">
-            <Text marginTop="2" fontSize="xl">
-              {top}
-            </Text>
-          </Badge>
-          <Heading ml="1">interessiert?</Heading>
-        </Flex>
+        {top === '' ? (
+          <Heading fontSize="1.75rem">
+            Sie sind an einer unserer Immobilien interessiert?
+          </Heading>
+        ) : (
+          <Flex fontSize="1.75rem">
+            <Heading mr="1">Sie sind an</Heading>
+            <Badge colorScheme="greenwhite" borderRadius="25px" pl="3" pr="3">
+              <Text marginTop="2" fontSize="xl">
+                {top}
+              </Text>
+            </Badge>
+            <Heading ml="1">interessiert?</Heading>
+          </Flex>
+        )}
         <Text fontSize="1.5rem" fontWeight="thin">
           <fields.TextField
             fieldName="contactsubheading"

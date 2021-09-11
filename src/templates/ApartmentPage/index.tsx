@@ -7,6 +7,7 @@ import React from 'react'
 
 import Footer from '../../components/molecules/Footer'
 import {Navbar} from '../../components/molecules'
+import {navigate} from 'gatsby-link'
 
 //> CSS
 import './index.scss'
@@ -52,9 +53,9 @@ const ApartmentPage: JaenTemplate = () => {
   }
 
   const parenthref = '/' + breadcrumbs[0] + '/'
-
+  let params: string[] = []
+  params = params.concat(breadcrumbs)
   breadcrumbs = format(breadcrumbs)
-
   return (
     <Box
       as="section"
@@ -87,12 +88,36 @@ const ApartmentPage: JaenTemplate = () => {
       </Center>
       <Container centerContent mb="5">
         <Heading>{breadcrumbs[0] + ' / ' + breadcrumbs[1]}</Heading>
-        <Text mb="4" fontSize="xl" fontWeight="light">
-          <fields.TextField
-            fieldName="apartmentsubhead"
-            initValue="Penthouse"
-          />
-        </Text>
+        <fields.ChoiceField
+          fieldName="apartmenttype"
+          options={['Penthouse', '4-Zimmer', '3-Zimmer']}
+          initValue="Penthouse"
+          onRenderPopover={(selection, options, select) => {
+            return (
+              <Box>
+                {options.map((option, key) => {
+                  return (
+                    <Button
+                      key={key}
+                      colorScheme="gray"
+                      variant="ghost"
+                      onClick={() => select(option)}
+                      disabled={option === selection}>
+                      {option}
+                    </Button>
+                  )
+                })}
+              </Box>
+            )
+          }}
+          onRender={selection => {
+            return (
+              <Text mb="4" fontSize="xl" fontWeight="light">
+                {selection}
+              </Text>
+            )
+          }}
+        />
         <fields.ChoiceField
           fieldName="apartmentavailable"
           initValue="Verfügbar"
@@ -103,6 +128,7 @@ const ApartmentPage: JaenTemplate = () => {
                 {options.map((option, key) => {
                   return (
                     <Button
+                      key={key}
                       disabled={option === selection}
                       onClick={() => select(option)}
                       textTransform="none"
@@ -195,12 +221,36 @@ const ApartmentPage: JaenTemplate = () => {
                 </Container>
                 <Container centerContent>
                   <Text fontSize="1.1rem">Wohnungstyp</Text>
-                  <Box fontSize="1.5rem" fontWeight="bold" mb="3">
-                    <fields.TextField
-                      fieldName="apartmenttype"
-                      initValue="Penthouse"
-                    />
-                  </Box>
+                  <fields.ChoiceField
+                    fieldName="apartmenttype"
+                    options={['Penthouse', '4-Zimmer', '3-Zimmer']}
+                    initValue="Penthouse"
+                    onRenderPopover={(selection, options, select) => {
+                      return (
+                        <Box>
+                          {options.map((option, key) => {
+                            return (
+                              <Button
+                                key={key}
+                                colorScheme="gray"
+                                variant="ghost"
+                                onClick={() => select(option)}
+                                disabled={option === selection}>
+                                {option}
+                              </Button>
+                            )
+                          })}
+                        </Box>
+                      )
+                    }}
+                    onRender={selection => {
+                      return (
+                        <Text fontSize="1.5rem" fontWeight="bold" mb="3">
+                          {selection}
+                        </Text>
+                      )
+                    }}
+                  />
                 </Container>
               </VStack>
               <Container centerContent>
@@ -212,7 +262,10 @@ const ApartmentPage: JaenTemplate = () => {
                   size="lg"
                   fontSize="xs"
                   paddingLeft="8"
-                  paddingRight="8">
+                  paddingRight="8"
+                  onClick={() =>
+                    navigate(`/kontakt/?top=${params[1]}&house=${params[0]}`)
+                  }>
                   Kontakt
                 </Button>
               </Container>
@@ -293,7 +346,10 @@ const ApartmentPage: JaenTemplate = () => {
           color="white"
           variant="solid"
           borderRadius="25px"
-          size="lg">
+          size="lg"
+          onClick={() =>
+            navigate(`/kontakt/?top=${params[1]}&house=${params[0]}`)
+          }>
           Kontaktiere uns
         </Button>
       </Container>
