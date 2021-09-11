@@ -20,7 +20,7 @@ import './index.scss'
 const Footer = (): JSX.Element => {
   return (
     <Box
-      backgroundColor="panoramaweg.lightgray"
+      bg="panoramaweg.lightgray"
       w="100%"
       h="12vh"
       position="absolute"
