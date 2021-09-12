@@ -2,7 +2,7 @@
   "name": "@snek-at/jaen-template",
   "version": "1.2.0",
   "description": "A template repository for Jaen",
-  "homepage": "https://template.snek.at/",
+  "homepage": "https://jaen-panoramaweg-page.emailwerk.snek.at/",
   "author": "Florian Kleber",
   "license": "EUPL-1.2",
   "main": "lib/index.js",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snek-at/jaen-template.git"
+    "url": "git+https://github.com/emailwerk/jaen-panoramaweg-page.git"
   },
   "bugs": {
-    "url": "https://github.com/snek-at/jaen-template/issues"
+    "url": "https://github.com/emailwerk/jaen-panoramaweg-page/issues"
   },
   "scripts": {
     "build": "gatsby build",
