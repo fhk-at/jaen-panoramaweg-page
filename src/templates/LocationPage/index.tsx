@@ -19,15 +19,15 @@ import * as style from './style'
 //#region > Components
 const LocationPage: JaenTemplate = () => {
   return (
-    <Box
-      as="section"
-      id="locationpage"
-      paddingBottom="12vh"
-      overflow="hidden"
-      paddingTop="15vh"
-      minHeight="100vh">
-      <Navbar />
-      <style.responsiveImage>
+    <style.responsiveImage>
+      <Box
+        as="section"
+        id="locationpage"
+        paddingBottom="12vh"
+        overflow="hidden"
+        paddingTop="15vh"
+        minHeight="100vh">
+        <Navbar />
         <ImageTopSection
           head1={
             <fields.TextField
@@ -54,10 +54,10 @@ const LocationPage: JaenTemplate = () => {
             />
           }
         />
-      </style.responsiveImage>
 
-      <Footer />
-    </Box>
+        <Footer />
+      </Box>
+    </style.responsiveImage>
   )
 }
 

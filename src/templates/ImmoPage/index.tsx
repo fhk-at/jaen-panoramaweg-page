@@ -18,15 +18,15 @@ import {Box} from '@chakra-ui/react'
 //#region > Components
 const ImmoPage: JaenTemplate = () => {
   return (
-    <Box
-      as="section"
-      id="immopage"
-      overflow="hidden"
-      paddingTop="15vh"
-      paddingBottom="12vh"
-      minH="100vh">
-      <Navbar />
-      <style.responsiveImage>
+    <style.responsiveImage>
+      <Box
+        as="section"
+        id="immopage"
+        overflow="hidden"
+        paddingTop="15vh"
+        paddingBottom="12vh"
+        minH="100vh">
+        <Navbar />
         <ImageTopSection
           head1={
             <fields.TextField
@@ -53,9 +53,9 @@ const ImmoPage: JaenTemplate = () => {
             />
           }
         />
-      </style.responsiveImage>
-      <Footer />
-    </Box>
+        <Footer />
+      </Box>
+    </style.responsiveImage>
   )
 }
 

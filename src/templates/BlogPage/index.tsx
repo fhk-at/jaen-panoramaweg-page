@@ -22,38 +22,38 @@ import * as style from './style'
 
 const BlogPage: JaenTemplate = () => {
   return (
-    <Box
-      as="section"
-      id="blogpage"
-      pb="12vh"
-      pt="15vh"
-      minH={['', '', '100vh', '100vh']}>
-      <Navbar />
-      <Container
-        maxW={['90%', '90%', '70%', '70%']}
-        centerContent
-        fontSize="1.1rem">
-        <Heading fontSize="1.75rem">
-          <fields.TextField
-            fieldName="blogheading"
-            initValue="Überschrift"
-            rtf={false}
-          />
-        </Heading>
-        <Text fontSize="1.5rem" mb="5">
-          <fields.TextField
-            fieldName="blogsubheading"
-            initValue="vom 01.01.2022"
-            rtf={false}
-          />
-        </Text>
-        <Text mb="5" maxW={['85%', '85%']}>
-          <fields.TextField
-            fieldName="blogrichtext"
-            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
-          />
-        </Text>
-        <style.responsiveImage>
+    <style.responsiveImage>
+      <Box
+        as="section"
+        id="blogpage"
+        pb="12vh"
+        pt="15vh"
+        minH={['', '', '100vh', '100vh']}>
+        <Navbar />
+        <Container
+          maxW={['90%', '90%', '70%', '70%']}
+          centerContent
+          fontSize="1.1rem">
+          <Heading fontSize="1.75rem">
+            <fields.TextField
+              fieldName="blogheading"
+              initValue="Überschrift"
+              rtf={false}
+            />
+          </Heading>
+          <Text fontSize="1.5rem" mb="5">
+            <fields.TextField
+              fieldName="blogsubheading"
+              initValue="vom 01.01.2022"
+              rtf={false}
+            />
+          </Text>
+          <Text mb="5" maxW={['85%', '85%']}>
+            <fields.TextField
+              fieldName="blogrichtext"
+              initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+            />
+          </Text>
           <ImageLeftSection
             imgleftimg={
               <fields.ImageField
@@ -80,10 +80,10 @@ const BlogPage: JaenTemplate = () => {
               />
             }
           />
-        </style.responsiveImage>
-      </Container>
-      <Footer />
-    </Box>
+        </Container>
+        <Footer />
+      </Box>
+    </style.responsiveImage>
   )
 }
 //#endregion
