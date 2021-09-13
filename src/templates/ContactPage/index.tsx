@@ -134,7 +134,7 @@ const ContactPage: JaenTemplate = () => {
       minH="100vh"
       paddingTop="15vh">
       <Navbar />
-      <Container centerContent maxW="40vw">
+      <Container centerContent maxW={['100%', '100%', '40vw', '40vw']}>
         {top === '' ? (
           <Heading fontSize="1.75rem">
             Sie sind an einer unserer Immobilien interessiert?
@@ -157,10 +157,17 @@ const ContactPage: JaenTemplate = () => {
           />
         </Text>
       </Container>
-      <Container width="70vw" centerContent mb="5" mt="10">
-        <Flex>
-          <Box w="30vw" mr="5">
-            <Heading fontSize="1.5rem" w="35vw" mb="7">
+      <Container
+        width={['100%', '100%', '70vw', '70vw']}
+        centerContent
+        mb="5"
+        mt="10">
+        <Flex direction={['column', 'column', 'row', 'row']}>
+          <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
+            <Heading
+              fontSize="1.5rem"
+              w={['100%', '100%', '35vw', '35vw']}
+              mb="7">
               Kontaktformular
             </Heading>
             <form onSubmit={formik.handleSubmit}>
@@ -237,7 +244,9 @@ const ContactPage: JaenTemplate = () => {
                   value={formik.values.message}
                 />
               </FormControl>
-              <Box textAlign="right">
+              <Box
+                textAlign={['center', 'center', 'right', 'right']}
+                mb={['5', '5']}>
                 <Button
                   type="submit"
                   colorScheme="greenwhite"
@@ -248,7 +257,7 @@ const ContactPage: JaenTemplate = () => {
               </Box>
             </form>
           </Box>
-          <Box w="30vw" h="40vh">
+          <Box w={['90%', '90%', '30vw', '30vw']} h="40vh">
             <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"
@@ -258,7 +267,7 @@ const ContactPage: JaenTemplate = () => {
             <Text fontSize="lg" mt="5">
               <fields.TextField
                 fieldName="contactrightrichtext"
-                initValue="Fill me"
+                initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
               />
             </Text>
           </Box>

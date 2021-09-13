@@ -15,7 +15,9 @@ import PartnerSection from '../components/organisms/PartnerSection'
 import BlogSection from '../components/organisms/BlogSection'
 
 import {Footer, Navbar} from '../components/molecules'
-import {Box, Text} from '@chakra-ui/react'
+import {Box, Center} from '@chakra-ui/react'
+
+import {StaticImage} from 'gatsby-plugin-image'
 
 //#endregion
 
@@ -42,6 +44,7 @@ const IndexPage = () => {
               alt: 'placeholder',
               title: 'placeholder'
             }}
+            width={['300px', '300px', '22vw', '22vw']}
           />
         }
         head1={
@@ -54,9 +57,9 @@ const IndexPage = () => {
         text1={
           <fields.TextField
             fieldName="imagetoptext1"
-            initValue="Genießen Sie das schimmern des Faaker Sees
+            initValue="<p>enießen Sie das schimmern des Faaker Sees
             Trotz der Moderne genießen Sie im Projekt Panoramaweg höchste Bauqualität, eingebettet in kärntens idyllischer Berg- und Seenlandschaft.
-            Der mayestetische gerade Blick auf den Mittagskogel und der seitliche Blick auf den türkisen Faakersee garantieren Lebensqualität auf höchstem Niveau. Als Bauträger im Premiumsegment ist es unsere Passion höchste Kundenzufriedenheit sicherzustellen. Moderne und landschaftsgetreue Architektur treffen hier zusammen mit den effizientesten Baurohstoffen. Sichern Sie sich jetzt Ihre neue Traumimmobilie!"
+            Der mayestetische gerade Blick auf den Mittagskogel und der seitliche Blick auf den türkisen Faakersee garantieren Lebensqualität auf höchstem Niveau. Als Bauträger im Premiumsegment ist es unsere Passion höchste Kundenzufriedenheit sicherzustellen. Moderne und landschaftsgetreue Architektur treffen hier zusammen mit den effizientesten Baurohstoffen. Sichern Sie sich jetzt Ihre neue Traumimmobilie!</p>"
           />
         }
       />
@@ -102,6 +105,7 @@ const IndexPage = () => {
           />
         }
       />
+      <Box paddingTop="5" />
       <BlogSection
         bloghead={
           <fields.TextField
@@ -118,11 +122,17 @@ const IndexPage = () => {
           />
         }
       />
-      {/* <StaticImage
-        src="../images/logo.png"
-        alt="Panoramaweg Logo"
-        title="Panoramaweg Logo"
-      /> */}
+      <Center marginBottom="10">
+        <fields.ImageField
+          fieldName="bottomlogo"
+          initValue={{
+            src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+            alt: 'logo',
+            title: 'logo'
+          }}
+          width="300px"
+        />
+      </Center>
       <Footer />
     </Box>
   )

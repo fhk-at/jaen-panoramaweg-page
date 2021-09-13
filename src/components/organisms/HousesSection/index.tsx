@@ -3,6 +3,7 @@
 // Contains all the functionality necessary to define React components
 import React from 'react'
 import {fields} from '@snek-at/jaen-pages'
+import {store as JaenStore} from '@snek-at/jaen-pages/src/store'
 // React Router
 // import { Link } from "react-router-dom";
 //> MDB
@@ -10,7 +11,23 @@ import {fields} from '@snek-at/jaen-pages'
 //> Components
 //> CSS
 import './index.scss'
-import {Box, Container, Heading, Text, Wrap} from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Wrap,
+  Flex,
+  Image,
+  Badge,
+  Button,
+  Spacer,
+  Progress
+} from '@chakra-ui/react'
+
+import {GiResize} from '@react-icons/all-files/gi/GiResize'
+import {IconContext} from '@react-icons/all-files/lib'
+import {navigate} from 'gatsby'
 //#endregion
 
 interface Props {
@@ -23,25 +40,219 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   // const addDot = (x: any) => {
   //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   // };
+  const store = JaenStore.getState().site.allSitePage?.nodes
+  let minPrice = 0
+  let maxPrice = 0
+  let maxSize = 0
+  let minSize = 0
+  let availableFlats = 0
+  let numFlats = 0
+  let apartmentTypes: string[] = []
+  let heading = ''
+
+  function cleanFieldValues(value: string, type: string) {
+    value = value.substring(3, value.length - 4)
+    if (type === 'price') {
+      value = value.replaceAll('.', '')
+    }
+    return value
+  }
+
+  function findMinMax(price: string, size: string) {
+    const parsedPrice = parseInt(price)
+    const parsedSize = parseInt(size)
+    if (minPrice === 0) {
+      minPrice = parsedPrice
+    } else if (minPrice > parsedPrice) {
+      minPrice = parsedPrice
+    }
+    if (maxPrice < parsedPrice) {
+      maxPrice = parsedPrice
+    }
+    if (minSize === 0) {
+      minSize = parsedSize
+    } else if (minSize > parsedSize) {
+      minSize = parsedSize
+    }
+    if (maxSize < parsedSize) {
+      maxSize = parsedSize
+    }
+  }
+
+  function fetchData(pages) {
+    numFlats = pages.length
+    for (const page of pages) {
+      const fields = store[page.id]?.fields
+      console.log('data:', fields)
+      let price = fields?.apartmentprice?.content?.text || '<p>0</p>'
+      let size = fields?.apartmentsize?.content?.text || '<p>0</p>'
+      const type = fields?.apartmenttype?.content?.option || 'Penthouse'
+      const available =
+        fields?.apartmentavailable?.content?.option || 'Verfügbar'
+      price = cleanFieldValues(price, 'price')
+      size = cleanFieldValues(size, 'size')
+      if (!apartmentTypes.includes(type)) {
+        apartmentTypes.push(type)
+      }
+      if (available === 'Verfügbar') {
+        availableFlats += 1
+      }
+      findMinMax(price, size)
+    }
+  }
 
   return (
-    <Box as="section" id="housesection">
+    <Box as="section" id="housesection" mb="10" mt="10">
       <Container centerContent maxW="40vw">
         <Heading fontSize="1.75rem">{househead}</Heading>
-        <Text fontSize="1.1rem">{housesubhead}</Text>
+        <Text fontSize="1.1rem" mb="5">
+          {housesubhead}
+        </Text>
+
         <fields.IndexField
           fieldName="houseindex"
           fixedSlug="SitePage /haus/"
           onRender={page => {
-            console.log(page)
+            console.log('store:', JaenStore.getState())
+            console.log('parent', page)
             const children = page?.children || []
+
             const cards = []
             for (const child of children) {
-              console.log(child)
-              cards.push(<Box></Box>)
+              const img =
+                child?.page?.fields?.houseimg?.content?.src ||
+                'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+              console.log('child', child)
+              let slug = child?.page?.slug || ''
+              let head = slug
+              head = slug.replace('haus', 'haus ')
+              head = head.charAt(0).toUpperCase() + head.substring(1)
+              const grandchildren = child?.page?.children
+              minPrice = 0
+              maxPrice = 0
+              maxSize = 0
+              minSize = 0
+              availableFlats = 0
+              numFlats = 0
+              apartmentTypes = []
+              heading = head
+
+              fetchData(grandchildren)
+
+              cards.push(
+                <Box
+                  padding="5"
+                  border="1px"
+                  borderColor="panoramaweg.lightgray"
+                  borderRadius="25px">
+                  <Flex>
+                    <Image src={img} width="250px" />
+                    <Container minW="235px">
+                      <Heading fontSize="1.25rem">{heading}</Heading>
+                      <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
+                      <Flex mb="3">
+                        {apartmentTypes.includes('Penthouse') ? (
+                          <Badge
+                            fontSize="xs"
+                            backgroundColor="panoramaweg.green"
+                            color="white"
+                            borderRadius="25px"
+                            size="sm"
+                            textTransform="none"
+                            marginRight="1">
+                            Penthouse
+                          </Badge>
+                        ) : (
+                          <Box />
+                        )}
+                        {apartmentTypes.includes('4-Zimmer') ? (
+                          <Badge
+                            fontSize="xs"
+                            backgroundColor="panoramaweg.green"
+                            color="white"
+                            borderRadius="25px"
+                            size="sm"
+                            textTransform="none"
+                            marginRight="1">
+                            4-Zimmer
+                          </Badge>
+                        ) : (
+                          <Box />
+                        )}
+                        {apartmentTypes.includes('3-Zimmer') ? (
+                          <Badge
+                            fontSize="xs"
+                            backgroundColor="panoramaweg.green"
+                            color="white"
+                            borderRadius="25px"
+                            size="sm"
+                            textTransform="none">
+                            3-Zimmer
+                          </Badge>
+                        ) : (
+                          <Box />
+                        )}
+                      </Flex>
+                      <Flex mb="2">
+                        <IconContext.Provider value={{color: 'gray'}}>
+                          <GiResize />
+                        </IconContext.Provider>
+                        <Text fontSize="sm" color="gray" ml="1">
+                          {minSize} - {maxSize} m²
+                        </Text>
+                      </Flex>
+                      <Flex>
+                        <Text
+                          fontWeight="bold"
+                          color="gray"
+                          fontSize="lg"
+                          mr="1">
+                          €
+                        </Text>
+                        <Text mt="1" ml="1.5" fontSize="sm" color="gray">
+                          {minPrice} - {maxPrice}
+                        </Text>
+                      </Flex>
+                    </Container>
+                  </Flex>
+                  <Flex marginTop="3">
+                    <Button
+                      colorScheme="greenwhite"
+                      padding="5"
+                      paddingLeft="12"
+                      paddingRight="12"
+                      fontSize="sm"
+                      size="lg"
+                      borderRadius="30px"
+                      onClick={() => navigate('/' + slug + '/')}>
+                      Wohnungsübersicht
+                    </Button>
+                    <Container>
+                      <Progress
+                        max={numFlats}
+                        value={availableFlats}
+                        borderRadius="25px"
+                        colorScheme="greenwhite"
+                        size="md"
+                        width="70%"
+                        ml="auto"
+                        mr="0"
+                      />
+                      <Text
+                        fontSize="sm"
+                        color="gray"
+                        width="70%"
+                        ml="auto"
+                        mr="0">
+                        {availableFlats} von {numFlats} Wohnungen verfügbar
+                      </Text>
+                    </Container>
+                  </Flex>
+                </Box>
+              )
             }
             return (
-              <Wrap>
+              <Wrap justify="center" spacing="5" maxW="80vw">
                 {cards.map((card, key) => {
                   return <Box key={key}>{card}</Box>
                 })}

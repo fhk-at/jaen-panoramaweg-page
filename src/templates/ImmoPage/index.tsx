@@ -21,9 +21,9 @@ const ImmoPage: JaenTemplate = () => {
       as="section"
       id="immopage"
       overflow="hidden"
-      paddingTop="15"
-      paddingBottom="12"
-      minH="100vh">
+      paddingTop="15vh"
+      paddingBottom="12vh"
+      minH={['fit-content', 'fit-content', '100vh', '100vh']}>
       <Navbar />
       <ImageTopSection
         head1={
@@ -41,9 +41,15 @@ const ImmoPage: JaenTemplate = () => {
               title: 'immoimg',
               alt: 'immoimg'
             }}
+            w={['300px', '300px', '22vw', '22vw']}
           />
         }
-        text1={<fields.TextField fieldName="immotext1" initValue="Fill me" />}
+        text1={
+          <fields.TextField
+            fieldName="immotext1"
+            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+          />
+        }
       />
       <Footer />
     </Box>

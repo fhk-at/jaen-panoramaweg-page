@@ -2,7 +2,7 @@
 //> React
 // Contains all the functionality necessary to define React components
 // import React from "react";
-import {Box, Spacer, Flex, HStack, Heading} from '@chakra-ui/react'
+import {Box, Spacer, Flex, HStack, Heading, LinkBox} from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import {StaticImage} from 'gatsby-plugin-image'
 //> MDB
@@ -18,7 +18,7 @@ const Navbar = (): JSX.Element => {
       as="section"
       id="navbar"
       height="15vh"
-      width="100vw"
+      width="100%"
       zIndex="15"
       backgroundColor="whiteAlpha.800"
       position="absolute"
@@ -41,9 +41,9 @@ const Navbar = (): JSX.Element => {
           pt="3.3vh"
           fontSize="1.4rem"
           fontWeight="bold">
-          <Link to="">Immobilie</Link>
+          <Link to="/projekt/">Immobilie</Link>
           <Link to="/lage/">Lage</Link>
-          <Link to="/fortschritt/">Baufortschritt</Link>
+          <Link to="/">Baufortschritt</Link>
           <Link to="/kontakt/">Kontakt</Link>
         </HStack>
       </Flex>

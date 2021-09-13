@@ -23,9 +23,17 @@ import {Container, Heading, Text} from '@chakra-ui/react'
 
 const BlogPage: JaenTemplate = () => {
   return (
-    <Box as="section" id="blogpage" pb="12vh" pt="15vh" minH="100vh">
+    <Box
+      as="section"
+      id="blogpage"
+      pb="12vh"
+      pt="15vh"
+      minH={['', '', '100vh', '100vh']}>
       <Navbar />
-      <Container maxW="70vw" centerContent fontSize="1.1rem">
+      <Container
+        maxW={['90%', '90%', '70%', '70%']}
+        centerContent
+        fontSize="1.1rem">
         <Heading fontSize="1.75rem">
           <fields.TextField
             fieldName="blogheading"
@@ -40,8 +48,11 @@ const BlogPage: JaenTemplate = () => {
             rtf={false}
           />
         </Text>
-        <Text mb="5">
-          <fields.TextField fieldName="blogrichtext" initValue="Fill me" />
+        <Text mb="5" maxW={['85%', '85%']}>
+          <fields.TextField
+            fieldName="blogrichtext"
+            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+          />
         </Text>
         <ImageLeftSection
           imgleftimg={
@@ -52,7 +63,9 @@ const BlogPage: JaenTemplate = () => {
                 title: 'blogimgleftimg',
                 alt: 'blogimgleftimg'
               }}
-              width="20vw"
+              width={['300px', '300px', '20vw', '20vw']}
+              ml={['auto', 'auto']}
+              mr={['auto', 'auto']}
             />
           }
           imgleftheading={
@@ -65,7 +78,7 @@ const BlogPage: JaenTemplate = () => {
           imgleftrichtext={
             <fields.TextField
               fieldName="blogimgleftrichtext"
-              initValue="Fill me"
+              initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
             />
           }
         />

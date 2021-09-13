@@ -29,9 +29,10 @@ Props): JSX.Element => {
     <Box
       as="section"
       id="partnersection"
-      backgroundColor="panoramaweg.lightgray">
+      backgroundColor="panoramaweg.lightgray"
+      pb="5">
       <Container centerContent width="100vw" fontSize="1.1rem">
-        <Heading as="h2" fontSize="1.5rem">
+        <Heading as="h2" fontSize="1.5rem" mt="3">
           {head1}
         </Heading>
         <Text mb="5">{subhead1}</Text>

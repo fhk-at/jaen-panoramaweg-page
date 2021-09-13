@@ -14,7 +14,7 @@ const HeroHidden = () => {
       position="absolute"
       top="0"
       left="0"
-      zIndex="5"
+      zIndex="1"
     />
   )
 }

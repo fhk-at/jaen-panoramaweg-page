@@ -36,7 +36,7 @@ export default function MapSection({}) {
   return (
     <section className="map-section text-center my-5">
       <GoogleMapReact
-        bootstrapURLKeys={{key: 'AIzaSyD90yB7qScXBVkDKn0GHhlWaSOXT9sXEuA'}}
+        bootstrapURLKeys={{key: process.env.GOOGLE_MAPS_API_KEY}}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}>
         <AnyReactComponent

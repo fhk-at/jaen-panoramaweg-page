@@ -21,13 +21,13 @@ interface Props {
 
 const ImageTopSection = ({head1, img1, text1}: Props): JSX.Element => {
   return (
-    <Container maxWidth="100vw" centerContent mt="5">
+    <Container maxWidth="100vw" centerContent mt="10" mb="10">
       {/* <img src={img} alt={head} className="img-fluid mb-3" /> */}
       {img1}
       <Heading fontSize="1.75rem" mt="3" mb="3">
         {head1}
       </Heading>
-      <Text w="50vw" fontSize="1.1rem">
+      <Text w={['90%', '90%', '50vw', '50vw']} fontSize="1.1rem">
         {text1}
       </Text>
     </Container>

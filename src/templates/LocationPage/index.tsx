@@ -23,13 +23,14 @@ const LocationPage: JaenTemplate = () => {
       id="locationpage"
       paddingBottom="12vh"
       overflow="hidden"
-      paddingTop="15vh">
+      paddingTop="15vh"
+      minHeight="100vh">
       <Navbar />
       <ImageTopSection
         head1={
           <fields.TextField
             fieldName="locationhead"
-            initValue="locationheading"
+            initValue="Überschrift"
             rtf={false}
           />
         }
@@ -41,10 +42,14 @@ const LocationPage: JaenTemplate = () => {
               title: 'locationimg',
               alt: 'locationimg'
             }}
+            w={['300px', '300px', '22vw', '22vw']}
           />
         }
         text1={
-          <fields.TextField fieldName="locationrichtext" initValue="Fill me" />
+          <fields.TextField
+            fieldName="locationrichtext"
+            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+          />
         }
       />
       <Footer />

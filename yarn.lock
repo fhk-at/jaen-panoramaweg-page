@@ -3474,7 +3474,7 @@
     js-cookie "^2.2.1"
     subscriptions-transport-ws "^0.9.18"
 
-"@snek-at/jaen-pages@^2.0.0-beta.26":
+"@snek-at/jaen-pages@^2.0.0-beta.30":
   version "2.0.0-beta.30"
   resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.30.tgz#ad291c98e551208452403bc9880bd97bf3a49806"
   integrity sha512-hZrT/q2/6OSOMz9JYQ4fJhAVizcek2AxOCvIVKJw14M9uoHE9oqkjQgIydwGTZZjTw8SJ+EeCAxpTU8G/f+0fA==
@@ -3540,7 +3540,7 @@
     react-analytics-charts "^1.2.12"
     react-use-analytics-api "^1.4.16"
 
-"@snek-at/jaen@^2.0.0-beta.17", "@snek-at/jaen@^2.0.0-beta.21":
+"@snek-at/jaen@^2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.21.tgz#3a38b8f5d5fc088dd45df28b6f4844dfb2ffa8a6"
   integrity sha512-+jepFPDq5lLfTa7aA6mad3WwX/s1JVhdiwqmw8SARm0WJob5jMfRdIyaFBg/CzvNj0riY73TSnSOpsbijmX/nQ==
@@ -7146,6 +7146,11 @@ ccount@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.1.0.tgz#246687debb6014735131be8abab2d93898f8d043"
   integrity sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==
+
+chakra-ui-steps@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/chakra-ui-steps/-/chakra-ui-steps-1.3.0.tgz#ec1a2e47b70ca6d79107a711f3d575eae3eeb61f"
+  integrity sha512-B2VsxZ2xvGCm2r4GHaAK+nSUx+B6E4rmDtYK3FG+2nRzVjmt5LPAq1AKu4wI8w3K8lASOUCOP05aCrH6YC/8zQ==
 
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"

@@ -87,7 +87,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
       <Navbar />
       <Container
         centerContent
-        maxW="80vw"
+        maxW={['100%', '100%', '80vw', '80vw']}
         borderBottom="1px"
         borderColor="panoramaweg.lightgray"
         pb="12"
@@ -106,43 +106,48 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             rtf="false"
           />
         </Text>
-        <Flex>
-          <AspectRatio ratio={16 / 10} minWidth="22vw">
-            <fields.ImageField
-              fieldName="houseimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'houseimg',
-                title: 'houseimg'
-              }}
-            />
-          </AspectRatio>
+        <Flex direction={['column', 'column', 'row', 'row']}>
+          <fields.ImageField
+            fieldName="houseimg"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              alt: 'houseimg',
+              title: 'houseimg'
+            }}
+            maxW={['300px', '300px', '22vw', '22vw']}
+            mb={['5', '5']}
+          />
 
-          <Container maxW="35vw" ml="10" fontSize="1.1rem">
+          <Container
+            maxW={['90%', '90%', '35vw', '35vw']}
+            ml={['0', '0', '10', '10']}
+            fontSize="1.1rem">
             <fields.TextField
               fieldName="houserichtext"
-              initValue="houserichtext"
+              initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
             />
           </Container>
         </Flex>
       </Container>
 
-      <Container centerContent maxW="40vw">
-        <Text fontWeight="light" fontSize="1.75rem">
+      <Container centerContent maxW={['100%', '100%', '40vw', '40vw']}>
+        <Text fontWeight="light" fontSize="1.75rem" mb="5">
           <fields.TextField
             fieldName="houseadtext"
-            initValue="houseadtext"
+            initValue="Unterüberschrift"
             rtf={false}
           />
         </Text>
-        <HStack spacing="3">
+        <Flex direction={['column', 'column', 'row', 'row']}>
           <Box
-            width="fit-content"
+            width={['100%', '100%', 'fit-content', 'fit-content']}
             borderRadius="25px"
             border="1px"
             borderColor="panoramaweg.lightgray"
-            padding="1vh"
-            height="7vh">
+            padding="5"
+            alignSelf={['center', 'center']}
+            mb={['3', '3']}
+            ml={['0', '0', '3', '3']}>
             <Text>Wohnungsgröße mindestens</Text>
             <HStack spacing="3">
               <Text>0m²</Text>
@@ -162,12 +167,14 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             </HStack>
           </Box>
           <Box
-            width="fit-content"
+            width={['100%', '100%', 'fit-content', 'fit-content']}
             borderRadius="25px"
             border="1px"
             borderColor="panoramaweg.lightgray"
-            padding="1vh"
-            height="7vh">
+            padding="5"
+            alignSelf={['center', 'center']}
+            mb={['3', '3']}
+            ml={['0', '0', '3', '3']}>
             <Text>Zimmer mindestens</Text>
             <HStack spacing="3">
               <Text>1</Text>
@@ -187,23 +194,33 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             </HStack>
           </Box>
           <Box
-            width="fit-content"
+            width={['100%', '100%', 'fit-content', 'fit-content']}
             borderRadius="25px"
             border="1px"
             borderColor="panoramaweg.lightgray"
-            padding="1vh"
-            height="7vh">
-            <Text>Verfügbar</Text>
-            <Center marginTop="1">
-              <Checkbox
-                isChecked={filters.availableFilter}
-                onChange={() =>
-                  handleValueChange(!filters.availableFilter, 'availableFilter')
-                }
-              />
-            </Center>
+            padding="5"
+            alignSelf={['center', 'center']}
+            mb={['3', '3']}
+            ml={['0', '0', '3', '3']}>
+            <Flex
+              direction={['row', 'row', 'column', 'column']}
+              alignContent={['center', 'center']}
+              justifyContent={['center', 'center']}>
+              <Text>Verfügbar</Text>
+              <Center marginTop="1" ml={['3', '3', '0', '0']}>
+                <Checkbox
+                  isChecked={filters.availableFilter}
+                  onChange={() =>
+                    handleValueChange(
+                      !filters.availableFilter,
+                      'availableFilter'
+                    )
+                  }
+                />
+              </Center>
+            </Flex>
           </Box>
-        </HStack>
+        </Flex>
       </Container>
       <fields.IndexField
         onRender={page => {
@@ -221,7 +238,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
 
             const richtext =
               fields?.apartmentrichtextright?.content?.text ||
-              '<p>No content found<p/>'
+              '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
             const image =
               fields?.apartmentrightimg?.content?.src ||
               'https://i.ibb.co/J2jzkBx/placeholder.jpg'
@@ -251,14 +268,18 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               <>
                 <Link to={link}>
                   <Box
-                    width="25vw"
+                    width={['90%', '90%', '25vw', '25vw']}
                     border="1px"
                     borderColor="panoramaweg.lightgray"
                     padding="5"
-                    paddingRight="0"
-                    borderRadius="25px">
-                    <Flex>
-                      <Image src={image} w="230px" />
+                    borderRadius="25px"
+                    justifyContent="center"
+                    alignContent="center">
+                    <Flex direction={['column', 'column', 'row', 'row']}>
+                      <Image
+                        src={image}
+                        w={['270px', '270px', '230px', '230px']}
+                      />
                       <Container size="lg">
                         <Heading>{formatedSlug}</Heading>
                         <Text>Wohnungsgröße: {cleanedSize}m²</Text>
@@ -308,6 +329,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         <Button
           colorScheme="greenwhite"
           borderRadius="25px"
+          mb="5"
           display={filters.hasFilter ? 'static' : 'none'}
           onClick={() => disableFilter()}>
           Filter deaktivieren

@@ -69,7 +69,9 @@ const ApartmentPage: JaenTemplate = () => {
         <Breadcrumb
           backgroundColor="panoramaweg.lightgray"
           borderRadius="25px"
-          w="58vw"
+          w={['100%', '100%', '58vw', '58vw']}
+          ml={['5', '5', '0', '0']}
+          mr={['5', '5', '0', '0']}
           padding="3">
           <BreadcrumbItem>
             <BreadcrumbLink color="#0645AD">
@@ -86,7 +88,7 @@ const ApartmentPage: JaenTemplate = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Center>
-      <Container centerContent mb="5">
+      <Container centerContent mb="5" maxW="100%">
         <Heading>{breadcrumbs[0] + ' / ' + breadcrumbs[1]}</Heading>
         <fields.ChoiceField
           fieldName="apartmenttype"
@@ -174,14 +176,19 @@ const ApartmentPage: JaenTemplate = () => {
           }}
         />
       </Container>
-      <Container maxW="70%">
+      <Container maxW={['100%', '100%', '70%', '70%']}>
         <Wrap spacing="7" justify="center">
           <Box
-            border="1px"
-            borderColor="panoramaweg.lightgray"
+            border={['0px', '0px', '1px', '1px']}
+            borderColor={[
+              '',
+              '',
+              'panoramaweg.lightgray',
+              'panoramaweg.lightgray'
+            ]}
             borderRadius="25px"
-            h="40vh"
-            w="587px">
+            minH="40vh"
+            w={['300px', '300px', '600px', '600px']}>
             <Box padding="4">
               <VStack spacing="5">
                 <Container centerContent>
@@ -271,44 +278,50 @@ const ApartmentPage: JaenTemplate = () => {
               </Container>
             </Box>
           </Box>
-          <Box h="40vh" w="587px">
-            <fields.ImageField
-              fieldName="apartmentrightimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'rightimg',
-                alt: 'rightimg'
-              }}
-              borderRadius="25px"
-              h="40vh"
-              w="587px"
-              objec
-            />
-          </Box>
-          <Box borderRadius="25px" h="40vh" w="587px">
-            <fields.ImageField
-              fieldName="apartmentleftimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'leftimg',
-                alt: 'lefttimg'
-              }}
-              borderRadius="25px"
-              height="40vh"
-              width="587px"
-              objectFit="fill"
-            />
-          </Box>
-          <Box
-            border="1px"
-            borderColor="panoramaweg.lightgray"
+          <fields.ImageField
+            fieldName="apartmentrightimg"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              title: 'rightimg',
+              alt: 'rightimg'
+            }}
             borderRadius="25px"
-            h="40vh"
-            w="587px">
-            <Box padding="4" fontSize="1.1rem">
+            h={['30vh', '30vh', '40vh', '40vh']}
+            w={['300px', '300px', '600px', '600px']}
+            objec
+          />
+
+          <fields.ImageField
+            fieldName="apartmentleftimg"
+            initValue={{
+              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+              title: 'leftimg',
+              alt: 'lefttimg'
+            }}
+            borderRadius="25px"
+            h={['30vh', '30vh', '40vh', '40vh']}
+            w={['300px', '300px', '600px', '600px']}
+            objectFit="fill"
+          />
+          <Box
+            border={['0px', '0px', '1px', '1px']}
+            borderColor={[
+              '',
+              '',
+              'panoramaweg.lightgray',
+              'panoramaweg.lightgray'
+            ]}
+            borderRadius="25px"
+            minH="40vh"
+            w={['300px', '300px', '600px', '600px']}>
+            <Box
+              padding="4"
+              fontSize="1.1rem"
+              borderBottom={['1px', '1px', '0px', '0px']}
+              borderColor={['panoramaweg.lightgray', 'panoramaweg.lightgray']}>
               <fields.TextField
                 fieldName="apartmentrichtextright"
-                initValue="apartmentrichtextright"
+                initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
               />
             </Box>
           </Box>
@@ -316,14 +329,14 @@ const ApartmentPage: JaenTemplate = () => {
       </Container>
       <Container
         pb="2"
-        maxW="58vw"
-        mt="12"
+        mt={['5', '5', '12', '12']}
         borderBottom="1px"
-        borderColor="panoramaweg.lightgray">
-        <Text fontSize="1.1rem" fontWeight="light">
+        borderColor="panoramaweg.lightgray"
+        maxW={['85%', '85%', '70%', '70%']}>
+        <Text fontSize="1.1rem" fontWeight="light" maxW="100%">
           <fields.TextField
             fieldName="apartmentbottomrichtext"
-            initValue="apartmentbottomrichtext"
+            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
           />
         </Text>
         <Button
@@ -334,7 +347,8 @@ const ApartmentPage: JaenTemplate = () => {
           textColor="white"
           fontSize="sm"
           fontWeight="light"
-          mt="3">
+          mt="3"
+          mb="5">
           Bau und Ausstattungsbeschreibung
         </Button>
       </Container>

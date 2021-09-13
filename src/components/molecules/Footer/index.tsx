@@ -25,14 +25,21 @@ const Footer = (): JSX.Element => {
       h="12vh"
       position="absolute"
       bottom="0">
-      <Container w="100%" centerContent color="panoramaweg.dark" pt="6">
+      <Container w="fit-content" centerContent color="panoramaweg.dark" pt="6">
         <Flex>
           <IconContext.Provider value={{style: {marginTop: '3'}}}>
             <BiCopyright />
           </IconContext.Provider>
-          <Text>2021 Copyright: TOP Immo W.M. Trehand GmbH</Text>
+          <Text
+            fontSize={['0.7rem', '0.8rem', '1.1rem', '1.1rem']}
+            pt={['1', '0', '0', '0']}>
+            2021 Copyright: TOP Immo W.M. Treuhand GmbH
+          </Text>
         </Flex>
-        <Flex fontWeight="bold" mt="2">
+        <Flex
+          fontWeight="bold"
+          mt="2"
+          fontSize={['0.7rem', '0.8rem', '1.1rem', '1.1rem']}>
           <Text>Made with</Text>
           <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
             <HiHeart />
@@ -43,7 +50,7 @@ const Footer = (): JSX.Element => {
           </Text>
           <Text>.</Text>
         </Flex>
-        <Flex fontSize="xs">
+        <Flex fontSize={['xx-small', 'xx-small', 'xs', 'xs']}>
           <HStack spacing="5" mt="2">
             <Link to="">Impressum</Link>
             <Link to="">Datenschutz</Link>

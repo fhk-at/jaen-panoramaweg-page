@@ -10,6 +10,8 @@ import {Container, Heading, Text, Box, Image, Wrap} from '@chakra-ui/react'
 import {fields} from '@snek-at/jaen-pages'
 import {Link} from 'gatsby'
 import './index.scss'
+import {Step, Steps} from 'chakra-ui-steps'
+
 //> Images
 // import logoImg from "../../../common/img/agency-small.png";
 //#endregion
@@ -22,44 +24,43 @@ interface Props {
 
 const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
   return (
-    <Container centerContent maxW="70vw">
+    <Container centerContent maxW="80vw" mb="10" mt="5">
       <Heading fontSize="1.5rem">{bloghead}</Heading>
-      <Text fontSize="1.1rem">{blogsubhead}</Text>
-      {/* <MDBStepper>
-        <MDBStep className="done">
-          <span className="step-item">
-            <span className="circle green">
-              <MDBIcon icon="check" />
-            </span>
-            <span className="label">Finanzierung</span>
-          </span>
-        </MDBStep>
-        <MDBStep className="active">
-          <span className="step-item">
-            <span className="circle">2</span>
-            <span className="label">Baustart</span>
-          </span>
-        </MDBStep>
-        <MDBStep>
-          <span className="step-item">
-            <span className="circle">3</span>
-            <span className="label">Baustart</span>
-          </span>
-        </MDBStep>
-        <MDBStep className="info">
-          <span className="step-item">
-            <span className="circle">4</span>
-            <span className="label">Platzhalter</span>
-          </span>
-        </MDBStep>
-        <MDBStep className="info">
-          <span className="step-item">
-            <span className="circle">5</span>
-            <span className="label">Fertigstellung</span>
-          </span>
-        </MDBStep>
-      </MDBStepper> */}
+      <Text fontSize="1.1rem" mb="5">
+        {blogsubhead}
+      </Text>
 
+      <fields.ChoiceField
+        fieldName="stepper"
+        options={[
+          'Finanzierung',
+          'Baustart',
+          'Platzhalter',
+          'Platzhalter',
+          'Fertigstellung'
+        ]}
+        initValue={2}
+        onRenderPopover={null}
+        onRender={(selection, options, onSelect, isEditing) => {
+          return (
+            <Steps activeStep={selection} colorScheme="greenwhite">
+              {options.map((option, index) => (
+                <Step
+                  cursor={isEditing ? 'pointer' : 'default'}
+                  isCompletedStep={
+                    selection === options.length - 1 ? true : undefined
+                  }
+                  label={option}
+                  key={index}
+                  onClick={
+                    isEditing ? () => onSelect(index) : () => null
+                  }></Step>
+              ))}
+            </Steps>
+          )
+        }}
+      />
+      <Box marginTop="5" />
       <fields.IndexField
         fieldName="blogindex"
         fixedSlug="SitePage /blog/"
@@ -75,11 +76,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
             const slug = child?.page?.slug
             const fields = child?.page?.fields
             const heading = removePTags(
-              fields?.bloghead?.content?.text || '<p>No content available</p>'
+              fields?.bloghead?.content?.text || '<p>Überschrift</p>'
             )
             const text = removePTags(
               fields?.blogrichtext?.content?.text ||
-                '<p>No content available</p>'
+                '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
             )
             const img =
               fields?.blogimgleftimg?.content?.src ||
