@@ -11,7 +11,7 @@ export const responsiveImage = styled(Box)`
       margin-right: auto;
     }
     ${mq[1]} {
-      width: 600px;
+      width: 300px;
       margin-left: auto;
       margin-right: auto;
     }

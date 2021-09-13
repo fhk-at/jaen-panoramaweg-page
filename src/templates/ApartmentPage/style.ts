@@ -10,7 +10,7 @@ export const responsiveImage = styled(Box)`
       height: 30vh;
     }
     ${mq[1]} {
-      width: 600px;
+      width: 300px;
       height: 30vh;
     }
     ${mq[2]} {

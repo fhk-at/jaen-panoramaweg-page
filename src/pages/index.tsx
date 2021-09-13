@@ -27,7 +27,7 @@ const IndexPageCSS = styled(Box)`
       margin-right: auto;
     }
     ${mq[1]} {
-      width: 600px;
+      width: 300px;
     }
     ${mq[2]} {
       width: 22vw;
