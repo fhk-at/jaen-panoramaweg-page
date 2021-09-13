@@ -23,7 +23,7 @@ const HeroSection = ({button1}: Props): JSX.Element => {
         justifyContent="center"
         alignContent="center"
         position="relative">
-        <HeroHidden />
+        {/* <HeroHidden /> */}
         <fields.ImageField
           fieldName="herobackground"
           initValue={{
@@ -36,6 +36,7 @@ const HeroSection = ({button1}: Props): JSX.Element => {
           left="0"
           width="100vw"
           height="100vh"
+          filter="drop-shadow(0,0,#9C27B01A)"
         />
         <Container>
           <fields.ImageField

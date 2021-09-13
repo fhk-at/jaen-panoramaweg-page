@@ -10,9 +10,10 @@ import ImageTopSection from '../../components/organisms/ImageTopSection'
 import {Footer, Navbar} from '../../components/molecules'
 
 //> CSS
-import './index.scss'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {Box} from '@chakra-ui/layout'
+
+import * as style from './style'
 //#endregion
 
 //#region > Components
@@ -26,32 +27,35 @@ const LocationPage: JaenTemplate = () => {
       paddingTop="15vh"
       minHeight="100vh">
       <Navbar />
-      <ImageTopSection
-        head1={
-          <fields.TextField
-            fieldName="locationhead"
-            initValue="Überschrift"
-            rtf={false}
-          />
-        }
-        img1={
-          <fields.ImageField
-            fieldName="locationimage"
-            initValue={{
-              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              title: 'locationimg',
-              alt: 'locationimg'
-            }}
-            w={['300px', '300px', '22vw', '22vw']}
-          />
-        }
-        text1={
-          <fields.TextField
-            fieldName="locationrichtext"
-            initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
-          />
-        }
-      />
+      <style.responsiveImage>
+        <ImageTopSection
+          head1={
+            <fields.TextField
+              fieldName="locationhead"
+              initValue="Überschrift"
+              rtf={false}
+            />
+          }
+          img1={
+            <fields.ImageField
+              fieldName="locationimage"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'locationimg',
+                alt: 'locationimg'
+              }}
+              className="responsiveImage"
+            />
+          }
+          text1={
+            <fields.TextField
+              fieldName="locationrichtext"
+              initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+            />
+          }
+        />
+      </style.responsiveImage>
+
       <Footer />
     </Box>
   )

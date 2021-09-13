@@ -23,8 +23,6 @@ import {fields} from '@snek-at/jaen-pages'
 import Footer from '../../components/molecules/Footer'
 
 import {useFormik} from 'formik'
-//> CSS
-import './index.scss'
 import {BifrostBridge} from '@snek-at/bridge'
 import gql from 'graphql-tag'
 import {Navbar} from '../../components/molecules'

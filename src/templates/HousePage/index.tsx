@@ -10,7 +10,6 @@ import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 
 //> Components
 //> CSS
-import './index.scss'
 import {Navbar, Footer} from '../../components/molecules'
 import {
   Box,
@@ -32,6 +31,8 @@ import {
   Button
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
+
+import * as style from './style'
 //#endregion
 
 //#region > Components
@@ -107,17 +108,17 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           />
         </Text>
         <Flex direction={['column', 'column', 'row', 'row']}>
-          <fields.ImageField
-            fieldName="houseimg"
-            initValue={{
-              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'houseimg',
-              title: 'houseimg'
-            }}
-            maxW={['300px', '300px', '22vw', '22vw']}
-            mb={['5', '5']}
-          />
-
+          <style.responsiveImage>
+            <fields.ImageField
+              fieldName="houseimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                alt: 'houseimg',
+                title: 'houseimg'
+              }}
+              className="responsiveImage"
+            />
+          </style.responsiveImage>
           <Container
             maxW={['90%', '90%', '35vw', '35vw']}
             ml={['0', '0', '10', '10']}

@@ -11,14 +11,13 @@ import ImageLeftSection from '../../components/organisms/ImageLeftSection'
 
 import {Footer, Navbar} from '../../components/molecules'
 
-import './index.scss'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {Box} from '@chakra-ui/layout'
 import {Container, Heading, Text} from '@chakra-ui/react'
 //#endregion
 
 //#endregion
-
+import * as style from './style'
 //#region > Components
 
 const BlogPage: JaenTemplate = () => {
@@ -54,34 +53,34 @@ const BlogPage: JaenTemplate = () => {
             initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
           />
         </Text>
-        <ImageLeftSection
-          imgleftimg={
-            <fields.ImageField
-              fieldName="blogimgleftimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'blogimgleftimg',
-                alt: 'blogimgleftimg'
-              }}
-              width={['300px', '300px', '20vw', '20vw']}
-              ml={['auto', 'auto']}
-              mr={['auto', 'auto']}
-            />
-          }
-          imgleftheading={
-            <fields.TextField
-              fieldName="blogimgleftheading"
-              initValue="Unterüberschrift"
-              rtf={false}
-            />
-          }
-          imgleftrichtext={
-            <fields.TextField
-              fieldName="blogimgleftrichtext"
-              initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
-            />
-          }
-        />
+        <style.responsiveImage>
+          <ImageLeftSection
+            imgleftimg={
+              <fields.ImageField
+                fieldName="blogimgleftimg"
+                initValue={{
+                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                  title: 'blogimgleftimg',
+                  alt: 'blogimgleftimg'
+                }}
+                className="responsiveImage"
+              />
+            }
+            imgleftheading={
+              <fields.TextField
+                fieldName="blogimgleftheading"
+                initValue="Unterüberschrift"
+                rtf={false}
+              />
+            }
+            imgleftrichtext={
+              <fields.TextField
+                fieldName="blogimgleftrichtext"
+                initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+              />
+            }
+          />
+        </style.responsiveImage>
       </Container>
       <Footer />
     </Box>

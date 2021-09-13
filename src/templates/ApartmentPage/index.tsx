@@ -9,9 +9,6 @@ import Footer from '../../components/molecules/Footer'
 import {Navbar} from '../../components/molecules'
 import {navigate} from 'gatsby-link'
 
-//> CSS
-import './index.scss'
-
 //> SNEK
 import {fields} from '@snek-at/jaen-pages'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
@@ -33,6 +30,8 @@ import {
 import {DownloadIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
 import ApartmentHidden from '../../components/organisms/ApartmentHidden'
+
+import * as style from './style'
 
 const ApartmentPage: JaenTemplate = () => {
   const url = window.location.href
@@ -278,31 +277,31 @@ const ApartmentPage: JaenTemplate = () => {
               </Container>
             </Box>
           </Box>
-          <fields.ImageField
-            fieldName="apartmentrightimg"
-            initValue={{
-              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              title: 'rightimg',
-              alt: 'rightimg'
-            }}
-            borderRadius="25px"
-            h={['30vh', '30vh', '40vh', '40vh']}
-            w={['300px', '300px', '600px', '600px']}
-            objec
-          />
+          <style.responsiveImage>
+            <fields.ImageField
+              fieldName="apartmentrightimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'rightimg',
+                alt: 'rightimg'
+              }}
+              borderRadius="25px"
+              objectFit="fill"
+              className="responsiveImage"
+            />
 
-          <fields.ImageField
-            fieldName="apartmentleftimg"
-            initValue={{
-              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              title: 'leftimg',
-              alt: 'lefttimg'
-            }}
-            borderRadius="25px"
-            h={['30vh', '30vh', '40vh', '40vh']}
-            w={['300px', '300px', '600px', '600px']}
-            objectFit="fill"
-          />
+            <fields.ImageField
+              fieldName="apartmentleftimg"
+              initValue={{
+                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                title: 'leftimg',
+                alt: 'lefttimg'
+              }}
+              borderRadius="25px"
+              objectFit="fill"
+              className="responsiveImage"
+            />
+          </style.responsiveImage>
           <Box
             border={['0px', '0px', '1px', '1px']}
             borderColor={[
