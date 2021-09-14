@@ -1,30 +1,19 @@
 import {ChevronDownIcon} from '@chakra-ui/icons'
-import {Box, Text, Container} from '@chakra-ui/react'
+import {Box, Text, Center, VStack} from '@chakra-ui/react'
 
+import {Link} from 'react-scroll'
 import HeroHidden from '../../molecules/HeroHidden'
 
 import React from 'react'
 import {fields} from '@snek-at/jaen-pages'
 import * as style from './style'
 //#region > Components
-interface Props {
-  button1: React.ReactNode
-}
 
-const HeroSection = ({button1}: Props): JSX.Element => {
+const HeroSection = (): JSX.Element => {
   return (
     <>
       <style.HeroStyle>
-        <Box
-          as="section"
-          id="hero"
-          height="100vh"
-          width="100%"
-          display="flex"
-          justifyContent="center"
-          alignContent="center"
-          position="relative">
-          {/* <HeroHidden /> */}
+        <Box h="100vh">
           <fields.ImageField
             fieldName="herobackground"
             initValue={{
@@ -34,33 +23,43 @@ const HeroSection = ({button1}: Props): JSX.Element => {
             }}
             className="herobackground"
           />
-          <Container>
-            <fields.ImageField
-              fieldName="herologo"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'Logo',
-                alt: 'Logo'
-              }}
-              className="herologo"
-            />
-            <Box
-              position="relative"
-              margin="auto"
-              as="button"
-              marginTop="2rem"
-              padding="1rem"
-              borderRadius="30px"
-              backgroundColor="white"
-              color="black"
-              justifyContent="center"
-              alignContent="center"
-              zIndex={10}
-              display="flex">
-              <ChevronDownIcon w={6} h={6} />
-              <Text>{button1}</Text>
-            </Box>
-          </Container>
+          <HeroHidden />
+          <Box
+            justifyContent="center"
+            alignContent="center"
+            position="absolute"
+            top="40vh"
+            left="38vw">
+            <VStack spacing="5">
+              <fields.ImageField
+                fieldName="herologo"
+                initValue={{
+                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                  title: 'Logo',
+                  alt: 'Logo'
+                }}
+                className="herologo"
+              />
+              <Link to="imagetopsection" isDynamic smooth={true}>
+                <Box
+                  position="relative"
+                  margin="auto"
+                  as="button"
+                  marginTop="2rem"
+                  padding="1rem"
+                  borderRadius="30px"
+                  backgroundColor="white"
+                  color="black"
+                  justifyContent="center"
+                  alignContent="center"
+                  zIndex={10}
+                  display="flex">
+                  <ChevronDownIcon w={6} h={6} />
+                  <Text>Mehr dazu</Text>
+                </Box>
+              </Link>
+            </VStack>
+          </Box>
         </Box>
       </style.HeroStyle>
     </>

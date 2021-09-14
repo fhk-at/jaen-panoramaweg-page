@@ -51,7 +51,7 @@ const ApartmentPage: JaenTemplate = () => {
     return value
   }
 
-  const parenthref = '/' + breadcrumbs[0] + '/'
+  const parenthref = '/haus/' + breadcrumbs[0] + '/'
   let params: string[] = []
   params = params.concat(breadcrumbs)
   breadcrumbs = format(breadcrumbs)

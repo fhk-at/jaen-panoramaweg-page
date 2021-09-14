@@ -238,7 +238,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                       fontSize="sm"
                       size="lg"
                       borderRadius="30px"
-                      onClick={() => navigate('/' + slug + '/')}>
+                      onClick={() => navigate('/haus/' + slug + '/')}>
                       Wohnungsübersicht
                     </Button>
                     <Container>

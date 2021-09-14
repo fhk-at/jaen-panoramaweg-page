@@ -3474,10 +3474,10 @@
     js-cookie "^2.2.1"
     subscriptions-transport-ws "^0.9.18"
 
-"@snek-at/jaen-pages@^2.0.0-beta.32":
-  version "2.0.0-beta.32"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.32.tgz#497eb562e8f57b8905f38452d423949f45c9d363"
-  integrity sha512-vY7NWZFaqGWh6ds7JDnzXHtR8kDn86slwPcJnM885Gv8r55k+9kQX1brQjUroeZRvPmSax9LpnZsupJoVQyWOA==
+"@snek-at/jaen-pages@^2.0.0-beta.33":
+  version "2.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.34.tgz#c6c323d9165654e45c2116353034ed312221ca8b"
+  integrity sha512-OVMVtDGpNwZ9mXV6Qynv8wN+vo1cLc5Dapl0EM8P8QCPz87EPzNv3y9ptSH4zHlKib8alGoqU33iTACCR0MtgA==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.6.7"
@@ -13587,6 +13587,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.truncate@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
@@ -16745,6 +16750,14 @@ react-remove-scroll@2.4.1:
     tslib "^1.0.0"
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
+
+react-scroll@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.4.tgz#7cc882d7058d5b5aedcd362b1de13c88d64ebe4c"
+  integrity sha512-J9rFqmdzularCXJoK2vleHVg2//y9Fs6zh7K13x7Yz3Y1kHPfQ/TTq029L09q1Gr5/5JjFLBOB2Sa3yYIqyTyQ==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
 
 react-side-effect@^2.1.0:
   version "2.1.1"

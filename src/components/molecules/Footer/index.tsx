@@ -11,7 +11,7 @@ import {Box, Container, Flex, HStack, Text} from '@chakra-ui/react'
 import {HiHeart} from '@react-icons/all-files/hi/HiHeart'
 import {BiCopyright} from '@react-icons/all-files/bi/BiCopyright'
 import {IconContext} from '@react-icons/all-files'
-import {Link} from 'gatsby'
+import {Link} from '@chakra-ui/react'
 
 //> CSS
 import './index.scss'
@@ -52,8 +52,12 @@ const Footer = (): JSX.Element => {
         </Flex>
         <Flex fontSize={['xx-small', 'xx-small', 'xs', 'xs']}>
           <HStack spacing="5" mt="2">
-            <Link to="">Impressum</Link>
-            <Link to="">Datenschutz</Link>
+            <Link href="https://www.top-immo.org/about" isExternal>
+              Impressum
+            </Link>
+            <Link href="https://www.top-immo.org/privacy" isExternal>
+              Datenschutz
+            </Link>
           </HStack>
         </Flex>
       </Container>

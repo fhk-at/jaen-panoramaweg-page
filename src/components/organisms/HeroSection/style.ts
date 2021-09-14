@@ -10,11 +10,8 @@ export const HeroStyle = styled(Box)`
     height: 100vh;
   }
   .herologo {
-    margin: auto;
     position: relative;
     z-index: 10;
-    width: 80%;
-    object-fit: contain;
-    margin-top: 40vh;
+    width: 450px;
   }
 `

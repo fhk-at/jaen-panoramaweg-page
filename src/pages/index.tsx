@@ -45,17 +45,9 @@ const IndexPageCSS = styled(Box)`
 const IndexPage = () => {
   return (
     <IndexPageCSS>
-      <Box as="section" id="homepage" overflow="hidden" paddingBottom="12vh">
+      <Box as="section" id="homepage" paddingBottom="12vh" overflow="hidden">
         <Navbar />
-        <HeroSection
-          button1={
-            <fields.TextField
-              fieldName="herobutton1"
-              initValue="Mehr dazu"
-              rtf={false}
-            />
-          }
-        />
+        <HeroSection />
         <ImageTopSection
           img1={
             <fields.ImageField

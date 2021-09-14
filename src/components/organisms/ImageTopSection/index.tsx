@@ -1,9 +1,10 @@
 //#region > Imports
 //> React
 // Contains all the functionality necessary to define React components
-import {Container, Heading, Text, Center} from '@chakra-ui/react'
+import {Container, Heading, Text, Box} from '@chakra-ui/react'
 import React from 'react'
 // React Router
+import {Element} from 'react-scroll'
 // import { Link } from "react-router-dom";
 
 //> CSS
@@ -21,16 +22,18 @@ interface Props {
 
 const ImageTopSection = ({head1, img1, text1}: Props): JSX.Element => {
   return (
-    <Container maxWidth="100vw" centerContent mt="10" mb="10">
-      {/* <img src={img} alt={head} className="img-fluid mb-3" /> */}
-      {img1}
-      <Heading fontSize="1.75rem" mt="3" mb="3">
-        {head1}
-      </Heading>
-      <Text w={['90%', '90%', '50vw', '50vw']} fontSize="1.1rem">
-        {text1}
-      </Text>
-    </Container>
+    <Box id="imagetopsection">
+      <Container maxWidth="100vw" centerContent mt="10" mb="10">
+        {/* <img src={img} alt={head} className="img-fluid mb-3" /> */}
+        {img1}
+        <Heading fontSize="1.75rem" mt="3" mb="3">
+          {head1}
+        </Heading>
+        <Text w={['90%', '90%', '50vw', '50vw']} fontSize="1.1rem">
+          {text1}
+        </Text>
+      </Container>
+    </Box>
   )
 }
 
