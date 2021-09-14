@@ -9,21 +9,23 @@
  */
 import {Box} from '@chakra-ui/react'
 import {fields, JaenBlock} from '@snek-at/jaen-pages'
+import * as style from './partnerStyle'
 
 const PartnerCard: JaenBlock = () => {
   return (
-    <Box>
-      <fields.ImageField
-        fieldName="partnerblockimg"
-        initValue={{
-          src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-          title: 'partner',
-          alt: 'partner'
-        }}
-        width="250px"
-        height="200px"
-      />
-    </Box>
+    <style.PartnerStyle>
+      <Box>
+        <fields.ImageField
+          fieldName="partnerblockimg"
+          initValue={{
+            src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+            title: 'partner',
+            alt: 'partner'
+          }}
+          className="partnerImage"
+        />
+      </Box>
+    </style.PartnerStyle>
   )
 }
 

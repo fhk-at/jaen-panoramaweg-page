@@ -12,7 +12,7 @@ import {navigate} from 'gatsby-link'
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 // Style
-import './index.scss'
+import * as style from './style'
 import {useState} from 'react'
 //#endregion
 
@@ -21,75 +21,78 @@ const Navbar = (): JSX.Element => {
   const [linkMenue, setLinkMenue] = useState(false)
 
   return (
-    <Box
-      as="section"
-      id="navbar"
-      height="15vh"
-      width="100%"
-      zIndex="15"
-      backgroundColor="whiteAlpha.800"
-      position="absolute"
-      top="0"
-      left="0">
-      <Flex fontWeight="bold">
-        <Link to="/">
-          <StaticImage
-            src="../../../images/logo_short.png"
-            title="logo"
-            alt="logo"
-            className="navbarlogodiv"
-            imgClassName="navbarlogoimg"
-          />
-        </Link>
-        <HStack
-          display={['none', 'none', 'inline', 'inline']}
-          pr="4.2vw"
-          spacing="8"
-          pt="6vh"
-          fontSize="1.4rem"
-          fontWeight="bold"
-          ml="auto">
-          <Link to="/projekt/">Immobilie</Link>
-          <Link to="/lage/">Lage</Link>
-          <scroll.Link
-            to="blogsection"
-            isDynamic
-            smooth
-            style={{cursor: 'pointer'}}
-            onClick={() => {
-              window.location.pathname === '/'
-                ? null
-                : navigate('/#blogsection')
-            }}>
-            Baufortschritt
-          </scroll.Link>
-          <Link to="/kontakt/">Kontakt</Link>
-        </HStack>
-        <IconButton
-          display={['block', 'block', 'none', 'none']}
-          mt="6vh"
-          aria-label="Linkmenü"
-          icon={<HamburgerIcon />}
-          onClick={() => {
-            setLinkMenue(!linkMenue)
-          }}
-        />
-        <Collapse in={linkMenue}>
-          <VStack
-            width="100%"
-            spacing="3"
-            position="absolute"
-            top="15vh"
-            left="0"
-            bg="whiteAlpha.800">
+    <style.NavbarStyle>
+      <Box
+        as="section"
+        id="navbar"
+        height="15vh"
+        width="100%"
+        zIndex="15"
+        backgroundColor="whiteAlpha.800"
+        position="absolute"
+        top="0"
+        left="0">
+        <Flex fontWeight="bold">
+          <Link to="/">
+            <StaticImage
+              src="../../../images/logo_short.png"
+              title="logo"
+              alt="logo"
+              className="navbarlogodiv"
+              imgClassName="navbarlogoimg"
+            />
+          </Link>
+          <HStack
+            display={['none', 'none', 'inline', 'inline']}
+            pr="4.2vw"
+            spacing="8"
+            pt="6vh"
+            fontSize="1.4rem"
+            fontWeight="bold"
+            ml="auto">
             <Link to="/projekt/">Immobilie</Link>
             <Link to="/lage/">Lage</Link>
-            <Link to="/">Baufortschritt</Link>
+            <scroll.Link
+              to="blogsection"
+              isDynamic
+              smooth
+              style={{cursor: 'pointer'}}
+              onClick={() => {
+                window.location.pathname === '/'
+                  ? null
+                  : navigate('/#blogsection')
+              }}>
+              Baufortschritt
+            </scroll.Link>
             <Link to="/kontakt/">Kontakt</Link>
-          </VStack>
-        </Collapse>
-      </Flex>
-    </Box>
+          </HStack>
+          <IconButton
+            display={['block', 'block', 'none', 'none']}
+            mt="4vh"
+            mr="10"
+            aria-label="Linkmenü"
+            icon={<HamburgerIcon />}
+            onClick={() => {
+              setLinkMenue(!linkMenue)
+            }}
+          />
+          <Collapse in={linkMenue}>
+            <VStack
+              width="100%"
+              spacing="3"
+              position="absolute"
+              top="15vh"
+              left="0"
+              bg="whiteAlpha.800">
+              <Link to="/projekt/">Immobilie</Link>
+              <Link to="/lage/">Lage</Link>
+              <Link to="/">Baufortschritt</Link>
+              <Link to="/kontakt/">Kontakt</Link>
+            </VStack>
+          </Collapse>
+        </Flex>
+      </Box>
+    </style.NavbarStyle>
   )
 }
 //#endregion
