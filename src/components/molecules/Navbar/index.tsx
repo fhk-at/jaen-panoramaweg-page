@@ -57,10 +57,9 @@ const Navbar = (): JSX.Element => {
             smooth
             style={{cursor: 'pointer'}}
             onClick={() => {
-              console.log('hi', window.location.pathname)
               window.location.pathname === '/'
                 ? null
-                : navigate('/?blogsection')
+                : navigate('/#blogsection')
             }}>
             Baufortschritt
           </scroll.Link>
