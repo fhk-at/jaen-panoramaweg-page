@@ -12,6 +12,7 @@ import {Link} from 'gatsby'
 import './index.scss'
 import {Step, Steps} from 'chakra-ui-steps'
 import {Element} from 'react-scroll'
+import {hasWindow} from '../../../common/utils'
 
 //> Images
 // import logoImg from "../../../common/img/agency-small.png";
@@ -24,6 +25,9 @@ interface Props {
 }
 
 const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
+  // Checks if not SSR
+  const isWindow = hasWindow()
+
   return (
     <Element id="blogsection">
       <Container centerContent maxW="80vw" mb="10" mt="5">
@@ -44,6 +48,10 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
           initValue={2}
           onRenderPopover={null}
           onRender={(selection, options, onSelect, isEditing) => {
+            if (!isWindow) {
+              return null
+            }
+
             return (
               <Steps activeStep={selection} colorScheme="greenwhite">
                 {options.map((option, index) => (

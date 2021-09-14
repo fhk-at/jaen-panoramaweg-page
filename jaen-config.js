@@ -6,10 +6,7 @@ module.exports = {
       templates: [
         require('./src/templates/HousePage/index.tsx'),
         require('./src/templates/ApartmentPage/index.tsx'),
-        require('./src/templates/ContactPage/index.tsx'),
-        require('./src/templates/LocationPage/index.tsx'),
         require('./src/templates/BlogPage/index.tsx'),
-        require('./src/templates/ImmoPage/index.tsx')
       ]
     }
   }

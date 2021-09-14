@@ -20,15 +20,15 @@ import {
 } from '@chakra-ui/react'
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {fields} from '@snek-at/jaen-pages'
-import Footer from '../../components/molecules/Footer'
+import Footer from '../components/molecules/Footer'
 
 import {useFormik} from 'formik'
 import {BifrostBridge} from '@snek-at/bridge'
 import gql from 'graphql-tag'
-import {Navbar} from '../../components/molecules'
+import {Navbar} from '../components/molecules'
 //#endregion
 
-//#region > Bi-Stack
+//#region
 const Bridge = new BifrostBridge({
   httpUrl: 'https://origin.snek.at/graphql'
 })
@@ -172,7 +172,9 @@ const ContactPage: JaenTemplate = () => {
               <FormControl
                 id="fname"
                 mb="5"
-                isInvalid={formik.errors.fname && formik.touched.fname}>
+                isInvalid={
+                  (formik.errors.fname && formik.touched.fname) || false
+                }>
                 <FormErrorMessage>
                   Bitte geben Sie Ihren Vornamen ein.
                 </FormErrorMessage>
@@ -186,7 +188,9 @@ const ContactPage: JaenTemplate = () => {
               <FormControl
                 id="lname"
                 mb="5"
-                isInvalid={formik.errors.lname && formik.touched.lname}>
+                isInvalid={
+                  (formik.errors.lname && formik.touched.lname) || false
+                }>
                 <FormErrorMessage>
                   Bitte geben Sie Ihren Nachnamen ein.
                 </FormErrorMessage>
@@ -200,7 +204,9 @@ const ContactPage: JaenTemplate = () => {
               <FormControl
                 id="email"
                 mb="5"
-                isInvalid={formik.errors.email && formik.touched.email}>
+                isInvalid={
+                  (formik.errors.email && formik.touched.email) || false
+                }>
                 <FormErrorMessage>
                   Bitte geben Sie eine korrekte Emailadresse ein.
                 </FormErrorMessage>
@@ -214,7 +220,9 @@ const ContactPage: JaenTemplate = () => {
               <FormControl
                 id="telephone"
                 mb="5"
-                isInvalid={formik.errors.telephone && formik.touched.telephone}>
+                isInvalid={
+                  (formik.errors.telephone && formik.touched.telephone) || false
+                }>
                 <FormErrorMessage>
                   Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
                   werden.
@@ -230,7 +238,9 @@ const ContactPage: JaenTemplate = () => {
               <FormControl
                 id="message"
                 mb="5"
-                isInvalid={formik.errors.message && formik.touched.message}>
+                isInvalid={
+                  (formik.errors.message && formik.touched.message) || false
+                }>
                 <FormErrorMessage>
                   Bitte schreiben Sie uns eine Nachricht.
                 </FormErrorMessage>

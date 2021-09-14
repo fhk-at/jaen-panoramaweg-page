@@ -64,8 +64,8 @@
     "react-helmet": "^6.1.0",
     "react-scroll": "^1.8.4",
     "sharp": "^0.29.1",
-    "yup": "^0.27.0",
-    "yup-phone": "^1.2.19"
+    "yup": "^0.29.1",
+    "yup-phone": "1.2.12"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",

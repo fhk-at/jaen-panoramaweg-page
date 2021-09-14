@@ -32,6 +32,7 @@ import {Link} from 'gatsby'
 import ApartmentHidden from '../../components/organisms/ApartmentHidden'
 
 import * as style from './style'
+import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
   const url = window.location.href
@@ -353,6 +354,11 @@ const ApartmentPage: JaenTemplate = () => {
             Bau und Ausstattungsbeschreibung
           </Button>
         </Container>
+        <Box as="div" mt="5" mb="10">
+          <Center>
+            <ImageCollection />
+          </Center>
+        </Box>
         <Container as="div" centerContent mt="5" mb="10">
           <Heading>Interessiert?</Heading>
           <Button
@@ -368,6 +374,7 @@ const ApartmentPage: JaenTemplate = () => {
             Kontaktiere uns
           </Button>
         </Container>
+
         <Footer />
       </Box>
     </style.responsiveImage>

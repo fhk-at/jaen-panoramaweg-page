@@ -153,8 +153,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 <Slider
                   max={maxSize}
                   step={5}
-                  value={filters.sizeFilter}
-                  onChange={value => {
+                  defaultValue={filters.sizeFilter}
+                  onChangeEnd={value => {
                     handleValueChange(value, 'sizeFilter')
                   }}>
                   <SliderTrack bg="panoramaweg.lightgray">
@@ -180,8 +180,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 <Slider
                   min={1}
                   max={maxRooms}
-                  value={filters.roomFilter}
-                  onChange={value => {
+                  defaultValue={filters.roomFilter}
+                  onChangeEnd={value => {
                     handleValueChange(value, 'roomFilter')
                   }}>
                   <SliderTrack bg="panoramaweg.lightgray">
@@ -221,109 +221,113 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             </Box>
           </Flex>
         </Container>
-        <fields.IndexField
-          onRender={page => {
-            function cleanFieldValues(value: string, type: string) {
-              value = value.slice(3, value.length - 4)
-              if (type === 'price') {
-                value = value.replace('.', '')
+        <Box minH="10vh">
+          <fields.IndexField
+            onRender={page => {
+              function cleanFieldValues(value: string, type: string) {
+                value = value.slice(3, value.length - 4)
+                if (type === 'price') {
+                  value = value.replace('.', '')
+                }
+                return value
               }
-              return value
-            }
-            const filter: number[] = []
-            const cards = []
-            for (const child of page.children) {
-              const fields = child.page.fields || {}
+              const filter: number[] = []
+              const cards = []
+              for (const child of page.children) {
+                const fields = child.page.fields || {}
 
-              const richtext =
-                fields?.apartmentrichtextright?.content?.text ||
-                '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
-              const image =
-                fields?.apartmentrightimg?.content?.src ||
-                'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-              const size = fields?.apartmentsize?.content?.text || '<p>0</p>'
-              const rooms = fields?.apartmentrooms?.content?.text || '<p>1</p>'
-              const available =
-                fields?.apartmentavailable?.content?.option || 'Verfügbar'
-              let slug = child?.page?.slug
+                const richtext =
+                  fields?.apartmentrichtextright?.content?.text ||
+                  '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
+                const image =
+                  fields?.apartmentrightimg?.content?.src ||
+                  'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+                const size = fields?.apartmentsize?.content?.text || '<p>0</p>'
+                const rooms =
+                  fields?.apartmentrooms?.content?.text || '<p>1</p>'
+                const available =
+                  fields?.apartmentavailable?.content?.option || 'Verfügbar'
+                let slug = child?.page?.slug
 
-              const formatedSlug = slug.replace('top', 'Top ')
-              const cleanedSize = cleanFieldValues(size, 'size')
-              const cleanedRooms = cleanFieldValues(rooms, 'rooms')
-              const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
-              const link = window.location.pathname + slug + '/'
-              console.log(link)
-              findMinMax(cleanedRooms, cleanedSize)
+                const formatedSlug = slug.replace('top', 'Top ')
+                const cleanedSize = cleanFieldValues(size, 'size')
+                const cleanedRooms = cleanFieldValues(rooms, 'rooms')
+                const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
+                const link = window.location.pathname + slug + '/'
+                console.log(link)
+                findMinMax(cleanedRooms, cleanedSize)
 
-              if (
-                parseInt(cleanedSize) < filters.sizeFilter ||
-                parseInt(cleanedRooms) < filters.roomFilter ||
-                (filters.availableFilter && available === 'Verkauft')
-              ) {
-                filter.push(cards.length)
+                if (
+                  parseInt(cleanedSize) < filters.sizeFilter ||
+                  parseInt(cleanedRooms) < filters.roomFilter ||
+                  (filters.availableFilter && available === 'Verkauft')
+                ) {
+                  filter.push(cards.length)
+                }
+
+                cards.push(
+                  <>
+                    <Link to={link}>
+                      <Box
+                        width={['90%', '90%', '25vw', '25vw']}
+                        border="1px"
+                        borderColor="panoramaweg.lightgray"
+                        padding="5"
+                        borderRadius="25px"
+                        justifyContent="center"
+                        alignContent="center">
+                        <Flex direction={['column', 'column', 'row', 'row']}>
+                          <Image
+                            src={image}
+                            w={['270px', '270px', '230px', '230px']}
+                          />
+                          <Container size="lg">
+                            <Heading>{formatedSlug}</Heading>
+                            <Text>Wohnungsgröße: {cleanedSize}m²</Text>
+                            <Progress
+                              value={parseInt(cleanedSize)}
+                              max={maxSize}
+                              colorScheme="greenwhite"
+                              borderRadius="25px"
+                              size="sm"
+                              width="100%"
+                            />
+                            <Text>Zimmer: {cleanedRooms}</Text>
+                            <Progress
+                              value={parseInt(cleanedRooms)}
+                              max={maxRooms}
+                              colorScheme="greenwhite"
+                              borderRadius="25px"
+                              size="sm"
+                              width="100%"
+                            />
+                            <Text mt="1" noOfLines={4}>
+                              {cleanedRichtext}
+                            </Text>
+                          </Container>
+                        </Flex>
+                      </Box>
+                    </Link>
+                  </>
+                )
               }
-
-              cards.push(
-                <>
-                  <Link to={link}>
-                    <Box
-                      width={['90%', '90%', '25vw', '25vw']}
-                      border="1px"
-                      borderColor="panoramaweg.lightgray"
-                      padding="5"
-                      borderRadius="25px"
-                      justifyContent="center"
-                      alignContent="center">
-                      <Flex direction={['column', 'column', 'row', 'row']}>
-                        <Image
-                          src={image}
-                          w={['270px', '270px', '230px', '230px']}
-                        />
-                        <Container size="lg">
-                          <Heading>{formatedSlug}</Heading>
-                          <Text>Wohnungsgröße: {cleanedSize}m²</Text>
-                          <Progress
-                            value={parseInt(cleanedSize)}
-                            max={maxSize}
-                            colorScheme="greenwhite"
-                            borderRadius="25px"
-                            size="sm"
-                            width="100%"
-                          />
-                          <Text>Zimmer: {cleanedRooms}</Text>
-                          <Progress
-                            value={parseInt(cleanedRooms)}
-                            max={maxRooms}
-                            colorScheme="greenwhite"
-                            borderRadius="25px"
-                            size="sm"
-                            width="100%"
-                          />
-                          <Text mt="1" noOfLines={4}>
-                            {cleanedRichtext}
-                          </Text>
-                        </Container>
-                      </Flex>
-                    </Box>
-                  </Link>
-                </>
+              return (
+                <Wrap spacing="5" justify="center" mt="5" mb="10">
+                  {cards.map((component, index) => {
+                    return (
+                      <Box
+                        key={index}
+                        display={filter.includes(index) ? 'none' : 'static'}>
+                        {component}
+                      </Box>
+                    )
+                  })}
+                </Wrap>
               )
-            }
-            return (
-              <Wrap spacing="5" justify="center" mt="5" mb="10">
-                {cards.map((component, index) => {
-                  return (
-                    <Box
-                      key={index}
-                      display={filter.includes(index) ? 'none' : 'static'}>
-                      {component}
-                    </Box>
-                  )
-                })}
-              </Wrap>
-            )
-          }}
-        />
+            }}
+          />
+        </Box>
+
         <Container centerContent>
           <Button
             colorScheme="greenwhite"

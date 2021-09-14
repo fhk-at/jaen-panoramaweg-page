@@ -1,9 +1,10 @@
-import styled from '@emotion/styled'
 import {Box} from '@chakra-ui/react'
+
+import styled from '@emotion/styled'
 
 import {mq} from '../../utils'
 
-export const responsiveImage = styled(Box)`
+export const ResponsiveImage = styled(Box)`
   .responsiveImage {
     ${mq[0]} {
       width: 300px;
