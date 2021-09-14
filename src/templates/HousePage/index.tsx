@@ -118,8 +118,9 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               className="responsiveImage"
             />
             <Container
-              maxW={['90%', '90%', '35vw', '35vw']}
-              ml={['0', '0', '10', '10']}
+              maxW={['300px', '300px', '35vw', '35vw']}
+              ml={['auto', 'auto', '10', '10']}
+              mr={['auto', 'auto', '0', '0']}
               fontSize="1.1rem">
               <fields.TextField
                 fieldName="houserichtext"
@@ -271,17 +272,24 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <>
                     <Link to={link}>
                       <Box
-                        width={['90%', '90%', '25vw', '25vw']}
+                        width={['90%', '90%', '30vw', '30vw']}
                         border="1px"
                         borderColor="panoramaweg.lightgray"
                         padding="5"
                         borderRadius="25px"
                         justifyContent="center"
-                        alignContent="center">
+                        alignContent="center"
+                        ml={['auto', 'auto', '0', '0']}
+                        mr={['auto', 'auto', '0', '0']}>
                         <Flex direction={['column', 'column', 'row', 'row']}>
                           <Image
                             src={image}
-                            w={['270px', '270px', '230px', '230px']}
+                            w="300px"
+                            h="200px"
+                            ml={['auto', 'auto', '0', '0']}
+                            mr={['auto', 'auto', '0', '0']}
+                            mt={['0', '0', 'auto', 'auto']}
+                            mb={['5', '5', 'auto', 'auto']}
                           />
                           <Container size="lg">
                             <Heading>{formatedSlug}</Heading>

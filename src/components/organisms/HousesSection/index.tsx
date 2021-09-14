@@ -155,6 +155,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                   <Image
                     src={img}
                     width="250px"
+                    height="170px"
                     ml={['auto', 'auto', '0', '0']}
                     mr={['auto', 'auto', '0', '0']}
                   />

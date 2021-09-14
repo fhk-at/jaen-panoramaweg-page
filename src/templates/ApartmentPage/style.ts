@@ -7,19 +7,19 @@ export const responsiveImage = styled(Box)`
   .responsiveImage {
     ${mq[0]} {
       width: 300px;
-      height: 30vh;
+      height: 180px;
     }
     ${mq[1]} {
       width: 300px;
-      height: 30vh;
+      height: 180px;
     }
     ${mq[2]} {
       width: 600px;
-      height: 40vh;
+      height: 375px;
     }
     ${mq[3]} {
       width: 600px;
-      height: 40vh;
+      height: 375px;
     }
   }
 `

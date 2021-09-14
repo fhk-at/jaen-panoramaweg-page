@@ -305,8 +305,8 @@ const ApartmentPage: JaenTemplate = () => {
             <Box
               border={['0px', '0px', '1px', '1px']}
               borderColor={[
-                '',
-                '',
+                'panoramaweg.lightgray',
+                'panoramaweg.lightgray',
                 'panoramaweg.lightgray',
                 'panoramaweg.lightgray'
               ]}
