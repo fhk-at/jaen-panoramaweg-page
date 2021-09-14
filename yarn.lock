@@ -3474,10 +3474,10 @@
     js-cookie "^2.2.1"
     subscriptions-transport-ws "^0.9.18"
 
-"@snek-at/jaen-pages@^2.0.0-beta.31":
-  version "2.0.0-beta.31"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.31.tgz#6cd918d24e006eeddc15f170f77eabe8c17cebf0"
-  integrity sha512-sXsqY5fF0+X4G0aGKfMICHt5j09ljiPlpSvn4mA2whjNbinhHmn33R6NsdsL3gVgLYMzisZFgTiZ0xWymTzVMQ==
+"@snek-at/jaen-pages@^2.0.0-beta.32":
+  version "2.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.32.tgz#497eb562e8f57b8905f38452d423949f45c9d363"
+  integrity sha512-vY7NWZFaqGWh6ds7JDnzXHtR8kDn86slwPcJnM885Gv8r55k+9kQX1brQjUroeZRvPmSax9LpnZsupJoVQyWOA==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.6.7"
@@ -3488,9 +3488,9 @@
     "@loadable/component" "^5.15.0"
     "@react-icons/all-files" "^4.1.0"
     "@reduxjs/toolkit" "^1.6.1"
-    "@snek-at/jaen" "^2.0.0-beta.22"
-    "@snek-at/jaen-shared-ui" "2.0.0-beta.17"
-    "@snek-at/snek-finder" "^1.0.0-beta.11"
+    "@snek-at/jaen" "^2.0.0-beta.23"
+    "@snek-at/jaen-shared-ui" "2.0.0-beta.18"
+    "@snek-at/snek-finder" "^1.0.0-beta.15"
     deepmerge "^4.2.2"
     electron "^14.0.0"
     esm "^3.2.25"
@@ -3511,10 +3511,10 @@
     react-redux "^7.2.4"
     uuid "^8.3.2"
 
-"@snek-at/jaen-shared-ui@2.0.0-beta.17":
-  version "2.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-shared-ui/-/jaen-shared-ui-2.0.0-beta.17.tgz#3b4cd726db16f752ed869e02a84ad7d6adc7fb41"
-  integrity sha512-7SBir8z8RmT+OhbzqdUOdAOVkdWyvvMpGArg67MnmuTONhlLHwyUSdGfTeepu3FQ6gn/WuGi1mCqSi7X5uL5wg==
+"@snek-at/jaen-shared-ui@2.0.0-beta.18":
+  version "2.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-shared-ui/-/jaen-shared-ui-2.0.0-beta.18.tgz#3bff5ba5b669e0bf545e02053a10edb339b01fa9"
+  integrity sha512-0lowIhhhkU8KsgdfBWZxcDJRM2PRlNIHasDe40ur3CAVHGyZ1MpT0HB5VIPs9YvqITGavIenGxsN/nQsbKdoNg==
   dependencies:
     "@atlaskit/tree" "^8.4.0"
     "@chakra-ui/icons" "^1.0.15"
@@ -3526,7 +3526,7 @@
     "@fortawesome/react-fontawesome" "^0.1.15"
     "@react-icons/all-files" "^4.1.0"
     "@snek-at/react-lottie" "1.0.0-beta.3"
-    "@snek-at/snek-finder" "1.0.0-beta.12"
+    "@snek-at/snek-finder" "1.0.0-beta.15"
     "@snek-at/storybook-addon-chakra-ui" "^1.0.0-beta.2"
     "@storybook/addon-actions" "^6.3.7"
     "@storybook/addon-essentials" "^6.3.7"
@@ -3540,15 +3540,15 @@
     react-analytics-charts "^1.2.12"
     react-use-analytics-api "^1.4.16"
 
-"@snek-at/jaen@^2.0.0-beta.22":
-  version "2.0.0-beta.22"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.22.tgz#eb8fe3ddec8f9c7a96a55d50d93fcb52e0ab1379"
-  integrity sha512-947J6QlWBhOtNKKsIrHFQ7LDN/vT06ZS4Dp0TvcIBOvYEwsa33qeaIHU1ahqk/4KTwrM2MhNma5Mx1wySZKR2g==
+"@snek-at/jaen@^2.0.0-beta.23":
+  version "2.0.0-beta.23"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen/-/jaen-2.0.0-beta.23.tgz#060d92eaa0d1aaf0a8049362352f9a04b9f42daf"
+  integrity sha512-icN+o9eUm9k4BwdFyAfqI2ivA7Ph6Vi9gFoVaXGpUcrz/CjkTzO8Bn7sGZbWEJTcCsOHwf42FGnZkZLhPsaRvQ==
   dependencies:
     "@chakra-ui/react" "^1.6.7"
     "@loadable/component" "^5.15.0"
     "@snek-at/bridge" "^1.0.0"
-    "@snek-at/jaen-shared-ui" "2.0.0-beta.17"
+    "@snek-at/jaen-shared-ui" "2.0.0-beta.18"
     gatsby-alias-imports "^1.0.6"
     gatsby-plugin-compile-es6-packages "^2.1.1"
     gatsby-plugin-emotion "^6.13.0"
@@ -3561,37 +3561,10 @@
   dependencies:
     lottie-web "^5.7.12"
 
-"@snek-at/snek-finder@1.0.0-beta.12":
-  version "1.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/@snek-at/snek-finder/-/snek-finder-1.0.0-beta.12.tgz#c1b6eabd72c80e6b1e9511ac6a07f21cc243f94b"
-  integrity sha512-rztlgF3lkWyB2iMpY7jwPqtwxlxctZSAUy7Do4L6i22idoxRmQF/zZcftu24+Azdbj3d8fuGSYn9UhQ8pISRfA==
-  dependencies:
-    "@chakra-ui/icons" "^1.0.14"
-    "@chakra-ui/react" "^1.6.6"
-    "@emotion/react" "^11"
-    "@emotion/styled" "^11"
-    "@react-icons/all-files" "^4.1.0"
-    "@react-pdf-viewer/core" "^2.7.1"
-    "@react-pdf-viewer/default-layout" "^2.7.1"
-    "@react-pdf-viewer/print" "^2.7.1"
-    "@toast-ui/react-image-editor" "^3.15.0"
-    filerobot-image-editor "^3.12.17"
-    framer-motion "^4"
-    immutability-helper "^3.1.1"
-    ipfs-http-client "^52.0.0"
-    pdf2pic "^2.1.4"
-    react "^17.0.2"
-    react-dnd "^14.0.2"
-    react-dnd-html5-backend "^14.0.0"
-    react-dropzone "^11.3.4"
-    react-pdf "^5.3.2"
-    react-table "^7.7.0"
-    react-zoom-pan-pinch "^2.1.3"
-
-"@snek-at/snek-finder@^1.0.0-beta.11":
-  version "1.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@snek-at/snek-finder/-/snek-finder-1.0.0-beta.11.tgz#33914343d618322334bea8e7edf457c02612cb4a"
-  integrity sha512-j7pv0zKYSQASitfBdQmjiF99A9/dhQEWqLFDt7WaIBQmT8ZWEvOtdZmGPGl6usKFZDtgatp+YLV4qXMCDja15g==
+"@snek-at/snek-finder@1.0.0-beta.15", "@snek-at/snek-finder@^1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@snek-at/snek-finder/-/snek-finder-1.0.0-beta.15.tgz#0339209676794827251c964aaedf34208519853b"
+  integrity sha512-x4DtIO899BQc9/E24x7iHObSuYGpW9R2MWHDydb6UNt2iK8DWlzf/ZNBeo4nphCFlq/pyFIVMmAM8+ddHuPsMw==
   dependencies:
     "@chakra-ui/icons" "^1.0.14"
     "@chakra-ui/react" "^1.6.6"
