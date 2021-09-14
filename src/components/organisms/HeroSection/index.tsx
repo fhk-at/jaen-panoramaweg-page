@@ -4,7 +4,7 @@ import {Box, Text, Center, VStack} from '@chakra-ui/react'
 import {StaticImage} from 'gatsby-plugin-image'
 
 import {Link} from 'react-scroll'
-import HeroHidden from '../../molecules/HeroHidden'
+// import HeroHidden from '../../molecules/HeroHidden'
 
 import React from 'react'
 import {fields} from '@snek-at/jaen-pages'
@@ -25,7 +25,7 @@ const HeroSection = (): JSX.Element => {
             }}
             className="herobackground"
           />
-          <HeroHidden />
+          {/* <HeroHidden /> */}
           <Box
             justifyContent="center"
             alignContent="center"

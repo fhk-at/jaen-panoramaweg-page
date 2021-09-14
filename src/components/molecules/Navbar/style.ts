@@ -18,12 +18,14 @@ export const NavbarStyle = styled(Box)`
     ${mq[2]} {
       margin-top: 3.1vh;
       margin-left: 4.1vw;
-      width: 50%;
+      width: 17rem;
+      max-width: 50%;
     }
     ${mq[3]} {
       margin-top: 3.1vh;
       margin-left: 4.1vw;
       width: 17rem;
+      max-width: 50%;
     }
 
     .navbarlogoimg {
