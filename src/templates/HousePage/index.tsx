@@ -253,7 +253,9 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 const cleanedSize = cleanFieldValues(size, 'size')
                 const cleanedRooms = cleanFieldValues(rooms, 'rooms')
                 const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
-                const link = window.location.pathname + slug + '/'
+                const link =
+                  typeof window !== 'undefined' &&
+                  window.location.pathname + slug + '/'
                 console.log(link)
                 findMinMax(cleanedRooms, cleanedSize)
 

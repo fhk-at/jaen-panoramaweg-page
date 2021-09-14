@@ -90,9 +90,9 @@ const sendMail = async (formData: any) => {
 const ContactPage: JaenTemplate = () => {
   // const top = useSelector((state: RootState) => state.lastVisited)
 
-  const query = window.location.search || ''
+  const query = (typeof window !== 'undefined' && window.location.search) || ''
   const urlParams = new URLSearchParams(query)
-  let url = window.location.href
+  let url = typeof window === 'undefined' ? '' : window.location.href
   let top = urlParams.get('top') || ''
   let house = urlParams.get('house') || ''
 
