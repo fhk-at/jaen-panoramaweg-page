@@ -68,7 +68,6 @@ const Navbar = (): JSX.Element => {
         <IconButton
           display={['block', 'block', 'none', 'none']}
           mt="6vh"
-          mr="auto"
           aria-label="Linkmenü"
           icon={<HamburgerIcon />}
           onClick={() => {

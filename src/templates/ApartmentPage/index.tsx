@@ -35,7 +35,7 @@ import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
-  const url = (typeof window !== 'undefined' && window.location.href) || ''
+  const url = (typeof window !== 'undefined' && window.location.href) || '////'
   let breadcrumbs = url.split('/')
 
   breadcrumbs = breadcrumbs.slice(
@@ -44,10 +44,12 @@ const ApartmentPage: JaenTemplate = () => {
   )
 
   function format(value: string[]) {
-    value[0] = value[0].replace('haus', 'haus ')
-    value[1] = value[1].replace('top', 'top ')
-    for (let i = 0; i < value.length; i++) {
-      value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1)
+    if (value.length > 1) {
+      value[0] = value[0].replace('haus', 'haus ')
+      value[1] = value[1].replace('top', 'top ')
+      for (let i = 0; i < value.length; i++) {
+        value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1)
+      }
     }
     return value
   }

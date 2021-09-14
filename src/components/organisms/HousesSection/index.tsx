@@ -40,7 +40,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   // const addDot = (x: any) => {
   //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   // };
-  const store = JaenStore.getState().site.allSitePage?.nodes
+  const store = JaenStore.getState().site?.allSitePage?.nodes
   let minPrice = 0
   let maxPrice = 0
   let maxSize = 0
@@ -80,9 +80,9 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   }
 
   function fetchData(pages) {
-    numFlats = pages.length
+    numFlats = pages?.length
     for (const page of pages) {
-      const fields = store[page.id]?.fields
+      const fields = store?.[page.id]?.fields
       console.log('data:', fields)
       let price = fields?.apartmentprice?.content?.text || '<p>0</p>'
       let size = fields?.apartmentsize?.content?.text || '<p>0</p>'
