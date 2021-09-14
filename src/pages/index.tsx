@@ -19,6 +19,7 @@ import {Box, Center} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import {mq} from '../utils'
+import {StaticImage} from 'gatsby-plugin-image'
 
 const IndexPageCSS = styled(Box)`
   .responsiveImage {
@@ -134,14 +135,12 @@ const IndexPage = () => {
           }
         />
         <Center marginBottom="10">
-          <fields.ImageField
-            fieldName="bottomlogo"
-            initValue={{
-              src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'logo',
-              title: 'logo'
-            }}
-            width="300px"
+          <StaticImage
+            src="../images/logo_short.png"
+            title="Logo"
+            alt="Logo"
+            style={{width: '300px'}}
+            imgStyle={{objectFit: 'contain'}}
           />
         </Center>
         <Footer />
