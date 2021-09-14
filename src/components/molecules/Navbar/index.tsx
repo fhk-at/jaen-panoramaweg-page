@@ -2,17 +2,30 @@
 //> React
 // Contains all the functionality necessary to define React components
 // import React from "react";
-import {Box, Spacer, Flex, HStack, Heading, LinkBox} from '@chakra-ui/react'
+import {
+  Box,
+  Spacer,
+  Flex,
+  HStack,
+  IconButton,
+  VStack,
+  SlideFade,
+  Collapse
+} from '@chakra-ui/react'
+import {HamburgerIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
 import {StaticImage} from 'gatsby-plugin-image'
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 // Style
 import './index.scss'
+import {useState} from 'react'
 //#endregion
 
 //#region > Components
 const Navbar = (): JSX.Element => {
+  const [linkMenue, setLinkMenue] = useState(false)
+
   return (
     <Box
       as="section"
@@ -34,18 +47,43 @@ const Navbar = (): JSX.Element => {
             imgClassName="navbarlogoimg"
           />
         </Link>
-        <Spacer />
         <HStack
+          display={['none', 'none', 'inline', 'inline']}
           pr="4.2vw"
           spacing="8"
-          pt="3.3vh"
+          pt="6vh"
           fontSize="1.4rem"
-          fontWeight="bold">
+          fontWeight="bold"
+          ml="auto">
           <Link to="/projekt/">Immobilie</Link>
           <Link to="/lage/">Lage</Link>
           <Link to="/">Baufortschritt</Link>
           <Link to="/kontakt/">Kontakt</Link>
         </HStack>
+        <IconButton
+          display={['block', 'block', 'none', 'none']}
+          mt="6vh"
+          mr="auto"
+          aria-label="Linkmenü"
+          icon={<HamburgerIcon />}
+          onClick={() => {
+            setLinkMenue(!linkMenue)
+          }}
+        />
+        <Collapse in={linkMenue}>
+          <VStack
+            width="100%"
+            spacing="3"
+            position="absolute"
+            top="15vh"
+            left="0"
+            bg="whiteAlpha.800">
+            <Link to="/projekt/">Immobilie</Link>
+            <Link to="/lage/">Lage</Link>
+            <Link to="/">Baufortschritt</Link>
+            <Link to="/kontakt/">Kontakt</Link>
+          </VStack>
+        </Collapse>
       </Flex>
     </Box>
   )

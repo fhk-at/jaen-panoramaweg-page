@@ -95,11 +95,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                   borderColor="panoramaweg.lightgray"
                   borderRadius="25px"
                   boxSizing="border-box"
-                  width="425px">
+                  width={['300px', '300px', '425px', '425px']}>
                   <Image
                     src={img}
-                    height="285px"
-                    width="425px"
+                    height={['200px', '200px', '285px', '285px']}
+                    width={['300px', '300px', '425px', '425px']}
                     borderTopRadius="25px"
                   />
                   <Box padding="5">

@@ -11,6 +11,7 @@ import ImageTopSection from '../components/organisms/ImageTopSection'
 import MapSection from '../components/organisms/MapSection'
 import PartnerSection from '../components/organisms/PartnerSection'
 import BlogSection from '../components/organisms/BlogSection'
+import LightBox from '../components/molecules/LightBox'
 
 import {Footer, Navbar} from '../components/molecules'
 import {Box, Center} from '@chakra-ui/react'

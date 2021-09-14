@@ -142,12 +142,23 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
               cards.push(
                 <Box
                   padding="5"
-                  border="1px"
-                  borderColor="panoramaweg.lightgray"
+                  borderBottom={['1px']}
+                  border={['0px', '0px', '1px', '1px']}
+                  borderColor={[
+                    'panoramaweg.lightgray',
+                    'panoramaweg.lightgray',
+                    'panoramaweg.lightgray',
+                    'panoramaweg.lightgray'
+                  ]}
                   borderRadius="25px">
-                  <Flex>
-                    <Image src={img} width="250px" />
-                    <Container minW="235px">
+                  <Flex direction={['column', 'column', 'row', 'row']}>
+                    <Image
+                      src={img}
+                      width="250px"
+                      ml={['auto', 'auto', '0', '0']}
+                      mr={['auto', 'auto', '0', '0']}
+                    />
+                    <Container minW="235px" centerContent>
                       <Heading fontSize="1.25rem">{heading}</Heading>
                       <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
                       <Flex mb="3">
@@ -215,9 +226,12 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                       </Flex>
                     </Container>
                   </Flex>
-                  <Flex marginTop="3">
+                  <Flex
+                    marginTop="3"
+                    direction={['column', 'column', 'row', 'row']}>
                     <Button
                       colorScheme="greenwhite"
+                      mb={['3', '3', '0', '0']}
                       padding="5"
                       paddingLeft="12"
                       paddingRight="12"
@@ -234,16 +248,16 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                         borderRadius="25px"
                         colorScheme="greenwhite"
                         size="md"
-                        width="70%"
+                        width={['90%', '90%', '70%', '70%']}
                         ml="auto"
-                        mr="0"
+                        mr={['auto', 'auto', '0', '0']}
                       />
                       <Text
-                        fontSize="sm"
+                        fontSize={['xs', 'xs', 'sm', 'sm']}
                         color="gray"
-                        width="70%"
+                        width={['90%', '90%', '70%', '70%']}
                         ml="auto"
-                        mr="0">
+                        mr={['auto', 'auto', '0', '0']}>
                         {availableFlats} von {numFlats} Wohnungen verfügbar
                       </Text>
                     </Container>
