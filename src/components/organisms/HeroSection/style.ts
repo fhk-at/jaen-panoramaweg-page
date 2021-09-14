@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import {Box} from '@chakra-ui/react'
 
+import {mq} from '../../../utils'
+
 export const HeroStyle = styled(Box)`
   .herobackground {
     position: absolute;
@@ -10,8 +12,25 @@ export const HeroStyle = styled(Box)`
     height: 100vh;
   }
   .herologo {
-    position: relative;
-    z-index: 10;
-    width: 450px;
+    ${mq[0]} {
+      width: 300px;
+      position: relative;
+      z-index: 10;
+    }
+    ${mq[1]} {
+      width: 300px;
+      position: relative;
+      z-index: 10;
+    }
+    ${mq[2]} {
+      width: 350px;
+      position: relative;
+      z-index: 10;
+    }
+    ${mq[3]} {
+      width: 350px;
+      position: relative;
+      z-index: 10;
+    }
   }
 `

@@ -108,173 +108,168 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
         <Text fontSize="1.1rem" mb="5">
           {housesubhead}
         </Text>
+      </Container>
+      <fields.IndexField
+        fieldName="houseindex"
+        fixedSlug="SitePage /haus/"
+        onRender={page => {
+          console.log('store:', JaenStore.getState())
+          console.log('parent', page)
+          const children = page?.children || []
 
-        <fields.IndexField
-          fieldName="houseindex"
-          fixedSlug="SitePage /haus/"
-          onRender={page => {
-            console.log('store:', JaenStore.getState())
-            console.log('parent', page)
-            const children = page?.children || []
+          const cards = []
+          for (const child of children) {
+            const img =
+              child?.page?.fields?.houseimg?.content?.src ||
+              'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+            console.log('child', child)
+            let slug = child?.page?.slug || ''
+            let head = slug
+            head = slug.replace('haus', 'haus ')
+            head = head.charAt(0).toUpperCase() + head.substring(1)
+            const grandchildren = child?.page?.children
+            minPrice = 0
+            maxPrice = 0
+            maxSize = 0
+            minSize = 0
+            availableFlats = 0
+            numFlats = 0
+            apartmentTypes = []
+            heading = head
 
-            const cards = []
-            for (const child of children) {
-              const img =
-                child?.page?.fields?.houseimg?.content?.src ||
-                'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-              console.log('child', child)
-              let slug = child?.page?.slug || ''
-              let head = slug
-              head = slug.replace('haus', 'haus ')
-              head = head.charAt(0).toUpperCase() + head.substring(1)
-              const grandchildren = child?.page?.children
-              minPrice = 0
-              maxPrice = 0
-              maxSize = 0
-              minSize = 0
-              availableFlats = 0
-              numFlats = 0
-              apartmentTypes = []
-              heading = head
+            fetchData(grandchildren)
 
-              fetchData(grandchildren)
-
-              cards.push(
-                <Box
-                  padding="5"
-                  borderBottom={['1px']}
-                  border={['0px', '0px', '1px', '1px']}
-                  borderColor={[
-                    'panoramaweg.lightgray',
-                    'panoramaweg.lightgray',
-                    'panoramaweg.lightgray',
-                    'panoramaweg.lightgray'
-                  ]}
-                  borderRadius="25px">
-                  <Flex direction={['column', 'column', 'row', 'row']}>
-                    <Image
-                      src={img}
-                      width="250px"
-                      ml={['auto', 'auto', '0', '0']}
+            cards.push(
+              <Box
+                padding="5"
+                borderBottom={['1px']}
+                border={['0px', '0px', '1px', '1px']}
+                borderColor={[
+                  'panoramaweg.lightgray',
+                  'panoramaweg.lightgray',
+                  'panoramaweg.lightgray',
+                  'panoramaweg.lightgray'
+                ]}
+                borderRadius="25px">
+                <Flex direction={['column', 'column', 'row', 'row']}>
+                  <Image
+                    src={img}
+                    width="250px"
+                    ml={['auto', 'auto', '0', '0']}
+                    mr={['auto', 'auto', '0', '0']}
+                  />
+                  <Container minW="235px" centerContent>
+                    <Heading fontSize="1.25rem">{heading}</Heading>
+                    <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
+                    <Flex mb="3">
+                      {apartmentTypes.includes('Penthouse') ? (
+                        <Badge
+                          fontSize="xs"
+                          backgroundColor="panoramaweg.green"
+                          color="white"
+                          borderRadius="25px"
+                          size="sm"
+                          textTransform="none"
+                          marginRight="1">
+                          Penthouse
+                        </Badge>
+                      ) : (
+                        <Box />
+                      )}
+                      {apartmentTypes.includes('4-Zimmer') ? (
+                        <Badge
+                          fontSize="xs"
+                          backgroundColor="panoramaweg.green"
+                          color="white"
+                          borderRadius="25px"
+                          size="sm"
+                          textTransform="none"
+                          marginRight="1">
+                          4-Zimmer
+                        </Badge>
+                      ) : (
+                        <Box />
+                      )}
+                      {apartmentTypes.includes('3-Zimmer') ? (
+                        <Badge
+                          fontSize="xs"
+                          backgroundColor="panoramaweg.green"
+                          color="white"
+                          borderRadius="25px"
+                          size="sm"
+                          textTransform="none">
+                          3-Zimmer
+                        </Badge>
+                      ) : (
+                        <Box />
+                      )}
+                    </Flex>
+                    <Flex mb="2">
+                      <IconContext.Provider value={{color: 'gray'}}>
+                        <GiResize />
+                      </IconContext.Provider>
+                      <Text fontSize="sm" color="gray" ml="1">
+                        {minSize} - {maxSize} m²
+                      </Text>
+                    </Flex>
+                    <Flex>
+                      <Text fontWeight="bold" color="gray" fontSize="lg" mr="1">
+                        €
+                      </Text>
+                      <Text mt="1" ml="1.5" fontSize="sm" color="gray">
+                        {minPrice} - {maxPrice}
+                      </Text>
+                    </Flex>
+                  </Container>
+                </Flex>
+                <Flex
+                  marginTop="3"
+                  direction={['column', 'column', 'row', 'row']}>
+                  <Button
+                    colorScheme="greenwhite"
+                    mb={['3', '3', '0', '0']}
+                    padding="5"
+                    paddingLeft="12"
+                    paddingRight="12"
+                    fontSize="sm"
+                    size="lg"
+                    borderRadius="30px"
+                    onClick={() => navigate('/haus/' + slug + '/')}>
+                    Wohnungsübersicht
+                  </Button>
+                  <Container>
+                    <Progress
+                      max={numFlats}
+                      value={availableFlats}
+                      borderRadius="25px"
+                      colorScheme="greenwhite"
+                      size="md"
+                      width={['90%', '90%', '70%', '70%']}
+                      ml="auto"
                       mr={['auto', 'auto', '0', '0']}
                     />
-                    <Container minW="235px" centerContent>
-                      <Heading fontSize="1.25rem">{heading}</Heading>
-                      <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
-                      <Flex mb="3">
-                        {apartmentTypes.includes('Penthouse') ? (
-                          <Badge
-                            fontSize="xs"
-                            backgroundColor="panoramaweg.green"
-                            color="white"
-                            borderRadius="25px"
-                            size="sm"
-                            textTransform="none"
-                            marginRight="1">
-                            Penthouse
-                          </Badge>
-                        ) : (
-                          <Box />
-                        )}
-                        {apartmentTypes.includes('4-Zimmer') ? (
-                          <Badge
-                            fontSize="xs"
-                            backgroundColor="panoramaweg.green"
-                            color="white"
-                            borderRadius="25px"
-                            size="sm"
-                            textTransform="none"
-                            marginRight="1">
-                            4-Zimmer
-                          </Badge>
-                        ) : (
-                          <Box />
-                        )}
-                        {apartmentTypes.includes('3-Zimmer') ? (
-                          <Badge
-                            fontSize="xs"
-                            backgroundColor="panoramaweg.green"
-                            color="white"
-                            borderRadius="25px"
-                            size="sm"
-                            textTransform="none">
-                            3-Zimmer
-                          </Badge>
-                        ) : (
-                          <Box />
-                        )}
-                      </Flex>
-                      <Flex mb="2">
-                        <IconContext.Provider value={{color: 'gray'}}>
-                          <GiResize />
-                        </IconContext.Provider>
-                        <Text fontSize="sm" color="gray" ml="1">
-                          {minSize} - {maxSize} m²
-                        </Text>
-                      </Flex>
-                      <Flex>
-                        <Text
-                          fontWeight="bold"
-                          color="gray"
-                          fontSize="lg"
-                          mr="1">
-                          €
-                        </Text>
-                        <Text mt="1" ml="1.5" fontSize="sm" color="gray">
-                          {minPrice} - {maxPrice}
-                        </Text>
-                      </Flex>
-                    </Container>
-                  </Flex>
-                  <Flex
-                    marginTop="3"
-                    direction={['column', 'column', 'row', 'row']}>
-                    <Button
-                      colorScheme="greenwhite"
-                      mb={['3', '3', '0', '0']}
-                      padding="5"
-                      paddingLeft="12"
-                      paddingRight="12"
-                      fontSize="sm"
-                      size="lg"
-                      borderRadius="30px"
-                      onClick={() => navigate('/haus/' + slug + '/')}>
-                      Wohnungsübersicht
-                    </Button>
-                    <Container>
-                      <Progress
-                        max={numFlats}
-                        value={availableFlats}
-                        borderRadius="25px"
-                        colorScheme="greenwhite"
-                        size="md"
-                        width={['90%', '90%', '70%', '70%']}
-                        ml="auto"
-                        mr={['auto', 'auto', '0', '0']}
-                      />
-                      <Text
-                        fontSize={['xs', 'xs', 'sm', 'sm']}
-                        color="gray"
-                        width={['90%', '90%', '70%', '70%']}
-                        ml="auto"
-                        mr={['auto', 'auto', '0', '0']}>
-                        {availableFlats} von {numFlats} Wohnungen verfügbar
-                      </Text>
-                    </Container>
-                  </Flex>
-                </Box>
-              )
-            }
-            return (
-              <Wrap justify="center" spacing="5" maxW="80vw">
-                {cards.map((card, key) => {
-                  return <Box key={key}>{card}</Box>
-                })}
-              </Wrap>
+                    <Text
+                      fontSize={['xs', 'xs', 'sm', 'sm']}
+                      color="gray"
+                      width={['90%', '90%', '70%', '70%']}
+                      ml="auto"
+                      mr={['auto', 'auto', '0', '0']}>
+                      {availableFlats} von {numFlats} Wohnungen verfügbar
+                    </Text>
+                  </Container>
+                </Flex>
+              </Box>
             )
-          }}
-        />
-      </Container>
+          }
+          return (
+            <Wrap justify="center" spacing="5" maxW="75vw" ml="auto" mr="auto">
+              {cards.map((card, key) => {
+                return <Box key={key}>{card}</Box>
+              })}
+            </Wrap>
+          )
+        }}
+      />
     </Box>
   )
 }

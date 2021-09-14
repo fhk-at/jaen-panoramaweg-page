@@ -1,6 +1,8 @@
 import {ChevronDownIcon} from '@chakra-ui/icons'
 import {Box, Text, Center, VStack} from '@chakra-ui/react'
 
+import {StaticImage} from 'gatsby-plugin-image'
+
 import {Link} from 'react-scroll'
 import HeroHidden from '../../molecules/HeroHidden'
 
@@ -28,23 +30,19 @@ const HeroSection = (): JSX.Element => {
             justifyContent="center"
             alignContent="center"
             position="absolute"
-            top="40vh"
-            left="38vw">
-            <VStack spacing="5">
-              <fields.ImageField
-                fieldName="herologo"
-                initValue={{
-                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                  title: 'Logo',
-                  alt: 'Logo'
-                }}
+            top="0"
+            w="100%"
+            pointerEvents="none">
+            <VStack spacing="5" pt="40vh">
+              <StaticImage
+                src="../../../images/logo_white.png"
+                title="Logo"
+                alt="Logo"
                 className="herologo"
               />
               <Link to="imagetopsection" isDynamic smooth={true}>
                 <Box
                   position="relative"
-                  margin="auto"
-                  as="button"
                   marginTop="2rem"
                   padding="1rem"
                   borderRadius="30px"
@@ -53,7 +51,9 @@ const HeroSection = (): JSX.Element => {
                   justifyContent="center"
                   alignContent="center"
                   zIndex={10}
-                  display="flex">
+                  display="flex"
+                  pointerEvents="all"
+                  cursor="pointer">
                   <ChevronDownIcon w={6} h={6} />
                   <Text>Mehr dazu</Text>
                 </Box>
