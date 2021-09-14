@@ -35,9 +35,8 @@ const LightBox: React.FC<LightBoxProps> = ({previewImage, children}) => {
       <Modal onClose={onClose} isOpen={isOpen} isCentered size="6xl">
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader />
-          <ModalCloseButton />
-          <ModalBody>
+          <ModalCloseButton color="white" />
+          <ModalBody p="0" width="100%" height="100%">
             <Center>{previewImage}</Center>
           </ModalBody>
         </ModalContent>

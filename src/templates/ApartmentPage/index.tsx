@@ -35,7 +35,7 @@ import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
-  const url = typeof window !== 'undefined' && window.location.href
+  const url = (typeof window !== 'undefined' && window.location.href) || ''
   let breadcrumbs = url.split('/')
 
   breadcrumbs = breadcrumbs.slice(
@@ -354,11 +354,7 @@ const ApartmentPage: JaenTemplate = () => {
             Bau und Ausstattungsbeschreibung
           </Button>
         </Container>
-        <Box as="div" mt="5" mb="10">
-          <Center>
-            <ImageCollection />
-          </Center>
-        </Box>
+        <Box as="div" mt="5" mb="10"></Box>
         <Container as="div" centerContent mt="5" mb="10">
           <Heading>Interessiert?</Heading>
           <Button
@@ -374,7 +370,9 @@ const ApartmentPage: JaenTemplate = () => {
             Kontaktiere uns
           </Button>
         </Container>
-
+        <Center>
+          <ImageCollection />
+        </Center>
         <Footer />
       </Box>
     </style.responsiveImage>
