@@ -35,7 +35,7 @@ import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
-  const url = (typeof window !== 'undefined' && window.location.href) || '////'
+  const url = (typeof window !== 'undefined' && window.location.href) || ''
   let breadcrumbs = url.split('/')
 
   breadcrumbs = breadcrumbs.slice(
