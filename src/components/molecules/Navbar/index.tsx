@@ -80,7 +80,7 @@ const Navbar = (): JSX.Element => {
             width={['6vh', '8vh']}
             height={['6vh', '8vh']}
             display={['block', 'block', 'none', 'none']}
-            mt="10"
+            mt="12"
             mr="5"
             aria-label="Linkmenü"
             icon={<HamburgerIcon boxSize={['40px', '50px']} />}
@@ -94,7 +94,7 @@ const Navbar = (): JSX.Element => {
                 width="100%"
                 spacing="3"
                 position="absolute"
-                top="15vh"
+                top="140px"
                 left="0"
                 bg="white"
                 fontSize="2rem">

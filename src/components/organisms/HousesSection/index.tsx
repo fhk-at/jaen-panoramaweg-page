@@ -240,7 +240,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     onClick={() => navigate('/haus/' + slug + '/')}>
                     Wohnungsübersicht
                   </Button>
-                  <Container>
+                  <Container mt="auto">
                     <Progress
                       max={numFlats}
                       value={availableFlats}
