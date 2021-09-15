@@ -34,7 +34,7 @@ const HeroSection = (): JSX.Element => {
             top="0"
             w="100%"
             pointerEvents="none">
-            <VStack spacing="5" pt="40vh">
+            <VStack spacing="5" pt="23rem">
               <StaticImage
                 src="../../../images/panoramaweg_light.svg"
                 alt="Logo"
@@ -43,7 +43,7 @@ const HeroSection = (): JSX.Element => {
               <Link to="imagetopsection" isDynamic offset={-80} smooth={true}>
                 <Box
                   position="relative"
-                  marginTop="25vh"
+                  marginTop="14rem"
                   padding="1rem"
                   borderRadius="30px"
                   backgroundColor="white"
