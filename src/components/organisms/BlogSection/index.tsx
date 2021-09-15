@@ -105,6 +105,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                     boxSizing="border-box"
                     width={['300px', '300px', '425px', '425px']}>
                     <Image
+                      alt="blogcardimg"
                       src={img}
                       height={['200px', '200px', '285px', '285px']}
                       width={['300px', '300px', '425px', '425px']}

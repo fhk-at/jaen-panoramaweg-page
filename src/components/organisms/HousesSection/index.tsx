@@ -155,6 +155,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                 borderRadius="25px">
                 <Flex direction={['column', 'column', 'row', 'row']}>
                   <Image
+                    alt="housesectionimg"
                     src={img}
                     width="250px"
                     height="170px"

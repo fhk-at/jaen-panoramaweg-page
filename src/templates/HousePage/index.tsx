@@ -283,6 +283,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                         <Flex direction={['column', 'column', 'row', 'row']}>
                           <Image
                             src={image}
+                            alt="apartmentcardimg"
                             w="300px"
                             h="200px"
                             ml={['auto', 'auto', '0', '0']}
