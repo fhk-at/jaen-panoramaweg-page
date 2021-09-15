@@ -32,7 +32,7 @@ const LocationPage: JaenTemplate = () => {
           head1={
             <fields.TextField
               fieldName="locationhead"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           }

@@ -151,7 +151,7 @@ const ContactPage: JaenTemplate = () => {
         <Text fontSize="1.5rem" fontWeight="thin">
           <fields.TextField
             fieldName="contactsubheading"
-            initValue="Kontaktieren Sie uns und und wir melden uns bei Ihnen!"
+            initValue="<p>Kontaktieren Sie uns und und wir melden uns bei Ihnen!</p>"
           />
         </Text>
       </Container>
@@ -265,11 +265,13 @@ const ContactPage: JaenTemplate = () => {
               </Box>
             </form>
           </Box>
-          <Box w={['90%', '90%', '30vw', '30vw']} h="40vh">
+          <Box
+            w={['90%', '90%', '30vw', '30vw']}
+            h={['content-fit', 'content-fit', '40vh', '40vh']}>
             <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"
-                initValue="Wer sind wir?"
+                initValue="<p>Wer sind wir</p>?"
               />
             </Heading>
             <Text fontSize="lg" mt="5">

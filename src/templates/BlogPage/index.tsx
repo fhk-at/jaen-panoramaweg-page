@@ -38,14 +38,14 @@ const BlogPage: JaenTemplate = () => {
           <Heading fontSize="1.75rem">
             <fields.TextField
               fieldName="blogheading"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           </Heading>
           <Text fontSize="1.5rem" mb="10">
             <fields.TextField
               fieldName="blogsubheading"
-              initValue="vom 01.01.2022"
+              initValue="<p>vom 01.01.2022</p>"
               rtf={false}
             />
           </Text>
@@ -70,7 +70,7 @@ const BlogPage: JaenTemplate = () => {
             imgleftheading={
               <fields.TextField
                 fieldName="blogimgleftheading"
-                initValue="Unterüberschrift"
+                initValue="<p>Unterüberschrift</p>"
                 rtf={false}
               />
             }

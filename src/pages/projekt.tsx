@@ -32,7 +32,7 @@ const ImmoPage: JaenTemplate = () => {
           head1={
             <fields.TextField
               fieldName="immohead1"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           }
