@@ -130,8 +130,8 @@ const ContactPage: JaenTemplate = () => {
       id="contactpage"
       overflow="hidden"
       minH="100vh"
-      paddingTop="15vh"
-      pb="12vh">
+      paddingTop="140px"
+      pb="115px">
       <Navbar />
       <Container
         centerContent
@@ -189,7 +189,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.fname && formik.touched.fname) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie Ihren Vornamen ein.
                 </FormErrorMessage>
                 <Input
@@ -205,7 +205,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.lname && formik.touched.lname) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie Ihren Nachnamen ein.
                 </FormErrorMessage>
                 <Input
@@ -221,7 +221,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.email && formik.touched.email) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie eine korrekte Emailadresse ein.
                 </FormErrorMessage>
                 <Input
@@ -237,7 +237,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.telephone && formik.touched.telephone) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
                   werden.
                 </FormErrorMessage>
@@ -255,7 +255,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.message && formik.touched.message) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte schreiben Sie uns eine Nachricht.
                 </FormErrorMessage>
                 <Textarea
