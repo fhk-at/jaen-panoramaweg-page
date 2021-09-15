@@ -132,7 +132,10 @@ const ContactPage: JaenTemplate = () => {
       minH="100vh"
       paddingTop="15vh">
       <Navbar />
-      <Container centerContent maxW={['100%', '100%', '40vw', '40vw']}>
+      <Container
+        centerContent
+        maxW={['100%', '100%', '40vw', '40vw']}
+        mt={['10', '10', '0', '0']}>
         {top === '' ? (
           <Heading fontSize="1.75rem">
             Sie sind an einer unserer Immobilien interessiert?
