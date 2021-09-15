@@ -22,7 +22,7 @@ const Footer = (): JSX.Element => {
     <Box
       bg="panoramaweg.lightgray"
       w="100%"
-      h="12vh"
+      h="115px"
       position="absolute"
       bottom="0">
       <Container w="fit-content" centerContent color="panoramaweg.dark" pt="4">
