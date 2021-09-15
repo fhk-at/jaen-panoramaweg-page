@@ -95,14 +95,14 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           <Heading mb="0">
             <fields.TextField
               fieldName="housetitle"
-              initValue="Housetitle"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           </Heading>
           <Text fontSize="1.5rem" marginBottom="10">
             <fields.TextField
               fieldName="houseteaser"
-              initValue="houseteaser"
+              initValue="<p>Unterüberschrift</p>"
               rtf="false"
             />
           </Text>
@@ -133,7 +133,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           <Text fontWeight="light" fontSize="1.75rem" mb="5">
             <fields.TextField
               fieldName="houseadtext"
-              initValue="Unterüberschrift"
+              initValue="<p>Unterüberschrift</p>"
               rtf={false}
             />
           </Text>
@@ -271,7 +271,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <>
                     <Link to={link}>
                       <Box
-                        width={['90%', '90%', '30vw', '30vw']}
+                        width={['90%', '90%', '', '30vw']}
                         border="1px"
                         borderColor="panoramaweg.lightgray"
                         padding="5"

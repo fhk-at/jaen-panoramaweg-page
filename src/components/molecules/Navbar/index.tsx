@@ -95,7 +95,7 @@ const Navbar = (): JSX.Element => {
                 position="absolute"
                 top="15vh"
                 left="0"
-                bg="whiteAlpha.800"
+                bg="white"
                 fontSize="2rem">
                 <Link to="/projekt/">Immobilie</Link>
                 <Link to="/lage/">Lage</Link>
