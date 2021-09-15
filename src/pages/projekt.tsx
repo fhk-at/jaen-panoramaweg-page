@@ -41,7 +41,6 @@ const ImmoPage: JaenTemplate = () => {
               fieldName="immoimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'immoimg',
                 alt: 'immoimg'
               }}
               className="responsiveImage"

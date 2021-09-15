@@ -22,7 +22,6 @@ const HeroSection = (): JSX.Element => {
             fieldName="herobackground"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              title: 'herobackground',
               alt: 'herobackground'
             }}
             className="herobackground"
@@ -38,7 +37,6 @@ const HeroSection = (): JSX.Element => {
             <VStack spacing="5" pt="40vh">
               <StaticImage
                 src="../../../images/logo_white.png"
-                title="Logo"
                 alt="Logo"
                 className="herologo"
               />

@@ -285,7 +285,6 @@ const ApartmentPage: JaenTemplate = () => {
               fieldName="apartmentrightimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'rightimg',
                 alt: 'rightimg'
               }}
               borderRadius="25px"
@@ -297,7 +296,6 @@ const ApartmentPage: JaenTemplate = () => {
               fieldName="apartmentleftimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'leftimg',
                 alt: 'lefttimg'
               }}
               borderRadius="25px"

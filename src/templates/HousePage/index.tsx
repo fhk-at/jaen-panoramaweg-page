@@ -112,8 +112,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               fieldName="houseimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'houseimg',
-                title: 'houseimg'
+                alt: 'houseimg'
               }}
               className="responsiveImage"
             />

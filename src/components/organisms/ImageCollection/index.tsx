@@ -31,8 +31,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox1"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -41,8 +40,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox1"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -53,8 +51,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox2"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -63,8 +60,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox2"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -75,8 +71,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox3"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -85,8 +80,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox3"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -97,8 +91,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox4"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -107,8 +100,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox4"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -119,8 +111,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox5"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -129,8 +120,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox5"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -141,8 +131,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox6"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -151,8 +140,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox6"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -163,8 +151,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox7"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -173,8 +160,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox7"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -185,8 +171,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox8"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -195,8 +180,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox8"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />
@@ -207,8 +191,7 @@ const ImageCollection = () => {
               fieldName="apartmentlightbox9"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'lightboximage',
-                title: 'lightboximage'
+                alt: 'lightboximage'
               }}
               className="lightboxPreviewImage"
             />
@@ -217,8 +200,7 @@ const ImageCollection = () => {
             fieldName="apartmentlightbox9"
             initValue={{
               src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-              alt: 'lightboximage',
-              title: 'lightboximage'
+              alt: 'lightboximage'
             }}
             className="lightboxImage"
           />

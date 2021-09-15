@@ -24,7 +24,6 @@ const PartnerCard: JaenBlock = () => {
           fieldName="partnerblockimg"
           initValue={{
             src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-            title: 'partner',
             alt: 'partner'
           }}
           className="partnerImage"

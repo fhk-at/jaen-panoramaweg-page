@@ -41,7 +41,6 @@ const LocationPage: JaenTemplate = () => {
               fieldName="locationimage"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'locationimg',
                 alt: 'locationimg'
               }}
               className="responsiveImage"

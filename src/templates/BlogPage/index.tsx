@@ -61,7 +61,6 @@ const BlogPage: JaenTemplate = () => {
                 fieldName="blogimgleftimg"
                 initValue={{
                   src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                  title: 'blogimgleftimg',
                   alt: 'blogimgleftimg'
                 }}
                 className="responsiveImage"

@@ -44,7 +44,6 @@ const Navbar = (): JSX.Element => {
           <Link to="/">
             <StaticImage
               src="../../../images/logo_short.png"
-              title="logo"
               alt="logo"
               className="navbarlogodiv"
               imgClassName="navbarlogoimg"
