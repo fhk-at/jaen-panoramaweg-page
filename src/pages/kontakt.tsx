@@ -130,7 +130,8 @@ const ContactPage: JaenTemplate = () => {
       id="contactpage"
       overflow="hidden"
       minH="100vh"
-      paddingTop="15vh">
+      paddingTop="15vh"
+      pb="12vh">
       <Navbar />
       <Container
         centerContent
@@ -171,7 +172,8 @@ const ContactPage: JaenTemplate = () => {
         width={['100%', '100%', '70vw', '70vw']}
         centerContent
         mb="5"
-        mt="20">
+        mt="20"
+        minH="40vh">
         <Flex direction={['column', 'column', 'row', 'row']}>
           <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
             <Heading
@@ -277,13 +279,11 @@ const ContactPage: JaenTemplate = () => {
               </Box>
             </form>
           </Box>
-          <Box
-            w={['90%', '90%', '30vw', '30vw']}
-            h={['content-fit', 'content-fit', '40vh', '40vh']}>
+          <Box w={['90%', '90%', '30vw', '30vw']}>
             <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"
-                initValue="<p>Wer sind wir</p>?"
+                initValue="<p>Wer sind wir?</p>"
               />
             </Heading>
             <Text fontSize="lg" mt="5">
