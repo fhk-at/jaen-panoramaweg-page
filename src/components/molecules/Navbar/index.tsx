@@ -61,6 +61,7 @@ const Navbar = (): JSX.Element => {
             <Link to="/projekt/">Immobilie</Link>
             <Link to="/lage/">Lage</Link>
             <scroll.Link
+              offset={-80}
               to="blogsection"
               isDynamic
               smooth
@@ -76,13 +77,13 @@ const Navbar = (): JSX.Element => {
           </HStack>
           <IconButton
             ml="auto"
-            width="8vh"
-            height="8vh"
+            width={['6vh', '8vh']}
+            height={['6vh', '8vh']}
             display={['block', 'block', 'none', 'none']}
-            mt="4vh"
+            mt="2vh"
             mr="5"
             aria-label="Linkmenü"
-            icon={<HamburgerIcon boxSize="50px" />}
+            icon={<HamburgerIcon boxSize={['40px', '50px']} />}
             onClick={() => {
               setLinkMenue(!linkMenue)
             }}
@@ -100,6 +101,7 @@ const Navbar = (): JSX.Element => {
                 <Link to="/projekt/">Immobilie</Link>
                 <Link to="/lage/">Lage</Link>
                 <scroll.Link
+                  offset={-80}
                   to="blogsection"
                   isDynamic
                   smooth

@@ -42,7 +42,7 @@ const HeroSection = (): JSX.Element => {
                 alt="Logo"
                 className="herologo"
               />
-              <Link to="imagetopsection" isDynamic smooth={true}>
+              <Link to="imagetopsection" isDynamic offset={-80} smooth={true}>
                 <Box
                   position="relative"
                   marginTop="2rem"
