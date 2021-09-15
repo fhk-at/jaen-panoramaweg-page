@@ -144,8 +144,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             cards.push(
               <Box
                 padding="5"
-                borderBottom={['1px']}
                 border={['0px', '0px', '1px', '1px']}
+                borderBottom="1px"
                 borderColor={[
                   'panoramaweg.lightgray',
                   'panoramaweg.lightgray',

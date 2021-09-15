@@ -34,7 +34,7 @@ const AnyReactComponent = ({}) => (
 
 export default function MapSection({}) {
   return (
-    <section className="map-section text-center my-5">
+    <section className="map-section">
       <GoogleMapReact
         bootstrapURLKeys={{key: process.env.GOOGLE_MAPS_API_KEY}}
         defaultCenter={defaultProps.center}
