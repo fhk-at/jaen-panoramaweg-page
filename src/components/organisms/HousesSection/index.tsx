@@ -227,10 +227,15 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                 </Flex>
                 <Flex
                   marginTop="3"
-                  direction={['column', 'column', 'row', 'row']}>
+                  direction={[
+                    'column-reverse',
+                    'column-reverse',
+                    'row',
+                    'row'
+                  ]}>
                   <Button
                     colorScheme="greenwhite"
-                    mb={['3', '3', '0', '0']}
+                    mt={['3', '3', '0', '0']}
                     padding="5"
                     paddingLeft="12"
                     paddingRight="12"
