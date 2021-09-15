@@ -27,7 +27,8 @@ import {
   Image,
   Progress,
   Wrap,
-  Button
+  Button,
+  Badge
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import * as style from './style'
@@ -292,6 +293,19 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                           />
                           <Container size="lg">
                             <Heading>{formatedSlug}</Heading>
+                            <Badge
+                              fontSize="xs"
+                              backgroundColor={
+                                available === 'Verfügbar'
+                                  ? 'panoramaweg.green'
+                                  : '#f61a42'
+                              }
+                              color="white"
+                              borderRadius="25px"
+                              size="sm"
+                              textTransform="none">
+                              {available}
+                            </Badge>
                             <Text>Wohnungsgröße: {cleanedSize}m²</Text>
                             <Progress
                               value={parseInt(cleanedSize)}
