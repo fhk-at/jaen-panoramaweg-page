@@ -1,3 +1,5 @@
+//#region > Components
+
 import {ChevronDownIcon} from '@chakra-ui/icons'
 import {Box, Text, Center, VStack} from '@chakra-ui/react'
 
@@ -15,7 +17,7 @@ const HeroSection = (): JSX.Element => {
   return (
     <>
       <style.HeroStyle>
-        <Box h="100vh" justifyContent="center" alignContent="center">
+        <Box h="100vh">
           <fields.ImageField
             fieldName="herobackground"
             initValue={{
@@ -26,32 +28,40 @@ const HeroSection = (): JSX.Element => {
             className="herobackground"
           />
           {/* <HeroHidden /> */}
-          <VStack spacing="5" pt="40vh">
-            <StaticImage
-              src="../../../images/logo_white.png"
-              title="Logo"
-              alt="Logo"
-              className="herologo"
-            />
-            <Link to="imagetopsection" isDynamic smooth={true}>
-              <Box
-                position="relative"
-                marginTop="2rem"
-                padding="1rem"
-                borderRadius="30px"
-                backgroundColor="white"
-                color="black"
-                justifyContent="center"
-                alignContent="center"
-                zIndex={10}
-                display="flex"
-                pointerEvents="all"
-                cursor="pointer">
-                <ChevronDownIcon w={6} h={6} />
-                <Text>Mehr dazu</Text>
-              </Box>
-            </Link>
-          </VStack>
+          <Box
+            justifyContent="center"
+            alignContent="center"
+            position="absolute"
+            top="0"
+            w="100%"
+            pointerEvents="none">
+            <VStack spacing="5" pt="40vh">
+              <StaticImage
+                src="../../../images/logo_white.png"
+                title="Logo"
+                alt="Logo"
+                className="herologo"
+              />
+              <Link to="imagetopsection" isDynamic smooth={true}>
+                <Box
+                  position="relative"
+                  marginTop="2rem"
+                  padding="1rem"
+                  borderRadius="30px"
+                  backgroundColor="white"
+                  color="black"
+                  justifyContent="center"
+                  alignContent="center"
+                  zIndex={10}
+                  display="flex"
+                  pointerEvents="all"
+                  cursor="pointer">
+                  <ChevronDownIcon w={6} h={6} />
+                  <Text>Mehr dazu</Text>
+                </Box>
+              </Link>
+            </VStack>
+          </Box>
         </Box>
       </style.HeroStyle>
     </>

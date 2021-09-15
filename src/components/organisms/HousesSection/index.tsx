@@ -39,9 +39,9 @@ interface Props {
 const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   const site = usePages()
 
-  // const addDot = (x: any) => {
-  //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  // };
+  const addDot = (x: any) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+  }
   const store = site?.nodes
   let minPrice = 0
   let maxPrice = 0
@@ -138,6 +138,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             heading = head
 
             fetchData(grandchildren)
+            minPrice = addDot(minPrice)
+            maxPrice = addDot(maxPrice)
 
             cards.push(
               <Box
