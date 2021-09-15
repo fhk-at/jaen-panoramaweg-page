@@ -28,7 +28,8 @@ import {
   Progress,
   Wrap,
   Button,
-  Badge
+  Badge,
+  VStack
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import * as style from './style'
@@ -271,7 +272,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <>
                     <Link to={link}>
                       <Box
-                        width={['90%', '90%', '', '30vw']}
+                        width={['90%', '90%', '580px', '580px']}
                         border="1px"
                         borderColor="panoramaweg.lightgray"
                         padding="5"
@@ -281,31 +282,37 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                         ml={['auto', 'auto', '0', '0']}
                         mr={['auto', 'auto', '0', '0']}>
                         <Flex direction={['column', 'column', 'row', 'row']}>
-                          <Image
-                            src={image}
-                            alt="apartmentcardimg"
-                            w="300px"
-                            h="200px"
+                          <VStack
+                            spacing="0"
                             ml={['auto', 'auto', '0', '0']}
                             mr={['auto', 'auto', '0', '0']}
                             mt={['0', '0', 'auto', 'auto']}
-                            mb={['5', '5', 'auto', 'auto']}
-                          />
-                          <Container size="lg">
-                            <Heading>{formatedSlug}</Heading>
+                            mb={['5', '5', 'auto', 'auto']}>
+                            <Image
+                              src={image}
+                              alt="apartmentcardimg"
+                              w="300px"
+                              h="200px"
+                            />
                             <Badge
-                              fontSize="xs"
                               backgroundColor={
                                 available === 'Verfügbar'
                                   ? 'panoramaweg.green'
                                   : '#f61a42'
                               }
+                              width="300px"
+                              height="30px"
                               color="white"
-                              borderRadius="25px"
-                              size="sm"
-                              textTransform="none">
+                              textTransform="none"
+                              textAlign="center"
+                              fontSize="1.1rem"
+                              pt="0.6">
                               {available}
                             </Badge>
+                          </VStack>
+                          <Container size="lg">
+                            <Heading>{formatedSlug}</Heading>
+
                             <Text>Wohnungsgröße: {cleanedSize}m²</Text>
                             <Progress
                               value={parseInt(cleanedSize)}

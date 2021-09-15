@@ -144,14 +144,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             cards.push(
               <Box
                 padding="5"
-                border={['0px', '0px', '1px', '1px']}
-                borderBottom="1px"
-                borderColor={[
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray'
-                ]}
+                border="1px"
+                borderColor="panoramaweg.lightgray"
                 borderRadius="25px">
                 <Flex direction={['column', 'column', 'row', 'row']}>
                   <Image
@@ -161,8 +155,13 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     height="170px"
                     ml={['auto', 'auto', '0', '0']}
                     mr={['auto', 'auto', '0', '0']}
+                    mb={['5', '5', '0', '0']}
                   />
-                  <Container minW="235px">
+                  <Box
+                    ml={['0', '0', '5', '5']}
+                    minW="210px"
+                    alignContent={['center', 'center', 'start', 'start']}
+                    justifyContent={['center', 'center', 'start', 'start']}>
                     <Heading fontSize="1.25rem">{heading}</Heading>
                     <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
                     <Flex mb="3">
@@ -224,7 +223,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                         {minPrice} - {maxPrice}
                       </Text>
                     </Flex>
-                  </Container>
+                  </Box>
                 </Flex>
                 <Flex
                   marginTop="3"
@@ -266,7 +265,12 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             )
           }
           return (
-            <Wrap justify="center" spacing="5" maxW="75vw" ml="auto" mr="auto">
+            <Wrap
+              justify="center"
+              spacing="5"
+              maxW={['90%', '100%', '100%', '75vw']}
+              ml="auto"
+              mr="auto">
               {cards.map((card, key) => {
                 return <Box key={key}>{card}</Box>
               })}
