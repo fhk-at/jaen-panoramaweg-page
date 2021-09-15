@@ -41,9 +41,11 @@ const Footer = (): JSX.Element => {
           mt="2"
           fontSize={['0.7rem', '0.8rem', '1.1rem', '1.1rem']}>
           <Text>Made with</Text>
-          <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
-            <HiHeart />
-          </IconContext.Provider>
+          <Link href="https://snek.at" isExternal>
+            <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
+              <HiHeart />
+            </IconContext.Provider>
+          </Link>
           <Text>by</Text>
           <Text ml="1" color="blue.400">
             InspireMedia GmbH
@@ -54,6 +56,9 @@ const Footer = (): JSX.Element => {
           <HStack spacing="5" mt="2">
             <Link href="https://www.top-immo.org/about" isExternal>
               Impressum
+            </Link>
+            <Link fontSize="sm" href="https://snek.at" isExternal>
+              Powered by Snek
             </Link>
             <Link href="https://www.top-immo.org/privacy" isExternal>
               Datenschutz
