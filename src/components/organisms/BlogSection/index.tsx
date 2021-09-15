@@ -96,8 +96,6 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                 fields?.blogimgleftimg?.content?.src ||
                 'https://i.ibb.co/J2jzkBx/placeholder.jpg'
 
-              console.log(slug)
-
               cards.push(
                 <Link to={'/blog/' + slug + '/'}>
                   <Box

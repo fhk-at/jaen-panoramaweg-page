@@ -2,7 +2,15 @@
 //> React
 // Contains all the functionality necessary to define React components
 // import React from "react";
-import {Box, Flex, HStack, IconButton, VStack, Collapse} from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  HStack,
+  IconButton,
+  VStack,
+  Collapse,
+  Spacer
+} from '@chakra-ui/react'
 import {HamburgerIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
 import {StaticImage} from 'gatsby-plugin-image'
@@ -67,28 +75,45 @@ const Navbar = (): JSX.Element => {
             <Link to="/kontakt/">Kontakt</Link>
           </HStack>
           <IconButton
+            ml="auto"
+            width="8vh"
+            height="8vh"
             display={['block', 'block', 'none', 'none']}
             mt="4vh"
-            mr="10"
+            mr="5"
             aria-label="Linkmenü"
-            icon={<HamburgerIcon />}
+            icon={<HamburgerIcon boxSize="50px" />}
             onClick={() => {
               setLinkMenue(!linkMenue)
             }}
           />
           <Collapse in={linkMenue}>
-            <VStack
-              width="100%"
-              spacing="3"
-              position="absolute"
-              top="15vh"
-              left="0"
-              bg="whiteAlpha.800">
-              <Link to="/projekt/">Immobilie</Link>
-              <Link to="/lage/">Lage</Link>
-              <Link to="/">Baufortschritt</Link>
-              <Link to="/kontakt/">Kontakt</Link>
-            </VStack>
+            <Box display={['block', 'block', 'none', 'none']}>
+              <VStack
+                width="100%"
+                spacing="3"
+                position="absolute"
+                top="15vh"
+                left="0"
+                bg="whiteAlpha.800"
+                fontSize="2rem">
+                <Link to="/projekt/">Immobilie</Link>
+                <Link to="/lage/">Lage</Link>
+                <scroll.Link
+                  to="blogsection"
+                  isDynamic
+                  smooth
+                  style={{cursor: 'pointer'}}
+                  onClick={() => {
+                    window.location.pathname === '/'
+                      ? null
+                      : navigate('/#blogsection')
+                  }}>
+                  Baufortschritt
+                </scroll.Link>
+                <Link to="/kontakt/">Kontakt</Link>
+              </VStack>
+            </Box>
           </Collapse>
         </Flex>
       </Box>

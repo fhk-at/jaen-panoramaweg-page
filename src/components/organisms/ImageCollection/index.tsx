@@ -24,7 +24,7 @@ const ImageCollection = () => {
           '2100px'
         ]}
         spacing="0"
-        mb="10">
+        mb="20">
         <LightBox
           previewImage={
             <fields.ImageField

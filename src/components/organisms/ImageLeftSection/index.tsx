@@ -21,15 +21,15 @@ const ImageLeftSection = ({
   imgleftheading
 }: Props): JSX.Element => {
   return (
-    <Box as="section" id="imageleftsection" maxW="95%">
-      <Flex fontSize="1.1rem" direction={['column', 'column', 'row', 'row']}>
+    <Box as="section" id="imageleftsection" maxW="100%">
+      <Flex fontSize="1.1rem" direction={['column', 'column', 'column', 'row']}>
         {imgleftimg}
         <Box
           ml="5"
           mr={['5', '5', '0', '0']}
           justifyContent={['center', 'center', '', '']}
           alignContent={['center', 'center', '', '']}>
-          <Heading mb="5" fontSize="1.5rem">
+          <Heading mb="10" fontSize="1.5rem">
             {imgleftheading}
           </Heading>
           <Text maxW={['100%', '100%', '50vw', '50vw']}>{imgleftrichtext}</Text>

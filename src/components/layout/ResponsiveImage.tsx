@@ -19,10 +19,22 @@ export const ResponsiveImage = styled(Box)`
       margin-right: auto;
     }
     ${mq[2]} {
+      width: 300px;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ${mq[3]} {
+      width: 300px;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ${mq[4]} {
       width: 22vw;
       height: 26vh;
     }
-    ${mq[3]} {
+    ${mq[5]} {
       width: 22vw;
       height: 26vh;
     }

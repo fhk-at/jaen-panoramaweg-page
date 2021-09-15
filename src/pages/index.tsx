@@ -117,7 +117,7 @@ const IndexPage = () => {
             />
           }
         />
-        <Box paddingTop="5" />
+        <Box paddingTop="10" />
         <BlogSection
           bloghead={
             <fields.TextField
@@ -134,12 +134,12 @@ const IndexPage = () => {
             />
           }
         />
-        <Center marginBottom="10">
+        <Center marginBottom="20">
           <StaticImage
             src="../images/logo_short.png"
             title="Logo"
             alt="Logo"
-            style={{width: '300px'}}
+            style={{width: '300px', height: '180px'}}
             imgStyle={{objectFit: 'contain'}}
           />
         </Center>

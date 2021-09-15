@@ -3,7 +3,8 @@
 // Contains all the functionality necessary to define React components
 import React from 'react'
 import {fields} from '@snek-at/jaen-pages'
-import {store as JaenStore} from '@snek-at/jaen-pages/src/store'
+import {usePages} from '@snek-at/jaen-pages/src/contexts/cms'
+import {SitePages} from '@snek-at/jaen-pages/src/types'
 // React Router
 // import { Link } from "react-router-dom";
 //> MDB
@@ -21,7 +22,6 @@ import {
   Image,
   Badge,
   Button,
-  Spacer,
   Progress
 } from '@chakra-ui/react'
 
@@ -37,10 +37,12 @@ interface Props {
 
 //#region > Components
 const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
+  const site = usePages()
+
   // const addDot = (x: any) => {
   //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   // };
-  const store = JaenStore.getState().site?.allSitePage?.nodes
+  const store = site?.nodes
   let minPrice = 0
   let maxPrice = 0
   let maxSize = 0
@@ -113,8 +115,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
         fieldName="houseindex"
         fixedSlug="SitePage /haus/"
         onRender={page => {
-          console.log('store:', JaenStore.getState())
-          console.log('parent', page)
           const children = page?.children || []
 
           const cards = []
@@ -159,7 +159,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     ml={['auto', 'auto', '0', '0']}
                     mr={['auto', 'auto', '0', '0']}
                   />
-                  <Container minW="235px" centerContent>
+                  <Container minW="235px">
                     <Heading fontSize="1.25rem">{heading}</Heading>
                     <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
                     <Flex mb="3">

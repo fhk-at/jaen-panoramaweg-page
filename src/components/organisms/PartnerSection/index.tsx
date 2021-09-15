@@ -30,12 +30,12 @@ Props): JSX.Element => {
       as="section"
       id="partnersection"
       backgroundColor="panoramaweg.lightgray"
-      pb="5">
+      pb="10">
       <Container centerContent width="100vw" fontSize="1.1rem">
-        <Heading as="h2" fontSize="1.5rem" mt="3">
+        <Heading as="h2" fontSize="1.5rem" mt="6">
           {head1}
         </Heading>
-        <Text mb="5">{subhead1}</Text>
+        <Text mb="10">{subhead1}</Text>
       </Container>
       {partners1}
     </Box>

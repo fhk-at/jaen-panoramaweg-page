@@ -159,7 +159,7 @@ const ContactPage: JaenTemplate = () => {
         width={['100%', '100%', '70vw', '70vw']}
         centerContent
         mb="5"
-        mt="10">
+        mt="20">
         <Flex direction={['column', 'column', 'row', 'row']}>
           <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
             <Heading

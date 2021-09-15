@@ -30,7 +30,6 @@ import {
   Button
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
-import ImageCollection from '../../components/organisms/ImageCollection'
 import * as style from './style'
 //#endregion
 
@@ -348,9 +347,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             Filter deaktivieren
           </Button>
         </Container>
-        <Center>
-          <ImageCollection />
-        </Center>
+
         <Footer />
       </Box>
     </style.responsiveImage>

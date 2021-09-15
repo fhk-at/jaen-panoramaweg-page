@@ -14,7 +14,12 @@ import * as style from './partnerStyle'
 const PartnerCard: JaenBlock = () => {
   return (
     <style.PartnerStyle>
-      <Box>
+      <Box
+        borderWidth="1px"
+        borderRadius="lg"
+        overflow="hidden"
+        padding="5"
+        bg="white">
         <fields.ImageField
           fieldName="partnerblockimg"
           initValue={{
