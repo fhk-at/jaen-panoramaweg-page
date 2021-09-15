@@ -30,7 +30,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
 
   return (
     <Element id="blogsection">
-      <Container centerContent maxW="80vw" mb="10" mt="5">
+      <Container centerContent maxW="80vw" mb="20" mt="10">
         <Heading fontSize="1.5rem">{bloghead}</Heading>
         <Text fontSize="1.1rem" mb="5">
           {blogsubhead}
@@ -70,7 +70,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
             )
           }}
         />
-        <Box marginTop="5" />
+        <Box marginTop="10" />
         <fields.IndexField
           fieldName="blogindex"
           fixedSlug="SitePage /blog/"

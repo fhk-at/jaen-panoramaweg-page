@@ -104,7 +104,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   }
 
   return (
-    <Box as="section" id="housesection" mb="10" mt="10">
+    <Box as="section" id="housesection" mb="20" mt="20">
       <Container centerContent maxW="40vw">
         <Heading fontSize="1.75rem">{househead}</Heading>
         <Text fontSize="1.1rem" mb="5">
