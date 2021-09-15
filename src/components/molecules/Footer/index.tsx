@@ -25,7 +25,7 @@ const Footer = (): JSX.Element => {
       h="12vh"
       position="absolute"
       bottom="0">
-      <Container w="fit-content" centerContent color="panoramaweg.dark" pt="6">
+      <Container w="fit-content" centerContent color="panoramaweg.dark" pt="4">
         <Flex>
           <IconContext.Provider value={{style: {marginTop: '3'}}}>
             <BiCopyright />
@@ -50,7 +50,7 @@ const Footer = (): JSX.Element => {
           </Text>
           <Text>.</Text>
         </Flex>
-        <Flex fontSize={['xx-small', 'xx-small', 'xs', 'xs']}>
+        <Flex fontSize="xs">
           <HStack spacing="5" mt="2">
             <Link href="https://www.top-immo.org/about" isExternal>
               Impressum
