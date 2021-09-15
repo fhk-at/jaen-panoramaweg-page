@@ -141,9 +141,18 @@ const ContactPage: JaenTemplate = () => {
             Sie sind an einer unserer Immobilien interessiert?
           </Heading>
         ) : (
-          <Flex fontSize="1.75rem">
+          <Flex
+            fontSize="1.75rem"
+            direction={['column', 'column', 'row', 'row']}>
             <Heading mr="1">Sie sind an</Heading>
-            <Badge colorScheme="greenwhite" borderRadius="25px" pl="3" pr="3">
+            <Badge
+              colorScheme="greenwhite"
+              borderRadius="25px"
+              pl="3"
+              pr="3"
+              width="min-content"
+              ml="auto"
+              mr="auto">
               <Text marginTop="2" fontSize="xl">
                 {top}
               </Text>
