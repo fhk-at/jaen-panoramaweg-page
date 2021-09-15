@@ -65,7 +65,7 @@ const ApartmentPage: JaenTemplate = () => {
         id="apartmentpage"
         minH="100vh"
         overflow="hidden"
-        paddingTop="15vh"
+        paddingTop="140px"
         paddingBottom="12vh">
         <Navbar />
         <Center mb="5">

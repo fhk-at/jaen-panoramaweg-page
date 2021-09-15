@@ -28,7 +28,7 @@ const BlogPage: JaenTemplate = () => {
         as="section"
         id="blogpage"
         pb="12vh"
-        pt="15vh"
+        pt="140px"
         minH={['', '', '100vh', '100vh']}>
         <Navbar />
         <Container

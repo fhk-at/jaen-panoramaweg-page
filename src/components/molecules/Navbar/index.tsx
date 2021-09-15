@@ -33,7 +33,7 @@ const Navbar = (): JSX.Element => {
       <Box
         as="section"
         id="navbar"
-        height="15vh"
+        height="140px"
         width="100%"
         zIndex="15"
         backgroundColor="whiteAlpha.800"
@@ -52,9 +52,9 @@ const Navbar = (): JSX.Element => {
           </Link>
           <HStack
             display={['none', 'none', 'inline', 'inline']}
-            pr="4.2vw"
-            spacing="8"
-            pt="6vh"
+            pr="12"
+            spacing="15"
+            pt="55"
             fontSize={['', '', '1.1rem', '1.4rem']}
             fontWeight="bold"
             ml="auto">
@@ -80,7 +80,7 @@ const Navbar = (): JSX.Element => {
             width={['6vh', '8vh']}
             height={['6vh', '8vh']}
             display={['block', 'block', 'none', 'none']}
-            mt="2vh"
+            mt="10"
             mr="5"
             aria-label="Linkmenü"
             icon={<HamburgerIcon boxSize={['40px', '50px']} />}

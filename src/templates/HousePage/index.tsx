@@ -82,7 +82,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         as="section"
         id="housepage"
         minH="100vh"
-        paddingTop="15vh"
+        paddingTop="140px"
         overflow="hidden"
         paddingBottom="12vh">
         <Navbar />
