@@ -55,7 +55,7 @@ const Navbar = (): JSX.Element => {
             pr="4.2vw"
             spacing="8"
             pt="6vh"
-            fontSize="1.4rem"
+            fontSize={['', '', '1.1rem', '1.4rem']}
             fontWeight="bold"
             ml="auto">
             <Link to="/projekt/">Immobilie</Link>
