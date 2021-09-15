@@ -135,7 +135,7 @@ const IndexPage = () => {
         />
         <Center marginBottom="20">
           <StaticImage
-            src="../images/logo_short.png"
+            src="../images/panoramaweg_dark.svg"
             alt="Logo"
             style={{width: '300px', height: '180px'}}
             imgStyle={{objectFit: 'contain'}}

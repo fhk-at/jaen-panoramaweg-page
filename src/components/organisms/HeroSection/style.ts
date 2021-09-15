@@ -14,22 +14,22 @@ export const HeroStyle = styled(Box)`
   .herologo {
     ${mq[0]} {
       width: 300px;
-      position: relative;
+      position: absolute;
       z-index: 10;
     }
     ${mq[1]} {
       width: 300px;
-      position: relative;
+      position: absolute;
       z-index: 10;
     }
     ${mq[2]} {
       width: 350px;
-      position: relative;
+      position: absolute;
       z-index: 10;
     }
     ${mq[3]} {
       width: 350px;
-      position: relative;
+      position: absolute;
       z-index: 10;
     }
   }

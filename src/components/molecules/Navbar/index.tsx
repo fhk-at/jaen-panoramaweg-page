@@ -43,7 +43,7 @@ const Navbar = (): JSX.Element => {
         <Flex fontWeight="bold">
           <Link to="/">
             <StaticImage
-              src="../../../images/logo_short.png"
+              src="../../../images/panoramaweg_dark.svg"
               alt="logo"
               className="navbarlogodiv"
               imgClassName="navbarlogoimg"
