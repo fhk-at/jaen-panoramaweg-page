@@ -34,7 +34,7 @@ const HeroSection = (): JSX.Element => {
             top="0"
             w="100%"
             pointerEvents="none">
-            <VStack spacing="5" pt="23rem">
+            <VStack spacing="5" pt={['18rem', '18rem', '23rem', '23rem']}>
               <StaticImage
                 src="../../../images/panoramaweg_light.svg"
                 alt="Logo"
