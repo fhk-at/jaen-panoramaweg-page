@@ -9,7 +9,8 @@ import {
   IconButton,
   VStack,
   Collapse,
-  Spacer
+  useColorModeValue,
+  useColorMode
 } from '@chakra-ui/react'
 import {HamburgerIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
@@ -27,6 +28,8 @@ import {useState} from 'react'
 //#region > Components
 const Navbar = (): JSX.Element => {
   const [linkMenue, setLinkMenue] = useState(false)
+  const {colorMode} = useColorMode()
+  const navbarColor = useColorModeValue('whiteAlpha.800', '#1a202cdc')
 
   return (
     <style.NavbarStyle>
@@ -36,18 +39,27 @@ const Navbar = (): JSX.Element => {
         height="140px"
         width="100%"
         zIndex="15"
-        backgroundColor="whiteAlpha.800"
+        backgroundColor={navbarColor}
         position="absolute"
         top="0"
         left="0">
         <Flex fontWeight="bold">
           <Link to="/">
-            <StaticImage
-              src="../../../images/panoramaweg_dark.svg"
-              alt="logo"
-              className="navbarlogodiv"
-              imgClassName="navbarlogoimg"
-            />
+            {colorMode === 'light' ? (
+              <StaticImage
+                src="../../../images/panoramaweg_dark.svg"
+                alt="logo"
+                className="navbarlogodiv"
+                imgClassName="navbarlogoimg"
+              />
+            ) : (
+              <StaticImage
+                src="../../../images/panoramaweg_light.svg"
+                alt="logo"
+                className="navbarlogodiv"
+                imgClassName="navbarlogoimg"
+              />
+            )}
           </Link>
           <HStack
             display={['none', 'none', 'inline', 'inline']}

@@ -24,6 +24,7 @@ import {
   Flex,
   Heading,
   Text,
+  useColorModeValue,
   VStack,
   Wrap
 } from '@chakra-ui/react'
@@ -36,6 +37,9 @@ import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
   const url = (typeof window !== 'undefined' && window.location.href) || ''
+  const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
+  const breadcumbFontColor = useColorModeValue('#0645AD', 'white')
+
   let breadcrumbs = url.split('/')
 
   breadcrumbs = breadcrumbs.slice(
@@ -70,24 +74,25 @@ const ApartmentPage: JaenTemplate = () => {
         <Navbar />
         <Center mb="5">
           <Breadcrumb
-            backgroundColor="panoramaweg.lightgray"
+            backgroundColor={bgColor}
             borderRadius="25px"
             w={['100%', '100%', '58vw', '58vw']}
             ml={['5', '5', '0', '0']}
             mr={['5', '5', '0', '0']}
-            padding="3">
+            padding="3"
+            color={breadcumbFontColor}>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">
+              <BreadcrumbLink>
                 <Link to="/">Übersicht</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">
+              <BreadcrumbLink>
                 <Link to={parenthref}>{breadcrumbs[0]}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">{breadcrumbs[1]}</BreadcrumbLink>
+              <BreadcrumbLink>{breadcrumbs[1]}</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </Center>
