@@ -1,145 +1,145 @@
-//#region > Imports
-//> React
-// Contains all the functionality necessary to define React components
-// import React from "react";
 import {
   Box,
   Flex,
   HStack,
   IconButton,
-  VStack,
-  Collapse,
+  useDisclosure,
   useColorModeValue,
-  useColorMode
+  Stack,
+  useBreakpointValue
 } from '@chakra-ui/react'
-import {HamburgerIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
-import {StaticImage} from 'gatsby-plugin-image'
-import * as scroll from 'react-scroll'
 import {navigate} from 'gatsby-link'
+import * as scroll from 'react-scroll'
 
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-// Style
-import * as style from './style'
-import {useState} from 'react'
-//#endregion
+const Links = [
+  {text: 'Immobilie', to: '/projekt/'},
+  {text: 'Lage', to: '/lage/'},
+  {
+    text: 'Baufortschritt',
+    to: 'blogsection',
+    scroll: true,
+    onClick: () =>
+      window.location.pathname === '/' ? null : navigate('/#blogsection')
+  },
+  {text: 'Kontakt', to: '/kontakt/'}
+]
 
-//#region > Components
-const Navbar = (): JSX.Element => {
-  const [linkMenue, setLinkMenue] = useState(false)
-  const {colorMode} = useColorMode()
-  const navbarColor = useColorModeValue('whiteAlpha.800', '#1a202cdc')
+import {HamburgerIcon, CloseIcon} from '@chakra-ui/icons'
+import {StaticImage} from 'gatsby-plugin-image'
+
+const Navbar = () => {
+  const {isOpen, onOpen, onClose} = useDisclosure()
+
+  const mainImageStyle = {
+    width: '17rem',
+    maxWidth: '50%',
+    marginLeft: '4.1vw'
+  }
+
+  const navbarBg = useColorModeValue('whiteAlpha.800', '#1a202cdc')
+
+  const mainImage = useColorModeValue(
+    <StaticImage
+      src="../../../images/panoramaweg_dark.svg"
+      alt="logo"
+      style={mainImageStyle}
+    />,
+    <StaticImage
+      src="../../../images/panoramaweg_light.svg"
+      alt="logo"
+      style={mainImageStyle}
+    />
+  )
+
+  const mobileImageStyle = {
+    width: '45px'
+  }
+
+  const mobileImage = (
+    <StaticImage
+      src="../../../images/panoramaweg_icon.svg"
+      alt="logo"
+      style={mobileImageStyle}
+    />
+  )
+
+  const logo = useBreakpointValue({base: mobileImage, md: mainImage})
+
+  const navbarHeight = useBreakpointValue({base: 75, md: 140})
+
+  const links = Links.map((link, index) => (
+    <Box
+      key={index}
+      px={2}
+      py={1}
+      fontWeight="bold"
+      fontSize={['1.1rem', '1.1em', '1.1rem', '1.4rem']}
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.200', 'gray.700')
+      }}>
+      {link.scroll ? (
+        <scroll.Link
+          offset={-80}
+          to={link.to}
+          isDynamic
+          smooth
+          onClick={link.onClick}
+          style={{cursor: 'pointer'}}>
+          {link.text}
+        </scroll.Link>
+      ) : (
+        <Link to={link.to}>{link.text}</Link>
+      )}
+    </Box>
+  ))
 
   return (
-    <style.NavbarStyle>
-      <Box
-        as="section"
-        id="navbar"
-        height="140px"
-        width="100%"
-        zIndex="15"
-        backgroundColor={navbarColor}
-        position="absolute"
-        top="0"
-        left="0">
-        <Flex fontWeight="bold">
-          <Link to="/">
-            {colorMode === 'light' ? (
-              <StaticImage
-                src="../../../images/panoramaweg_dark.svg"
-                alt="logo"
-                className="navbarlogodiv"
-                imgClassName="navbarlogoimg"
-              />
-            ) : (
-              <StaticImage
-                src="../../../images/panoramaweg_light.svg"
-                alt="logo"
-                className="navbarlogodiv"
-                imgClassName="navbarlogoimg"
-              />
-            )}
-          </Link>
-          <HStack
-            display={['none', 'none', 'inline', 'inline']}
-            pr="12"
-            spacing="15"
-            pt="55"
-            fontSize={['', '', '1.1rem', '1.4rem']}
-            fontWeight="bold"
-            ml="auto">
-            <Link to="/projekt/">Immobilie</Link>
-            <Link to="/lage/">Lage</Link>
-            <scroll.Link
-              offset={-80}
-              to="blogsection"
-              isDynamic
-              smooth
-              style={{cursor: 'pointer'}}
-              onClick={() => {
-                window.location.pathname === '/'
-                  ? null
-                  : navigate('/#blogsection')
-              }}>
-              Baufortschritt
-            </scroll.Link>
-            <Link to="/kontakt/">Kontakt</Link>
+    <Box
+      bg={navbarBg}
+      zIndex={100}
+      textAlign="center"
+      pos="absolute"
+      top={0}
+      left={0}
+      width="100%">
+      <Flex
+        h={navbarHeight}
+        mx={5}
+        alignItems={'center'}
+        justifyContent={'space-between'}>
+        <Flex alignItems={'center'}>
+          <HStack spacing={8} alignItems={'center'}>
+            <Link to="/">{logo}</Link>
           </HStack>
-          <IconButton
-            ml="auto"
-            width={['50px', '60px']}
-            height={['50px', '60px']}
-            display={['block', 'block', 'none', 'none']}
-            mt={['45px', '40px']}
-            mr="5"
-            aria-label="Linkmenü"
-            icon={<HamburgerIcon boxSize={['40px', '50px']} />}
-            onClick={() => {
-              setLinkMenue(!linkMenue)
-            }}
-          />
-          <Collapse in={linkMenue}>
-            <Box display={['block', 'block', 'none', 'none']}>
-              <VStack
-                width="100%"
-                spacing="3"
-                position="absolute"
-                top="140px"
-                left="0"
-                bg="white"
-                fontSize="2rem">
-                <Link to="/projekt/">Immobilie</Link>
-                <Link to="/lage/">Lage</Link>
-                <scroll.Link
-                  offset={-80}
-                  to="blogsection"
-                  isDynamic
-                  smooth
-                  style={{cursor: 'pointer'}}
-                  onClick={() => {
-                    window.location.pathname === '/'
-                      ? null
-                      : navigate('/#blogsection')
-                  }}>
-                  Baufortschritt
-                </scroll.Link>
-                <Link to="/kontakt/">Kontakt</Link>
-              </VStack>
-            </Box>
-          </Collapse>
         </Flex>
-      </Box>
-    </style.NavbarStyle>
+        <HStack
+          as={'nav'}
+          spacing={4}
+          display={{base: 'none', md: 'flex'}}
+          mr="4.1vw">
+          {links}
+        </HStack>
+        <IconButton
+          size={'md'}
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          aria-label={'Open Menu'}
+          display={{md: 'none'}}
+          onClick={isOpen ? onClose : onOpen}
+        />
+      </Flex>
+
+      {isOpen ? (
+        <Box pb={4} display={{md: 'none'}}>
+          <Stack as={'nav'} spacing={4}>
+            {links}
+          </Stack>
+        </Box>
+      ) : null}
+    </Box>
   )
 }
-//#endregion
 
-//#region > Exports
 export default Navbar
-//#endregion
-
-/**
- * SPDX-License-Identifier: (EUPL-1.2)
- * Copyright © 2021 Christian Aichner
- */
