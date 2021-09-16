@@ -20,12 +20,12 @@ export const responsiveImage = styled(Box)`
       margin-bottom: 5;
     }
     ${mq[2]} {
-      width: 22vw;
-      height: 26vh;
+      width: 600px;
+      height: 360px;
     }
     ${mq[3]} {
-      width: 22vw;
-      height: 26vh;
+      width: 600px;
+      height: 360px;
     }
   }
 `
