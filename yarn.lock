@@ -3474,10 +3474,10 @@
     js-cookie "^2.2.1"
     subscriptions-transport-ws "^0.9.18"
 
-"@snek-at/jaen-pages@^2.0.0-beta.43":
-  version "2.0.0-beta.43"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.43.tgz#e19025c7856f788a72c3edbd7e810c3c2dc1bf3a"
-  integrity sha512-GSagKfn4qu0hZ/mjVM462GJ+bG4+CDnMq5TjvEwAD8BAQ1udQ8eV338psHoalnKO0lCxqVY6BXLRI/f6Zl/czA==
+"@snek-at/jaen-pages@^2.0.0-beta.44":
+  version "2.0.0-beta.44"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.44.tgz#cf4367f6cf08877007dff624278630c6eabc01da"
+  integrity sha512-Ea4WZ7I4xW4x+sQ8ilp3JW85J9ifD4tVI6h+obX0s2cdroXEq2ddjVdiUjmfRLNppBRsWJ9Y/dhbLeKHkbDvkQ==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.6.7"
@@ -3498,6 +3498,7 @@
     gatsby-alias-imports "^1.0.6"
     gatsby-plugin-compile-es6-packages "^2.1.1"
     gatsby-plugin-image "^1.13.0"
+    gatsby-plugin-react-helmet "^4.13.0"
     gatsby-plugin-sharp "^3.13.0"
     gatsby-source-filesystem "^3.13.0"
     gatsby-transformer-sharp "^3.13.0"
@@ -10584,7 +10585,7 @@ gatsby-plugin-page-creator@^3.13.0:
     globby "^11.0.4"
     lodash "^4.17.21"
 
-gatsby-plugin-react-helmet@^4.12.0:
+gatsby-plugin-react-helmet@^4.12.0, gatsby-plugin-react-helmet@^4.13.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-4.13.0.tgz#58f50bc9afb0f04a0726453c0827a59d7a159c7a"
   integrity sha512-GwIqbhFtPDryftM6NEWdjgWNDpWhyifgshDxtIh8PMSEIs7VMg2tgLQf8W8EpSP7yXu3aKDm/pxFXRlPZPk9cA==
