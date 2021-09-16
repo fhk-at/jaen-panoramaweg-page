@@ -2,25 +2,33 @@
   "pages": {
     "SitePage /": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbZANvfWxbFDw6WWAWpZk5SkLqUmqDfexpsE5a4KwQLTR",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmYiG66UJVF5HG7x2qovAmhYYVZG9Nt5in4BETQtNHHcAy"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbZANvfWxbFDw6WWAWpZk5SkLqUmqDfexpsE5a4KwQLTR",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmZmzFme4WwhAZpFebusABUorBZC7b39Mz1PXB4wwGZYLH",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     },
     "SitePage /f0481534-5c1b-4ea1-b3af-da13bf105a63": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmXEgFCjN3ZGNcKBhDZNy4PMwNzheC4D5oRNQXpqzfUn6h",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmfGQwPT129rWLx8AwYYRDkwKrTkR5yasSrmfAWnamjJTj"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmXEgFCjN3ZGNcKBhDZNy4PMwNzheC4D5oRNQXpqzfUn6h",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmTiomo6LNDtBS4ja13m6sBw7o7TSPGB2hxTrfBZqhvsSX",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     },
@@ -50,25 +58,33 @@
     },
     "SitePage /007148f9-383c-4344-a6a0-59c2bd599ce5": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmWA5aMJXWQPoqawa3cxRG68NAi6XB9iiQbynA9agL6NBo",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmWu4utY8TR2bcF1MFTMnCqiPq6RahZyuqaoed33fspdyZ"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmWA5aMJXWQPoqawa3cxRG68NAi6XB9iiQbynA9agL6NBo",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmaJA6yA3xzGgMbbo2Bjrx7ZxikkE5NKeRQHUgG2qLHnbp",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     },
     "SitePage /59742698-3177-45d8-8128-12317dcc2abf": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmdB67fVnrf768r6S86NMwTmj7XWhTdisVkVawYbtgq5EM",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmWFPMviDsSyNwASdoFjFu5u77yTxxT9Mgun3Ei3vZum8o"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmdB67fVnrf768r6S86NMwTmj7XWhTdisVkVawYbtgq5EM",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/Qmdi5kTXBbgeKQdBB3Z1cgA7WHVXmawzXFkR46z3z4ovtQ",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     },
@@ -98,13 +114,17 @@
     },
     "SitePage /f622f7f1-cbbe-4909-9495-bf2180dff3ad": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbisqzZ868wKFwbURvRoxFwMxYdkF6uiqSH1ZSioGSbrd",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmRKJCPN32b7JAMNbjxkSCwEw7h3QF4LAsny8isMvvhr4X"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbisqzZ868wKFwbURvRoxFwMxYdkF6uiqSH1ZSioGSbrd",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmewWesk7P4W2B84WkcWfBq7MYVNteLj2nWaE2fk2eEEPT",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     },
@@ -134,15 +154,67 @@
     },
     "SitePage /82bc7c2e-5e2a-4c05-85da-b6bfc8a6f666": {
       "context": {
-        "fileUrl": "https://cloudflare-ipfs.com/ipfs/Qma1UZP9Y1NEYFvK3Cke3NQMgnBokDyMCkDJ3xWGxtJwLu",
-        "createdAt": "2021-09-15T19:17:05.227Z"
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmVL7hAavyDNhTesjMQWo19AAa1tLG52innpLoSx2wL1Ws"
       },
       "migrations": [
         {
           "fileUrl": "https://cloudflare-ipfs.com/ipfs/Qma1UZP9Y1NEYFvK3Cke3NQMgnBokDyMCkDJ3xWGxtJwLu",
           "createdAt": "2021-09-15T19:17:05.227Z"
+        },
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmVQG4yfBwUqwwUqR8YhLwQCrQAtQHmvSxLpVTCmGkDw3j",
+          "createdAt": "2021-09-16T01:42:53.260Z"
+        }
+      ]
+    },
+    "SitePage /projekt/": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmSRPrDpaiW5mBnPeuGvBvD9JqH91W59u8hS1iCewFXyNR",
+        "createdAt": "2021-09-16T01:42:53.260Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmSRPrDpaiW5mBnPeuGvBvD9JqH91W59u8hS1iCewFXyNR",
+          "createdAt": "2021-09-16T01:42:53.260Z"
+        }
+      ]
+    },
+    "SitePage /lage/": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbsPj9b6wyMudW3j2dhCiFdax6cCpQETwPe4ZoJN3yH2h",
+        "createdAt": "2021-09-16T01:42:53.260Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmbsPj9b6wyMudW3j2dhCiFdax6cCpQETwPe4ZoJN3yH2h",
+          "createdAt": "2021-09-16T01:42:53.260Z"
         }
       ]
     }
+  },
+  "site": {
+    "context": {
+      "createdAt": "2021-09-16T01:42:53.260Z",
+      "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmaFftwS11cfjH7pdSeXkBEUiTUpqt52yBruYC21JkyB1R"
+    },
+    "migrations": [
+      {
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmaFftwS11cfjH7pdSeXkBEUiTUpqt52yBruYC21JkyB1R"
+      }
+    ]
+  },
+  "snekFinder": {
+    "context": {
+      "createdAt": "2021-09-16T01:42:53.260Z",
+      "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmVjPfFx7vEC8tmmFEqAM8G2jm7u5CGQRb8pSbynByRxHp"
+    },
+    "migrations": [
+      {
+        "createdAt": "2021-09-16T01:42:53.260Z",
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmVjPfFx7vEC8tmmFEqAM8G2jm7u5CGQRb8pSbynByRxHp"
+      }
+    ]
   }
 }

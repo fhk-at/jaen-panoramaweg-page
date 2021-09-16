@@ -1,8 +1,8 @@
 {
   "title": "snek site",
-  "description": " This is a blog theme. The description will be showed in SEO results on pages without their own descriptions.",
-  "siteUrl": "https://example.com",
-  "image": "https://ipfs.io/ipfs/QmcaK19wKwbvuLEZAb8k1dATCC3aQmQJyFkuWggcVGtDvg",
+  "description": "Leistbar, top Qualität, top Lage. Das sind die Ansprüche der TOP Immo W.M. Treuhand GmbH als Bauträger am österreichischen Immobilienmarkt.",
+  "siteUrl": "https://jaen-panoramaweg-page.emailwerk.snek.at",
+  "image": "https://cloudflare-ipfs.com/ipfs/QmaPb4WxDEDh3rJUSb37YvrMwznXtmE4qfVoqhrgZZMbfM",
   "author": {
     "name": "Your Name",
     "minibio": "This bio is shown at the bottom of each blog post. It supports <strong>custom HTML</strong> if you’re into that sort of thing."

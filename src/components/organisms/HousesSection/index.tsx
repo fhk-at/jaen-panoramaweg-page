@@ -51,8 +51,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   let numFlats = 0
   let apartmentTypes: string[] = []
   let heading = ''
-
   function cleanFieldValues(value: string, type: string) {
+    console.log('cleanFieldValues', value, type)
     value = value.substring(3, value.length - 4)
     if (type === 'price') {
       value = value.replaceAll('.', '')

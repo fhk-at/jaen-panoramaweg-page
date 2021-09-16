@@ -147,7 +147,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           </Text>
           <Flex direction={['column', 'column', 'row', 'row']}>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
@@ -174,7 +174,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               </HStack>
             </Box>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
@@ -201,7 +201,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               </HStack>
             </Box>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
