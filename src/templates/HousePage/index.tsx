@@ -89,7 +89,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         <Navbar />
         <Container
           centerContent
-          maxW={['100%', '100%', '80vw', '80vw']}
+          maxW={['100%', '100%', '90vw', '90vw']}
           borderBottom="1px"
           borderColor="panoramaweg.lightgray"
           pb="12"

@@ -45,11 +45,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
           options={[
             'Finanzierung',
             'Baustart',
-            'Platzhalter',
-            'Platzhalter',
+            'Platzhalter1',
+            'Platzhalter2',
             'Fertigstellung'
           ]}
-          initValue={2}
+          initValue={'Finanzierung'}
           onRenderPopover={null}
           onRender={(selection, options, onSelect, isEditing) => {
             if (!isWindow) {

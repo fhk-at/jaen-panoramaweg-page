@@ -76,10 +76,10 @@ const Navbar = (): JSX.Element => {
           </HStack>
           <IconButton
             ml="auto"
-            width={['6vh', '8vh']}
-            height={['6vh', '8vh']}
+            width={['50px', '60px']}
+            height={['50px', '60px']}
             display={['block', 'block', 'none', 'none']}
-            mt="12"
+            mt={['45px', '40px']}
             mr="5"
             aria-label="Linkmenü"
             icon={<HamburgerIcon boxSize={['40px', '50px']} />}
