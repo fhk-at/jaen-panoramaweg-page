@@ -3474,10 +3474,10 @@
     js-cookie "^2.2.1"
     subscriptions-transport-ws "^0.9.18"
 
-"@snek-at/jaen-pages@^2.0.0-beta.44":
-  version "2.0.0-beta.44"
-  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.44.tgz#cf4367f6cf08877007dff624278630c6eabc01da"
-  integrity sha512-Ea4WZ7I4xW4x+sQ8ilp3JW85J9ifD4tVI6h+obX0s2cdroXEq2ddjVdiUjmfRLNppBRsWJ9Y/dhbLeKHkbDvkQ==
+"@snek-at/jaen-pages@^2.0.0-beta.45":
+  version "2.0.0-beta.45"
+  resolved "https://registry.yarnpkg.com/@snek-at/jaen-pages/-/jaen-pages-2.0.0-beta.45.tgz#db876f6e5f8d3f8e440135b0d59204f5061d1c9c"
+  integrity sha512-zR+hCAWlHrMxTQfGBx50IY9NaAilKk/XNa2hmY54HQUHv8YaVIuiEzKWpxkPXEf+M4owwbiHMpSoGZ/HU/PJjQ==
   dependencies:
     "@chakra-ui/icons" "^1.0.15"
     "@chakra-ui/react" "^1.6.7"

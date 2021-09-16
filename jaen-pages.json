@@ -95,6 +95,30 @@
           "createdAt": "2021-09-16T05:23:04.487Z"
         }
       ]
+    },
+    "SitePage /projekt/": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmP6H23VNGDMGLpEA8bLvpm4DqH2UQkYfMMvA3schpqT2f",
+        "createdAt": "2021-09-16T20:10:14.639Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmP6H23VNGDMGLpEA8bLvpm4DqH2UQkYfMMvA3schpqT2f",
+          "createdAt": "2021-09-16T20:10:14.639Z"
+        }
+      ]
+    },
+    "SitePage /lage/": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmUCc3odBuzKwBn2VrYy8bLrDCe3rZ4YmYTayvhsYZvty8",
+        "createdAt": "2021-09-16T20:10:14.639Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmUCc3odBuzKwBn2VrYy8bLrDCe3rZ4YmYTayvhsYZvty8",
+          "createdAt": "2021-09-16T20:10:14.639Z"
+        }
+      ]
     }
   },
   "snekFinder": {
