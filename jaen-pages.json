@@ -1,3 +1,28 @@
 {
-  "pages": {}
+  "pages": {
+    "SitePage /e50037f7-9b46-4d3d-b1ac-c5ad4978c2d2": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmS6sRzqmEP43vgRHkZygesHykR2ARFaEm7rYR9HRkiLrj",
+        "createdAt": "2021-09-16T04:53:02.186Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmS6sRzqmEP43vgRHkZygesHykR2ARFaEm7rYR9HRkiLrj",
+          "createdAt": "2021-09-16T04:53:02.186Z"
+        }
+      ]
+    },
+    "SitePage /haus/": {
+      "context": {
+        "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmTq8Medbx75ZexSjF1atFWGw9ttZrL6JHhBTKsLsfDeVF",
+        "createdAt": "2021-09-16T04:53:02.186Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://cloudflare-ipfs.com/ipfs/QmTq8Medbx75ZexSjF1atFWGw9ttZrL6JHhBTKsLsfDeVF",
+          "createdAt": "2021-09-16T04:53:02.186Z"
+        }
+      ]
+    }
+  }
 }
