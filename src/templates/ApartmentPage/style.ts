@@ -5,6 +5,7 @@ import {mq} from '../../utils'
 
 export const responsiveImage = styled(Box)`
   .responsiveImage {
+    border-radius: 25px;
     ${mq[0]} {
       width: 300px;
       height: 180px;

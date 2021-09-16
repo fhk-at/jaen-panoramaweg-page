@@ -4,7 +4,7 @@
 
 import * as Yup from 'yup'
 import 'yup-phone'
-
+import React from 'react'
 import {
   Box,
   FormControl,
@@ -134,6 +134,7 @@ const ContactPage: JaenTemplate = () => {
       pb="115px">
       <Navbar />
       <Container
+        textAlign="center"
         centerContent
         maxW={['100%', '100%', '40vw', '40vw']}
         mt={['10', '10', '0', '0']}>
@@ -142,31 +143,35 @@ const ContactPage: JaenTemplate = () => {
             Sie sind an einer unserer Immobilien interessiert?
           </Heading>
         ) : (
-          <Flex
-            fontSize="1.75rem"
-            direction={['column', 'column', 'row', 'row']}>
-            <Heading mr="1">Sie sind an</Heading>
-            <Badge
-              colorScheme="greenwhite"
-              borderRadius="25px"
-              pl="3"
-              pr="3"
-              width="min-content"
-              ml="auto"
-              mr="auto">
-              <Text marginTop="2" fontSize="xl">
-                {top}
-              </Text>
-            </Badge>
-            <Heading ml="1">interessiert?</Heading>
-          </Flex>
+          <Heading fontSize="1.75rem" mx="auto">
+            Sie sind an{' '}
+            {
+              <>
+                <Badge
+                  display={['none', 'none', 'inline-block', 'inline-block']}
+                  colorScheme="greenwhite"
+                  borderRadius="25px"
+                  px="3"
+                  py="2"
+                  width="min-content"
+                  ml="auto"
+                  mr="auto">
+                  <Text fontSize="xl">{top}</Text>
+                </Badge>
+                <Text display={['inline', 'inline', 'none', 'none']}>
+                  {top}
+                </Text>
+              </>
+            }{' '}
+            interessiert?
+          </Heading>
         )}
-        <Text fontSize="1.5rem" fontWeight="thin">
+        <Box fontSize="1.25rem" mt="2">
           <fields.TextField
             fieldName="contactsubheading"
             initValue="<p>Kontaktieren Sie uns und und wir melden uns bei Ihnen!</p>"
           />
-        </Text>
+        </Box>
       </Container>
       <Container
         width={['100%', '100%', '70vw', '70vw']}
@@ -279,7 +284,7 @@ const ContactPage: JaenTemplate = () => {
               </Box>
             </form>
           </Box>
-          <Box w={['90%', '90%', '30vw', '30vw']}>
+          <Box w={['90%', '90%', '30vw', '30vw']} my={['10', '10', '0', '0']}>
             <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"

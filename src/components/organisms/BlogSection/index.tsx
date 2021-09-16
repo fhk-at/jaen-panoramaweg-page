@@ -30,7 +30,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
 
   return (
     <Element id="blogsection">
-      <Container centerContent maxW="80vw" mb="20" mt="10">
+      <Container
+        centerContent
+        maxW={['100%', '100%', '80%', '80%']}
+        mb="20"
+        mt="10">
         <Heading fontSize="1.5rem">{bloghead}</Heading>
         <Text fontSize="1.1rem" mb="5">
           {blogsubhead}
@@ -112,7 +116,10 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                       borderTopRadius="25px"
                     />
                     <Box padding="5">
-                      <Heading fontSize="1.5rem">{heading}</Heading>
+                      <Heading
+                        fontSize={['1.1rem', '1.1rem', '1.5rem', '1.5rem']}>
+                        {heading}
+                      </Heading>
                       <Text noOfLines={3} fomtSize="1.1rem">
                         {text}
                       </Text>

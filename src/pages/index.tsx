@@ -23,19 +23,24 @@ import {StaticImage} from 'gatsby-plugin-image'
 
 const IndexPageCSS = styled(Box)`
   .responsiveImage {
+    min-height: 180px;
     ${mq[0]} {
       width: 300px;
+      height: 180px;
       margin-left: auto;
       margin-right: auto;
     }
     ${mq[1]} {
       width: 300px;
+      height: 180px;
     }
     ${mq[2]} {
-      width: 22vw;
+      width: 600px;
+      height: 360px;
     }
     ${mq[3]} {
-      width: 22vw;
+      width: 600px;
+      height: 360px;
     }
   }
 `

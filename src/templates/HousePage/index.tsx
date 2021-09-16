@@ -48,6 +48,20 @@ const HousePage: JaenTemplate = (): JSX.Element => {
     availableFilter: false
   })
 
+  const houseimg = React.useMemo(
+    () => (
+      <fields.ImageField
+        fieldName="houseimg"
+        initValue={{
+          src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+          alt: 'houseimg'
+        }}
+        className="responsiveImage"
+      />
+    ),
+    []
+  )
+
   const handleValueChange = (val: any, stateName: string) => {
     setFilters({
       [stateName]: val,
@@ -109,14 +123,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             />
           </Text>
           <Flex direction={['column', 'column', 'row', 'row']}>
-            <fields.ImageField
-              fieldName="houseimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'houseimg'
-              }}
-              className="responsiveImage"
-            />
+            {houseimg}
             <Container
               maxW={['300px', '300px', '35vw', '35vw']}
               ml={['auto', 'auto', '10', '10']}
