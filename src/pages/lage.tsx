@@ -23,10 +23,10 @@ const LocationPage: JaenTemplate = () => {
       <Box
         as="section"
         id="locationpage"
-        paddingBottom="12vh"
+        paddingBottom="115px"
         overflow="hidden"
         paddingTop="140px"
-        minHeight="115px">
+        minHeight="100vh">
         <Navbar />
         <ImageTopSection
           head1={
