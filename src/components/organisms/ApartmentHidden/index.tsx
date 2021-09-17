@@ -21,19 +21,15 @@ const Rooms = () => {
 
 const Download = () => {
   const {isEditing} = useOptions()
-
+  console.log(isEditing)
   return (
     <Box display={isEditing ? 'static' : 'none'}>
-      <Flex direction="row">
-        <Text mr="1">Download URL:</Text>
-        <Box width="50vw">
-          <fields.TextField
-            fieldName="apartmentpdf"
-            initValue="<p>snek.at</p>"
-            rtf={false}
-          />
-        </Box>
-      </Flex>
+      <Text mr="1">Download URL:</Text>
+      <fields.TextField
+        fieldName="apartmentpdf"
+        initValue="<p>snek.at</p>"
+        rtf={false}
+      />
     </Box>
   )
 }

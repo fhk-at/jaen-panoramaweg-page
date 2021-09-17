@@ -26,13 +26,13 @@ import {
   Text,
   useColorModeValue,
   VStack,
-  Wrap
+  Wrap,
+  Link as ChakraLink
 } from '@chakra-ui/react'
 import {DownloadIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
 import * as Hidden from '../../components/organisms/ApartmentHidden'
 import {useTemplate} from '@snek-at/jaen-pages/src/contexts/template'
-
 import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
@@ -42,7 +42,30 @@ const ApartmentPage: JaenTemplate = () => {
   const breadcumbFontColor = useColorModeValue('#0645AD', 'white')
 
   const page = useTemplate()
-  console.log(page)
+
+  let pdfurl =
+    page?.page?.fields?.apartmentpdf?.content?.text || '<p>https://snek.at</p>'
+  pdfurl = pdfurl.substring(3, pdfurl.length - 4)
+  const pdfRegex = new RegExp(
+    '^(https?://)?www.([da-z.-]+).([a-z.]{2,6})/[w .-]+?.pdf$'
+  )
+
+  const valid = pdfRegex.test(pdfurl)
+
+  const downloadbutton = (
+    <Button
+      leftIcon={<DownloadIcon color="white" />}
+      backgroundColor="gray.600"
+      _hover={{bg: 'gray.500'}}
+      borderRadius="25px"
+      textColor="white"
+      fontSize="sm"
+      fontWeight="light"
+      mt="3"
+      mb="5">
+      Bau und Ausstattungsbeschreibung
+    </Button>
+  )
 
   let breadcrumbs = url.split('/')
 
@@ -350,19 +373,19 @@ const ApartmentPage: JaenTemplate = () => {
               initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
             />
           </Text>
-          <Button
-            leftIcon={<DownloadIcon color="white" />}
-            backgroundColor="gray.600"
-            _hover={{bg: 'gray.500'}}
-            borderRadius="25px"
-            textColor="white"
-            fontSize="sm"
-            fontWeight="light"
-            mt="3"
-            mb="5">
-            Bau und Ausstattungsbeschreibung
-          </Button>
-          <Hidden.ApartmentDownload />
+          {valid ? (
+            <>
+              <ChakraLink isExternal href={pdfurl}>
+                {downloadbutton}
+              </ChakraLink>
+              <Hidden.ApartmentDownload />
+            </>
+          ) : (
+            <>
+              {downloadbutton}
+              <Hidden.ApartmentDownload />
+            </>
+          )}
         </Container>
         <Box as="div" mt="5" mb="10"></Box>
         <Container as="div" centerContent mt="5" mb="10">
