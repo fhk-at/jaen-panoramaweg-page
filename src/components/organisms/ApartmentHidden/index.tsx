@@ -21,7 +21,6 @@ const Rooms = () => {
 
 const Download = () => {
   const {isEditing} = useOptions()
-  console.log(isEditing)
   return (
     <Box display={isEditing ? 'static' : 'none'}>
       <Text mr="1">Download URL:</Text>

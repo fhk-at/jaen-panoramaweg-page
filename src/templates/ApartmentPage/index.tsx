@@ -50,11 +50,20 @@ const ApartmentPage: JaenTemplate = () => {
   let pdfurl =
     page?.page?.fields?.apartmentpdf?.content?.text || '<p>https://snek.at</p>'
   pdfurl = pdfurl.substring(3, pdfurl.length - 4)
-  const pdfRegex = new RegExp(
-    '^(https?://)?www.([da-z.-]+).([a-z.]{2,6})/[w .-]+?.pdf$'
-  )
 
-  const valid = pdfRegex.test(pdfurl)
+  function isValidHttpUrl(string) {
+    let url
+
+    try {
+      url = new URL(string)
+    } catch (_) {
+      return false
+    }
+
+    return url.protocol === 'http:' || url.protocol === 'https:'
+  }
+
+  const valid = isValidHttpUrl(pdfurl)
 
   const downloadbutton = (
     <Button

@@ -52,7 +52,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   let apartmentTypes: string[] = []
   let heading = ''
   function cleanFieldValues(value: string, type: string) {
-    console.log('cleanFieldValues', value, type)
     value = value.substring(3, value.length - 4)
     if (type === 'price') {
       value = value.replaceAll('.', '')
@@ -85,7 +84,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
     numFlats = pages?.length
     for (const page of pages) {
       const fields = store?.[page.id]?.fields
-      console.log('data:', fields)
       let price = fields?.apartmentprice?.content?.text || '<p>0</p>'
       let size = fields?.apartmentsize?.content?.text || '<p>0</p>'
       const type = fields?.apartmenttype?.content?.option || 'Penthouse'
@@ -122,7 +120,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             const img =
               child?.page?.fields?.houseimg?.content?.src ||
               'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-            console.log('child', child)
             let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'haus ')

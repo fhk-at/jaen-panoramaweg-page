@@ -271,7 +271,6 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 const link =
                   typeof window !== 'undefined' &&
                   window.location.pathname + slug + '/'
-                console.log(link)
                 findMinMax(cleanedRooms, cleanedSize)
 
                 if (
@@ -305,8 +304,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                             <Image
                               src={image}
                               alt="apartmentcardimg"
-                              w="300px"
-                              h="200px"
+                              w={{base: '200px', md: '300px'}}
+                              h={{base: '150px', md: '200px'}}
                             />
                             <Badge
                               backgroundColor={
@@ -314,7 +313,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                                   ? 'panoramaweg.green'
                                   : '#f61a42'
                               }
-                              width="300px"
+                              width={{base: '200px', md: '300px'}}
                               height="30px"
                               color="white"
                               textTransform="none"
