@@ -37,6 +37,10 @@ import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
+  const [isClient, setIsClient] = React.useState(false)
+
+  React.useEffect(() => setIsClient(true))
+
   const url = (typeof window !== 'undefined' && window.location.href) || ''
   const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
   const breadcumbFontColor = useColorModeValue('#0645AD', 'white')
@@ -374,17 +378,17 @@ const ApartmentPage: JaenTemplate = () => {
             />
           </Text>
           {valid ? (
-            <>
+            <Box key={isClient}>
               <ChakraLink isExternal href={pdfurl}>
                 {downloadbutton}
               </ChakraLink>
               <Hidden.ApartmentDownload />
-            </>
+            </Box>
           ) : (
-            <>
+            <Box key={isClient}>
               {downloadbutton}
               <Hidden.ApartmentDownload />
-            </>
+            </Box>
           )}
         </Container>
         <Box as="div" mt="5" mb="10"></Box>

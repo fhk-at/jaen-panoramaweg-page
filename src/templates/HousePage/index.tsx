@@ -41,6 +41,9 @@ const HousePage: JaenTemplate = (): JSX.Element => {
   const [maxSize, setMaxSize] = React.useState<number>(0)
   const [maxRooms, setMaxRooms] = React.useState<number>(0)
   const [minSize, setMinSize] = React.useState<number>(0)
+  const [isClient, setIsClient] = React.useState(false)
+
+  React.useEffect(() => setIsClient(true))
 
   const [filters, setFilters] = React.useState<any>({
     sizeFilter: 0,
@@ -150,6 +153,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           </Text>
           <Flex direction={flex}>
             <Box
+              key={isClient}
               width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
