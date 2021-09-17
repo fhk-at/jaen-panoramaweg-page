@@ -17,7 +17,7 @@ const HeroSection = (): JSX.Element => {
   return (
     <>
       <style.HeroStyle>
-        <Box h="100vh">
+        <Box h="100vh" mb="20">
           <fields.ImageField
             fieldName="herobackground"
             initValue={{

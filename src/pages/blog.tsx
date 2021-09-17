@@ -1,17 +1,14 @@
-import {Box, CircularProgress, Container} from '@chakra-ui/react'
-import {Redirect} from '@reach/router'
+import {Box, Container, Text} from '@chakra-ui/react'
+import {navigate} from 'gatsby-link'
+import {useEffect} from 'react'
 
 const HouseRoot = () => {
+  useEffect(() => navigate('/'), [])
   return (
     <Box as="section" id="rootingpage" overflow="hidden">
       <Container marginTop="45vh" centerContent>
-        <CircularProgress
-          isIndeterminate
-          color="panoramaweg.green"
-          size="5vh"
-        />
+        <Text>Sie werden auf die Hauptseite weitergeleitet.</Text>
       </Container>
-      <Redirect to="/" />
     </Box>
   )
 }
