@@ -32,10 +32,11 @@ const Footer = (): JSX.Element => {
     <Box bg={bgColor} w="100%" h="115px" position="absolute" bottom="0">
       <Container w="fit-content" centerContent color={fontColor} pt="4">
         <Flex>
-          <IconContext.Provider value={{style: {marginTop: '3'}}}>
+          <IconContext.Provider value={{style: {'margin-top': '4'}}}>
             <BiCopyright />
           </IconContext.Provider>
           <Text
+            ml="1"
             fontSize={['0.7rem', '0.8rem', '1.1rem', '1.1rem']}
             pt={['1', '0', '0', '0']}>
             2021 Copyright: TOP Immo W.M. Treuhand GmbH
