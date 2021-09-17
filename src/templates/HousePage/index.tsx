@@ -29,7 +29,8 @@ import {
   Wrap,
   Button,
   Badge,
-  VStack
+  VStack,
+  useBreakpointValue
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import * as style from './style'
@@ -47,6 +48,22 @@ const HousePage: JaenTemplate = (): JSX.Element => {
     hasFilter: false,
     availableFilter: false
   })
+  const houseimage = React.useMemo(() => {
+    return (
+      <>
+        <fields.ImageField
+          fieldName="houseimg"
+          initValue={{
+            src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+            alt: 'houseimg'
+          }}
+          className="responsiveImage"
+        />
+      </>
+    )
+  }, [])
+
+  const flex = useBreakpointValue({base: 'column', md: 'row'})
 
   const handleValueChange = (val: any, stateName: string) => {
     setFilters({
@@ -108,15 +125,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               rtf="false"
             />
           </Text>
-          <Flex direction={['column', 'column', 'row', 'row']}>
-            <fields.ImageField
-              fieldName="houseimg"
-              initValue={{
-                src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'houseimg'
-              }}
-              className="responsiveImage"
-            />
+          <Flex direction={flex}>
+            {houseimage}
             <Container
               maxW={['300px', '300px', '35vw', '35vw']}
               ml={['auto', 'auto', '10', '10']}
@@ -138,15 +148,15 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               rtf={false}
             />
           </Text>
-          <Flex direction={['column', 'column', 'row', 'row']}>
+          <Flex direction={flex}>
             <Box
               width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
               padding="5"
-              alignSelf={['center', 'center']}
-              mb={['3', '3']}
+              alignSelf={['center', 'center', 'auto', 'auto']}
+              mb={['3', '3', '0', '0']}
               ml={['0', '0', '3', '3']}>
               <Text>Wohnungsgröße mindestens</Text>
               <HStack spacing="3">
@@ -172,8 +182,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               border="1px"
               borderColor="panoramaweg.lightgray"
               padding="5"
-              alignSelf={['center', 'center']}
-              mb={['3', '3']}
+              alignSelf={['center', 'center', 'auto', 'auto']}
+              mb={['3', '3', '0', '0']}
               ml={['0', '0', '3', '3']}>
               <Text>Zimmer mindestens</Text>
               <HStack spacing="3">
@@ -199,8 +209,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               border="1px"
               borderColor="panoramaweg.lightgray"
               padding="5"
-              alignSelf={['center', 'center']}
-              mb={['3', '3']}
+              alignSelf={['center', 'center', 'auto', 'auto']}
+              mb={['3', '3', '0', '0']}
               ml={['0', '0', '3', '3']}>
               <Flex
                 direction={['row', 'row', 'column', 'column']}

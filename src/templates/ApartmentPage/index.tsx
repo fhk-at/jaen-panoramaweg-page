@@ -30,7 +30,8 @@ import {
 } from '@chakra-ui/react'
 import {DownloadIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
-import ApartmentHidden from '../../components/organisms/ApartmentHidden'
+import * as Hidden from '../../components/organisms/ApartmentHidden'
+import {useTemplate} from '@snek-at/jaen-pages/src/contexts/template'
 
 import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
@@ -39,6 +40,9 @@ const ApartmentPage: JaenTemplate = () => {
   const url = (typeof window !== 'undefined' && window.location.href) || ''
   const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
   const breadcumbFontColor = useColorModeValue('#0645AD', 'white')
+
+  const page = useTemplate()
+  console.log(page)
 
   let breadcrumbs = url.split('/')
 
@@ -214,7 +218,7 @@ const ApartmentPage: JaenTemplate = () => {
                       </Text>
                     </Flex>
                     <>
-                      <ApartmentHidden />
+                      <Hidden.ApartmentRooms />
                     </>
                     <Text color="gray" fontSize="xs">
                       exkl. Balkon
@@ -358,6 +362,7 @@ const ApartmentPage: JaenTemplate = () => {
             mb="5">
             Bau und Ausstattungsbeschreibung
           </Button>
+          <Hidden.ApartmentDownload />
         </Container>
         <Box as="div" mt="5" mb="10"></Box>
         <Container as="div" centerContent mt="5" mb="10">

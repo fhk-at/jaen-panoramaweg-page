@@ -2,7 +2,7 @@ import {Box, Text, Flex} from '@chakra-ui/react'
 import {fields, useOptions} from '@snek-at/jaen-pages'
 import {withRedux} from '@snek-at/jaen-pages'
 
-const ApartmentHidden = () => {
+const Rooms = () => {
   const {isEditing} = useOptions()
 
   return (
@@ -19,4 +19,24 @@ const ApartmentHidden = () => {
   )
 }
 
-export default withRedux(ApartmentHidden)
+const Download = () => {
+  const {isEditing} = useOptions()
+
+  return (
+    <Box display={isEditing ? 'static' : 'none'}>
+      <Flex direction="row">
+        <Text mr="1">Download URL:</Text>
+        <Box width="50vw">
+          <fields.TextField
+            fieldName="apartmentpdf"
+            initValue="<p>snek.at</p>"
+            rtf={false}
+          />
+        </Box>
+      </Flex>
+    </Box>
+  )
+}
+
+export const ApartmentDownload = withRedux(Download)
+export const ApartmentRooms = withRedux(Rooms)
