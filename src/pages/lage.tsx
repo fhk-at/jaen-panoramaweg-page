@@ -25,7 +25,7 @@ const LocationPage: JaenTemplate = () => {
         id="locationpage"
         paddingBottom="115px"
         overflow="hidden"
-        paddingTop="140px"
+        paddingTop={{base: '75px', md: '140px'}}
         minHeight="100vh">
         <Navbar />
         <ImageTopSection
