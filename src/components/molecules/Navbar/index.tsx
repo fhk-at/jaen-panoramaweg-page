@@ -71,15 +71,8 @@ const Navbar = () => {
   const links = Links.map((link, index) => (
     <Box
       key={index}
-      px={2}
-      py={1}
       fontWeight="bold"
-      fontSize={['1.1rem', '1.1em', '1.1rem', '1.4rem']}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700')
-      }}>
+      fontSize={['1.1rem', '1.1em', '1.1rem', '1.4rem']}>
       {link.scroll ? (
         <scroll.Link
           offset={-80}
@@ -88,10 +81,30 @@ const Navbar = () => {
           smooth
           onClick={link.onClick}
           style={{cursor: 'pointer'}}>
-          {link.text}
+          <Box
+            px={2}
+            py={1}
+            rounded={'md'}
+            _hover={{
+              textDecoration: 'none',
+              bg: useColorModeValue('gray.200', 'gray.700')
+            }}>
+            {link.text}
+          </Box>
         </scroll.Link>
       ) : (
-        <Link to={link.to}>{link.text}</Link>
+        <Link to={link.to} key={index}>
+          <Box
+            px={2}
+            py={1}
+            rounded={'md'}
+            _hover={{
+              textDecoration: 'none',
+              bg: useColorModeValue('gray.200', 'gray.700')
+            }}>
+            {link.text}
+          </Box>
+        </Link>
       )}
     </Box>
   ))
