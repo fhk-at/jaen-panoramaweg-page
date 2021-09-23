@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {Box, CircularProgress, Container, Text} from '@chakra-ui/react'
 import {navigate} from 'gatsby-link'
 import {useEffect} from 'react'
