@@ -15,6 +15,7 @@ import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {Box} from '@chakra-ui/layout'
 import {Container, Heading, Text, Center} from '@chakra-ui/react'
 import ImageCollection from '../../components/organisms/ImageCollection'
+import {CookieModal} from '../../components/molecules'
 //#endregion
 
 //#endregion
@@ -24,6 +25,7 @@ import * as style from './style'
 const BlogPage: JaenTemplate = () => {
   return (
     <style.responsiveImage>
+      <CookieModal />
       <Box
         as="section"
         id="blogpage"

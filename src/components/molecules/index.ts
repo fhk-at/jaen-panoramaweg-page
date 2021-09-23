@@ -1,7 +1,7 @@
 //#region > Exports
 export {default as Navbar} from './Navbar'
 export {default as Footer} from './Footer'
-// export {default as CookieModal} from './CookieModal'
+export {default as CookieModal} from './CookieModal'
 //#endregion
 
 /**

@@ -36,6 +36,8 @@ import {useTemplate} from '@snek-at/jaen-pages/src/contexts/template'
 import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
+import {CookieModal} from '../../components/molecules'
+
 const ApartmentPage: JaenTemplate = () => {
   const [isClient, setIsClient] = React.useState(false)
 
@@ -104,6 +106,7 @@ const ApartmentPage: JaenTemplate = () => {
   breadcrumbs = format(breadcrumbs)
   return (
     <style.responsiveImage>
+      <CookieModal />
       <Box
         as="section"
         id="apartmentpage"

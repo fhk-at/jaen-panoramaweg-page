@@ -26,6 +26,7 @@ import {useFormik} from 'formik'
 import {BifrostBridge} from '@snek-at/bridge'
 import gql from 'graphql-tag'
 import {Navbar} from '../components/molecules'
+import {CookieModal} from '../components/molecules'
 //#endregion
 
 //#region
@@ -125,183 +126,186 @@ const ContactPage: JaenTemplate = () => {
   })
 
   return (
-    <Box
-      as="section"
-      id="contactpage"
-      overflow="hidden"
-      minH="100vh"
-      paddingTop={{base: '75px', md: '140px'}}
-      pb="115px">
-      <Navbar />
-      <Container
-        textAlign="center"
-        centerContent
-        maxW={['100%', '100%', '40vw', '40vw']}
-        mt={['10', '10', '0', '0']}>
-        {top === '' ? (
-          <Heading fontSize="1.75rem">
-            Sie sind an einer unserer Immobilien interessiert?
-          </Heading>
-        ) : (
-          <Heading fontSize="1.75rem" mx="auto">
-            Sie sind an{' '}
-            {
-              <>
-                <Badge
-                  display={['none', 'none', 'inline-block', 'inline-block']}
-                  colorScheme="greenwhite"
-                  borderRadius="25px"
-                  px="3"
-                  py="2"
-                  width="min-content"
-                  ml="auto"
-                  mr="auto">
-                  <Text fontSize="xl">{top}</Text>
-                </Badge>
-                <Text display={['inline', 'inline', 'none', 'none']}>
-                  {top}
-                </Text>
-              </>
-            }{' '}
-            interessiert?
-          </Heading>
-        )}
-        <Box fontSize="1.25rem" mt="2">
-          <fields.TextField
-            fieldName="contactsubheading"
-            initValue="<p>Kontaktieren Sie uns und und wir melden uns bei Ihnen!</p>"
-          />
-        </Box>
-      </Container>
-      <Container
-        width={['100%', '100%', '70vw', '70vw']}
-        centerContent
-        mb="5"
-        mt="20"
-        minH="40vh">
-        <Flex direction={['column', 'column', 'row', 'row']}>
-          <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
-            <Heading
-              fontSize="1.5rem"
-              w={['100%', '100%', '35vw', '35vw']}
-              mb="7">
-              Kontaktformular
+    <>
+      <CookieModal />
+      <Box
+        as="section"
+        id="contactpage"
+        overflow="hidden"
+        minH="100vh"
+        paddingTop={{base: '75px', md: '140px'}}
+        pb="115px">
+        <Navbar />
+        <Container
+          textAlign="center"
+          centerContent
+          maxW={['100%', '100%', '40vw', '40vw']}
+          mt={['10', '10', '0', '0']}>
+          {top === '' ? (
+            <Heading fontSize="1.75rem">
+              Sie sind an einer unserer Immobilien interessiert?
             </Heading>
-            <form onSubmit={formik.handleSubmit}>
-              <FormControl
-                id="fname"
-                mb="5"
-                isInvalid={
-                  (formik.errors.fname && formik.touched.fname) || false
-                }>
-                <FormErrorMessage ml="5" mb="1">
-                  Bitte geben Sie Ihren Vornamen ein.
-                </FormErrorMessage>
-                <Input
-                  placeholder="Vorname"
-                  borderRadius="25px"
-                  onChange={formik.handleChange}
-                  value={formik.values.fname}
-                />
-              </FormControl>
-              <FormControl
-                id="lname"
-                mb="5"
-                isInvalid={
-                  (formik.errors.lname && formik.touched.lname) || false
-                }>
-                <FormErrorMessage ml="5" mb="1">
-                  Bitte geben Sie Ihren Nachnamen ein.
-                </FormErrorMessage>
-                <Input
-                  placeholder="Nachname"
-                  borderRadius="25px"
-                  onChange={formik.handleChange}
-                  value={formik.values.lname}
-                />
-              </FormControl>
-              <FormControl
-                id="email"
-                mb="5"
-                isInvalid={
-                  (formik.errors.email && formik.touched.email) || false
-                }>
-                <FormErrorMessage ml="5" mb="1">
-                  Bitte geben Sie eine korrekte Emailadresse ein.
-                </FormErrorMessage>
-                <Input
-                  placeholder="Email"
-                  borderRadius="25px"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                />
-              </FormControl>
-              <FormControl
-                id="telephone"
-                mb="5"
-                isInvalid={
-                  (formik.errors.telephone && formik.touched.telephone) || false
-                }>
-                <FormErrorMessage ml="5" mb="1">
-                  Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
-                  werden.
-                </FormErrorMessage>
-                <Input
-                  type="tel"
-                  placeholder="Telefonnummer"
-                  borderRadius="25px"
-                  onChange={formik.handleChange}
-                  value={formik.values.telephone}
-                />
-              </FormControl>
-              <FormControl
-                id="message"
-                mb="5"
-                isInvalid={
-                  (formik.errors.message && formik.touched.message) || false
-                }>
-                <FormErrorMessage ml="5" mb="1">
-                  Bitte schreiben Sie uns eine Nachricht.
-                </FormErrorMessage>
-                <Textarea
-                  placeholder="Nachricht"
-                  borderRadius="25px"
-                  size="lg"
-                  onChange={formik.handleChange}
-                  value={formik.values.message}
-                />
-              </FormControl>
-              <Box
-                textAlign={['center', 'center', 'right', 'right']}
-                mb={['5', '5']}>
-                <Button
-                  type="submit"
-                  colorScheme="greenwhite"
-                  size="lg"
-                  borderRadius="25px">
-                  Absenden
-                </Button>
-              </Box>
-            </form>
-          </Box>
-          <Box w={['90%', '90%', '30vw', '30vw']} my={['10', '10', '0', '0']}>
-            <Heading fontSize="1.5rem">
-              <fields.TextField
-                fieldName="contactheadingright"
-                initValue="<p>Wer sind wir?</p>"
-              />
+          ) : (
+            <Heading fontSize="1.75rem" mx="auto">
+              Sie sind an{' '}
+              {
+                <>
+                  <Badge
+                    display={['none', 'none', 'inline-block', 'inline-block']}
+                    colorScheme="greenwhite"
+                    borderRadius="25px"
+                    px="3"
+                    py="2"
+                    width="min-content"
+                    ml="auto"
+                    mr="auto">
+                    <Text fontSize="xl">{top}</Text>
+                  </Badge>
+                  <Text display={['inline', 'inline', 'none', 'none']}>
+                    {top}
+                  </Text>
+                </>
+              }{' '}
+              interessiert?
             </Heading>
-            <Text fontSize="lg" mt="5">
-              <fields.TextField
-                fieldName="contactrightrichtext"
-                initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
-              />
-            </Text>
+          )}
+          <Box fontSize="1.25rem" mt="2">
+            <fields.TextField
+              fieldName="contactsubheading"
+              initValue="<p>Kontaktieren Sie uns und und wir melden uns bei Ihnen!</p>"
+            />
           </Box>
-        </Flex>
-      </Container>
-      <Footer />
-    </Box>
+        </Container>
+        <Container
+          width={['100%', '100%', '70vw', '70vw']}
+          centerContent
+          mb="5"
+          mt="20"
+          minH="40vh">
+          <Flex direction={['column', 'column', 'row', 'row']}>
+            <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
+              <Heading
+                fontSize="1.5rem"
+                w={['100%', '100%', '35vw', '35vw']}
+                mb="7">
+                Kontaktformular
+              </Heading>
+              <form onSubmit={formik.handleSubmit}>
+                <FormControl
+                  id="fname"
+                  mb="5"
+                  isInvalid={
+                    (formik.errors.fname && formik.touched.fname) || false
+                  }>
+                  <FormErrorMessage ml="5" mb="1">
+                    Bitte geben Sie Ihren Vornamen ein.
+                  </FormErrorMessage>
+                  <Input
+                    placeholder="Vorname"
+                    borderRadius="25px"
+                    onChange={formik.handleChange}
+                    value={formik.values.fname}
+                  />
+                </FormControl>
+                <FormControl
+                  id="lname"
+                  mb="5"
+                  isInvalid={
+                    (formik.errors.lname && formik.touched.lname) || false
+                  }>
+                  <FormErrorMessage ml="5" mb="1">
+                    Bitte geben Sie Ihren Nachnamen ein.
+                  </FormErrorMessage>
+                  <Input
+                    placeholder="Nachname"
+                    borderRadius="25px"
+                    onChange={formik.handleChange}
+                    value={formik.values.lname}
+                  />
+                </FormControl>
+                <FormControl
+                  id="email"
+                  mb="5"
+                  isInvalid={
+                    (formik.errors.email && formik.touched.email) || false
+                  }>
+                  <FormErrorMessage ml="5" mb="1">
+                    Bitte geben Sie eine korrekte Emailadresse ein.
+                  </FormErrorMessage>
+                  <Input
+                    placeholder="Email"
+                    borderRadius="25px"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                  />
+                </FormControl>
+                <FormControl
+                  id="telephone"
+                  mb="5"
+                  isInvalid={
+                    (formik.errors.telephone && formik.touched.telephone) || false
+                  }>
+                  <FormErrorMessage ml="5" mb="1">
+                    Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
+                    werden.
+                  </FormErrorMessage>
+                  <Input
+                    type="tel"
+                    placeholder="Telefonnummer"
+                    borderRadius="25px"
+                    onChange={formik.handleChange}
+                    value={formik.values.telephone}
+                  />
+                </FormControl>
+                <FormControl
+                  id="message"
+                  mb="5"
+                  isInvalid={
+                    (formik.errors.message && formik.touched.message) || false
+                  }>
+                  <FormErrorMessage ml="5" mb="1">
+                    Bitte schreiben Sie uns eine Nachricht.
+                  </FormErrorMessage>
+                  <Textarea
+                    placeholder="Nachricht"
+                    borderRadius="25px"
+                    size="lg"
+                    onChange={formik.handleChange}
+                    value={formik.values.message}
+                  />
+                </FormControl>
+                <Box
+                  textAlign={['center', 'center', 'right', 'right']}
+                  mb={['5', '5']}>
+                  <Button
+                    type="submit"
+                    colorScheme="greenwhite"
+                    size="lg"
+                    borderRadius="25px">
+                    Absenden
+                  </Button>
+                </Box>
+              </form>
+            </Box>
+            <Box w={['90%', '90%', '30vw', '30vw']} my={['10', '10', '0', '0']}>
+              <Heading fontSize="1.5rem">
+                <fields.TextField
+                  fieldName="contactheadingright"
+                  initValue="<p>Wer sind wir?</p>"
+                />
+              </Heading>
+              <Text fontSize="lg" mt="5">
+                <fields.TextField
+                  fieldName="contactrightrichtext"
+                  initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+                />
+              </Text>
+            </Box>
+          </Flex>
+        </Container>
+        <Footer />
+      </Box>
+    </>
   )
 }
 //#endregion

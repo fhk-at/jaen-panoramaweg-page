@@ -11,7 +11,7 @@ import ImageTopSection from '../components/organisms/ImageTopSection'
 import MapSection from '../components/organisms/MapSection'
 import PartnerSection from '../components/organisms/PartnerSection'
 import BlogSection from '../components/organisms/BlogSection'
-import LightBox from '../components/LightBox'
+import {CookieModal} from '../components/molecules'
 
 import {Footer, Navbar} from '../components/molecules'
 import {Box, Center} from '@chakra-ui/react'
@@ -51,6 +51,7 @@ const IndexPageCSS = styled(Box)`
 const IndexPage = () => {
   return (
     <IndexPageCSS>
+      <CookieModal />
       <Box as="section" id="homepage" paddingBottom="115px" overflow="hidden">
         <Navbar />
         <HeroSection />

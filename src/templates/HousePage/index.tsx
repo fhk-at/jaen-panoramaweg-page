@@ -34,6 +34,7 @@ import {
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
 import * as style from './style'
+import {CookieModal} from '../../components/molecules'
 //#endregion
 
 //#region > Components
@@ -99,6 +100,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
   }
   return (
     <style.responsiveImage>
+      <CookieModal />
       <Box
         as="section"
         id="housepage"

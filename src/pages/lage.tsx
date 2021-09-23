@@ -14,12 +14,14 @@ import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {Box} from '@chakra-ui/layout'
 
 import {ResponsiveImage} from '../components/layout/ResponsiveImage'
+import {CookieModal} from '../components/molecules'
 //#endregion
 
 //#region > Components
 const LocationPage: JaenTemplate = () => {
   return (
     <ResponsiveImage>
+      <CookieModal />
       <Box
         as="section"
         id="locationpage"

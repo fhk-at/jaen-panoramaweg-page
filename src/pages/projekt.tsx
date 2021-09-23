@@ -13,13 +13,14 @@ import {Footer, Navbar} from '../components/molecules'
 import {fields, JaenTemplate} from '@snek-at/jaen-pages'
 import {Box} from '@chakra-ui/react'
 import {ResponsiveImage} from '../components/layout/ResponsiveImage'
-
+import {CookieModal} from '../components/molecules'
 //#endregion
 
 //#region > Components
 const ImmoPage: JaenTemplate = () => {
   return (
     <ResponsiveImage>
+      <CookieModal />
       <Box
         as="section"
         id="immopage"
