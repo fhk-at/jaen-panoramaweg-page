@@ -29,13 +29,9 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react"
 
-function useStickyState(defaultValue:any, key:any) {
-  const [cookie, setCookie] = useState(() => {
-    const stickyValue = window.localStorage.getItem(key);
-    return stickyValue !== null
-      ? JSON.parse(stickyValue)
-      : defaultValue;
-  });
+function useStickyState(key:any) {
+  const [cookie, setCookie] = useState(undefined);
+
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(cookie));
   }, [key, cookie]);
@@ -43,7 +39,7 @@ function useStickyState(defaultValue:any, key:any) {
 }
 
 const CookieModal = () => {
-  const [cookie, setCookie] = useStickyState('', 'cookiesettings');
+  const [cookie, setCookie] = useStickyState('cookiesettings');
 
   const [cookieModal, setCookieModal] = useState(cookie ? false : true);
   const [essentialCookie] = useState(true);
