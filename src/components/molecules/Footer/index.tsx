@@ -64,7 +64,7 @@ const Footer = (): JSX.Element => {
         </Flex>
         <Flex mt="2">
           <Button onClick={toggleHideUI}>
-            {hideUI ? 'Mit Jaen bearbeiten' : 'Bearbeitung beenden'}
+            {hideUI ? 'Verwalten mit Jaen aktivieren' : 'Verwalten mit Jaen deaktivieren'}
           </Button>
         </Flex>
         <Flex fontSize="xs">
