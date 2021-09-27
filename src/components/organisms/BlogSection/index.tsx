@@ -89,8 +89,9 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
             for (const child of children) {
               const slug = child?.page?.slug
               const fields = child?.page?.fields
+              console.log(fields)
               const heading = removePTags(
-                fields?.bloghead?.content?.text || '<p>Überschrift</p>'
+                fields?.blogheading?.content?.text || '<p>Überschrift</p>'
               )
               const text = removePTags(
                 fields?.blogrichtext?.content?.text ||
