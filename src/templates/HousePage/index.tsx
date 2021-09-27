@@ -107,7 +107,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         minH="100vh"
         paddingTop={{base: '75px', md: '140px'}}
         overflow="hidden"
-        paddingBottom="145px">
+        paddingBottom="195px">
         <Navbar />
         <Container
           centerContent

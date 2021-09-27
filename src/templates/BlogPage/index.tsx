@@ -29,7 +29,7 @@ const BlogPage: JaenTemplate = () => {
       <Box
         as="section"
         id="blogpage"
-        pb="145px"
+        pb="195px"
         pt="140px"
         minH={['', '', '100vh', '100vh']}>
         <Navbar />

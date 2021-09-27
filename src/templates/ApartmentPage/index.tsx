@@ -113,7 +113,7 @@ const ApartmentPage: JaenTemplate = () => {
         minH="100vh"
         overflow="hidden"
         paddingTop={{base: '75px', md: '140px'}}
-        paddingBottom="145px">
+        paddingBottom="195px">
         <Navbar />
         <Center mb="5">
           <Breadcrumb

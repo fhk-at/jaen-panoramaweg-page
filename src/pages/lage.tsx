@@ -25,7 +25,7 @@ const LocationPage: JaenTemplate = () => {
       <Box
         as="section"
         id="locationpage"
-        paddingBottom="145px"
+        paddingBottom="195px"
         overflow="hidden"
         paddingTop={{base: '75px', md: '140px'}}
         minHeight="100vh">

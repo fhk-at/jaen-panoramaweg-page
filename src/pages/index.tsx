@@ -52,7 +52,7 @@ const IndexPage = () => {
   return (
     <IndexPageCSS>
       <CookieModal />
-      <Box as="section" id="homepage" paddingBottom="145px" overflow="hidden">
+      <Box as="section" id="homepage" paddingBottom="195px" overflow="hidden">
         <Navbar />
         <HeroSection />
         <ImageTopSection
