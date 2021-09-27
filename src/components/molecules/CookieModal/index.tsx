@@ -85,7 +85,13 @@ const CookieModal = () => {
   }
 
   return (
-    <Modal closeOnOverlayClick={false} isOpen={cookieModal} onClose={() => saveCookies()}>
+    <Modal
+      isCentered
+      motionPreset="slideInBottom"
+      closeOnOverlayClick={false}
+      isOpen={cookieModal}
+      onClose={() => saveCookies()}
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Cookie Einstellungen</ModalHeader>
