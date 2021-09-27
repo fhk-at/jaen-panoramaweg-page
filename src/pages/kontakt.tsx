@@ -97,12 +97,13 @@ const ContactPage: JaenTemplate = () => {
   let top = urlParams.get('top') || ''
   let house = urlParams.get('house') || ''
 
-  url = url.substring(0, url.indexOf('?'))
+  if (url.includes('?')) {
+    url = url.substring(0, url.indexOf('?'))
+  }
   if (top !== '' && house !== '') {
     url = url.replace('/kontakt/', '/' + house + '/' + top + '/')
   }
   top = top.replace('top', 'Top ')
-
   const formik = useFormik({
     initialValues: {
       fname: '',
@@ -243,11 +244,12 @@ const ContactPage: JaenTemplate = () => {
                   id="telephone"
                   mb="5"
                   isInvalid={
-                    (formik.errors.telephone && formik.touched.telephone) || false
+                    (formik.errors.telephone && formik.touched.telephone) ||
+                    false
                   }>
                   <FormErrorMessage ml="5" mb="1">
-                    Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
-                    werden.
+                    Die Telefonnummer muss in dem Schema +43664 5678901
+                    eingegeben werden.
                   </FormErrorMessage>
                   <Input
                     type="tel"
