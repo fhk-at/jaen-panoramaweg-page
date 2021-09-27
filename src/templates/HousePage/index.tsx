@@ -177,7 +177,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <SliderTrack bg="panoramaweg.lightgray">
                     <SliderFilledTrack bg="panoramaweg.green" />
                   </SliderTrack>
-                  <SliderThumb />
+                  <SliderThumb bg="panoramaweg.green" />
                 </Slider>
                 <Text>{maxSize}m²</Text>
               </HStack>
@@ -204,7 +204,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <SliderTrack bg="panoramaweg.lightgray">
                     <SliderFilledTrack bg="panoramaweg.green" />
                   </SliderTrack>
-                  <SliderThumb />
+                  <SliderThumb bg="panoramaweg.green" />
                 </Slider>
                 <Text>{maxRooms}</Text>
               </HStack>
