@@ -1,5 +1,6 @@
 module.exports = {
   remote: 'emailwerk/jaen-panoramaweg-page',
+  initialHideUI: true, // optional hide UI on load
   plugins: {
     pages: {
       resolve: require('@snek-at/jaen-pages/jaen-register'),

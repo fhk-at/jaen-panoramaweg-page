@@ -29,8 +29,13 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react"
 
-function useStickyState(key:any) {
-  const [cookie, setCookie] = useState(undefined);
+function useStickyState(defaultValue:any, key:any) {
+  const [cookie, setCookie] = useState(() => {
+    const stickyValue = typeof window !== 'undefined' && window.localStorage.getItem(key) || ''
+    return stickyValue
+      ? JSON.parse(stickyValue)
+      : defaultValue
+  });
 
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(cookie));
@@ -39,7 +44,7 @@ function useStickyState(key:any) {
 }
 
 const CookieModal = () => {
-  const [cookie, setCookie] = useStickyState('cookiesettings');
+  const [cookie, setCookie] = useStickyState('', 'cookiesettings');
 
   const [cookieModal, setCookieModal] = useState(cookie ? false : true);
   const [essentialCookie] = useState(true);
@@ -88,7 +93,7 @@ const CookieModal = () => {
         <ModalBody pb={6}>
           <Box w="9rem" mx="auto">
             {/* <Lottie options={defaultOptions} speed={1} ariaRole="img" /> */}
-            <Lottie lottie={ACookieLottie()} forceReloadDeps={[ACookieLottie()]}>
+            <Lottie lottie={ACookieLottie()}>
               {({container}) => (
                 <i>
                   {container}
@@ -144,3 +149,8 @@ const CookieModal = () => {
 }
 
 export default CookieModal
+
+/**
+ * SPDX-License-Identifier: (EUPL-1.2)
+ * Copyright © 2021 Christian Aichner
+ */

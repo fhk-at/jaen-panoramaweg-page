@@ -6,12 +6,15 @@
 // import { Link } from "react-router-dom";
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
+import {useJaenCoreContext} from '@snek-at/jaen'
+
 import {
   Box,
   Container,
   Flex,
   HStack,
   Text,
+  Button,
   useColorModeValue
 } from '@chakra-ui/react'
 
@@ -27,9 +30,10 @@ import './index.scss'
 const Footer = (): JSX.Element => {
   const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
   const fontColor = useColorModeValue('black', 'white')
+  const {toggleHideUI, hideUI} = useJaenCoreContext()
 
   return (
-    <Box bg={bgColor} w="100%" h="115px" position="absolute" bottom="0">
+    <Box bg={bgColor} w="100%" position="absolute" bottom="0">
       <Container w="fit-content" centerContent color={fontColor} pt="4">
         <Flex>
           <IconContext.Provider value={{style: {'margin-top': '4'}}}>
@@ -57,6 +61,11 @@ const Footer = (): JSX.Element => {
             InspireMedia GmbH
           </Text>
           <Text>.</Text>
+        </Flex>
+        <Flex mt="2">
+          <Button onClick={toggleHideUI}>
+            {hideUI ? 'Mit Jaen bearbeiten' : 'Bearbeitung beenden'}
+          </Button>
         </Flex>
         <Flex fontSize="xs">
           <HStack spacing="5" mt="2">
