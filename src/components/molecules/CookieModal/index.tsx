@@ -112,6 +112,7 @@ const CookieModal = () => {
           <Flex mt="20px" alignItems="center" justifyContent="center">
             <Checkbox
               isDisabled
+              colorScheme="greenwhite"
               isChecked={essentialCookie}
               htmlFor="essentialCookie">
               Essenziell
@@ -119,11 +120,13 @@ const CookieModal = () => {
           </Flex>
           <Flex mt="10px" alignItems="center" justifyContent="center">
             <Checkbox
+              colorScheme="greenwhite"
               isChecked={marketingCookie}
               onChange={(e) => setMarketingCookie(e.target.checked)}>
               Marketing
             </Checkbox>
             <Checkbox
+              colorScheme="greenwhite"
               ml="20px"
               isChecked={statisticsCookie}
               onChange={(e) => setStatisticsCookie(e.target.checked)}>
@@ -134,7 +137,7 @@ const CookieModal = () => {
 
         <ModalFooter>
           <Button
-            colorScheme="blue"
+            colorScheme="greenwhite"
             mr={3}
             onClick={() => checkAll()}>
             Alle akzeptieren

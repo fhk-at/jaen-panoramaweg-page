@@ -225,6 +225,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 <Text>Verfügbar</Text>
                 <Center marginTop="1" ml={['3', '3', '0', '0']}>
                   <Checkbox
+                    colorScheme="greenwhite"
                     isChecked={filters.availableFilter}
                     onChange={() =>
                       handleValueChange(
