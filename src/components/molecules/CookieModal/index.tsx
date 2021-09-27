@@ -86,7 +86,6 @@ const CookieModal = () => {
 
   return (
     <Modal
-      isCentered
       motionPreset="slideInBottom"
       closeOnOverlayClick={false}
       isOpen={cookieModal}
@@ -96,7 +95,7 @@ const CookieModal = () => {
       <ModalContent>
         <ModalHeader>Cookie Einstellungen</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6}>
+        <ModalBody pb={3}>
           <Box w="9rem" mx="auto">
             {/* <Lottie options={defaultOptions} speed={1} ariaRole="img" /> */}
             <Lottie lottie={ACookieLottie()}>
@@ -115,7 +114,7 @@ const CookieModal = () => {
           <Link color="blue" href="https://www.top-immo.org/privacy" isExternal>
             Datenschutz
           </Link>
-          <Flex mt="20px" alignItems="center" justifyContent="center">
+          <Flex mt="15px" alignItems="center" justifyContent="center">
             <Checkbox
               isDisabled
               colorScheme="greenwhite"
@@ -141,7 +140,10 @@ const CookieModal = () => {
           </Flex>
         </ModalBody>
 
-        <ModalFooter>
+        <ModalFooter
+          alignItems="center"
+          justifyContent="center"
+        >
           <Button
             colorScheme="greenwhite"
             mr={3}

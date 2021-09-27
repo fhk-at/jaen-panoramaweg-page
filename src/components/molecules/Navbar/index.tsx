@@ -32,8 +32,8 @@ const Navbar = () => {
   const {isOpen, onOpen, onClose} = useDisclosure()
 
   const mainImageStyle = {
-    width: '17rem',
-    maxWidth: '50%',
+    width: '175px',
+    heigth: '115px',
     marginLeft: '4.1vw'
   }
 
@@ -112,7 +112,7 @@ const Navbar = () => {
   return (
     <Box
       bg={navbarBg}
-      zIndex={100}
+      zIndex={39}
       textAlign="center"
       pos="absolute"
       top={0}
