@@ -43,6 +43,7 @@ const HeroSection = (): JSX.Element => {
               <Link to="imagetopsection" isDynamic offset={-80} smooth={true}>
                 <Box
                   position="relative"
+                  marginTop="14rem"
                   padding="1rem"
                   borderRadius="30px"
                   backgroundColor="white"
