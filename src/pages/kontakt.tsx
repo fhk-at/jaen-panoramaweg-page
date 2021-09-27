@@ -134,7 +134,7 @@ const ContactPage: JaenTemplate = () => {
         overflow="hidden"
         minH="100vh"
         paddingTop={{base: '75px', md: '140px'}}
-        pb="115px">
+        pb="145px">
         <Navbar />
         <Container
           textAlign="center"

@@ -26,7 +26,7 @@ const ImmoPage: JaenTemplate = () => {
         id="immopage"
         overflow="hidden"
         paddingTop={{base: '75px', md: '140px'}}
-        paddingBottom="115px"
+        paddingBottom="145px"
         minH="100vh">
         <Navbar />
         <ImageTopSection
