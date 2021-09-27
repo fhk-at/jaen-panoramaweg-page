@@ -16,11 +16,11 @@ export const responsiveImage = styled(Box)`
     }
     ${mq[2]} {
       width: 600px;
-      height: 375px;
+      height: 390px;
     }
     ${mq[3]} {
       width: 600px;
-      height: 375px;
+      height: 390px;
     }
   }
 `

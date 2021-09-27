@@ -111,6 +111,7 @@ const ApartmentPage: JaenTemplate = () => {
         as="section"
         id="apartmentpage"
         minH="100vh"
+        w="100%"
         overflow="hidden"
         paddingTop={{base: '75px', md: '140px'}}
         paddingBottom="195px">
@@ -227,8 +228,8 @@ const ApartmentPage: JaenTemplate = () => {
             }}
           />
         </Container>
-        <Container maxW={['100%', '100%', '70%', '70%']}>
-          <Wrap spacing="7" justify="center">
+        <Container maxW={{base: '100%', lg: '90%'}}>
+          <Wrap spacing="5" justify="center" w="100%">
             <Box
               border={['0px', '0px', '1px', '1px']}
               borderColor={[
@@ -311,7 +312,7 @@ const ApartmentPage: JaenTemplate = () => {
                     />
                   </Container>
                 </VStack>
-                <Container centerContent>
+                <Container centerContent mb="0">
                   <Button
                     backgroundColor="panoramaweg.green"
                     _hover={{bg: '#6bab3c'}}
