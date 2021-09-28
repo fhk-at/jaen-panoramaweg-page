@@ -27,6 +27,7 @@ const PartnerCard: JaenBlock = () => {
             alt: 'partner'
           }}
           className="partnerImage"
+          imgStyle={{objectFit: 'contain'}}
         />
       </Box>
     </style.PartnerStyle>
