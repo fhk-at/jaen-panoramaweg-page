@@ -307,8 +307,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                             <Image
                               src={image}
                               alt="apartmentcardimg"
-                              w={{base: '200px', md: '300px'}}
-                              h={{base: '150px', md: '200px'}}
+                              maxW={{base: '200px', md: '300px'}}
+                              maxH={{base: '150px', md: '200px'}}
                             />
                             <Badge
                               backgroundColor={
