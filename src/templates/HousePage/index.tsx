@@ -71,6 +71,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
 
   const handleValueChange = (val: any, stateName: string) => {
     setFilters({
+      ...filters,
       [stateName]: val,
       hasFilter: true
     })
