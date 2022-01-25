@@ -8,7 +8,7 @@
  * in the LICENSE file at https://snek.at/license
  */
 import {Box} from '@chakra-ui/react'
-import {fields, JaenBlock} from '@snek-at/jaen-pages'
+import {fields, JaenBlock} from '@jaenjs/jaen'
 import * as style from './partnerStyle'
 
 const PartnerCard: JaenBlock = () => {

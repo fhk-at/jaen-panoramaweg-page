@@ -1,6 +1,6 @@
 import {Box} from '@chakra-ui/react'
-import {useOptions} from '@snek-at/jaen-pages'
-import {withRedux} from '@snek-at/jaen-pages'
+import {useOptions} from '@jaenjs/jaen'
+import {withRedux} from '@jaenjs/jaen'
 
 const HeroHidden = () => {
   return (

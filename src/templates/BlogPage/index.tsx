@@ -3,7 +3,7 @@
 // Contains all the functionality necessary to define React components
 
 //> SNEK
-import {fields} from '@snek-at/jaen-pages'
+import {fields} from '@jaenjs/jaen'
 
 //> Components
 import ImageLeftSection from '../../components/organisms/ImageLeftSection'
@@ -11,7 +11,7 @@ import ImageLeftSection from '../../components/organisms/ImageLeftSection'
 
 import {Footer, Navbar} from '../../components/molecules'
 
-import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
 import {Box} from '@chakra-ui/layout'
 import {Container, Heading, Text, Center} from '@chakra-ui/react'
 import ImageCollection from '../../components/organisms/ImageCollection'

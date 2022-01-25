@@ -9,7 +9,7 @@ import {
   ModalHeader,
   Center
 } from '@chakra-ui/react'
-import {useOptions, withRedux} from '@snek-at/jaen-pages'
+import {useOptions, withRedux} from '@jaenjs/jaen'
 import * as React from 'react'
 import styled from '@emotion/styled'
 

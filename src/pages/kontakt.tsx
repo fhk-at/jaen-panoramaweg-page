@@ -18,8 +18,8 @@ import {
   Textarea,
   FormErrorMessage
 } from '@chakra-ui/react'
-import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
-import {fields} from '@snek-at/jaen-pages'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
+import {fields} from '@jaenjs/jaen'
 import Footer from '../components/molecules/Footer'
 
 import {useFormik} from 'formik'

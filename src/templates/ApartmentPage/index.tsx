@@ -10,8 +10,8 @@ import {Navbar} from '../../components/molecules'
 import {navigate} from 'gatsby-link'
 
 //> SNEK
-import {fields} from '@snek-at/jaen-pages'
-import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {fields} from '@jaenjs/jaen'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
 import {
   Badge,
   Box,
@@ -32,7 +32,7 @@ import {
 import {DownloadIcon} from '@chakra-ui/icons'
 import {Link} from 'gatsby'
 import * as Hidden from '../../components/organisms/ApartmentHidden'
-import {useTemplate} from '@snek-at/jaen-pages/src/contexts/template'
+import {useTemplate} from '@jaenjs/jaen/src/contexts/template'
 import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 

@@ -192,7 +192,7 @@ The standard user for this is **snekman** and the password for the account is **
 
 ### App Settings
 ```javascript
-import {CMSProvider} from '@snek-at/jaen'
+import {CMSProvider} from '@jaenjs/jaen'
 
 import {HomePage} from '...'
 import ImprintPage from '...'
@@ -230,7 +230,7 @@ It is advisable to give all the fields descriptive names.
 The SimpleTextField is as the name implies quite simple. You just have to give the field a name.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleTextField)</div>
 
 ```javascript
-import {SimpleTextField} from '@snek-at/jaen'
+import {SimpleTextField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -248,7 +248,7 @@ export default HomePage
 SimpleRichTextField is also a quite simple field that only requires a name. <div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleRichTextField)</div>
 
 ```javascript
-import {SimpleRichTextField} from '@snek-at/jaen'
+import {SimpleRichTextField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -267,7 +267,7 @@ If you want to add an image to your page you can use the SimpleImageField. <br /
 It works by embedding an image that is hosted on the ipfs by the CMS.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleImageField)</div>
 
 ```javascript
-import {SimpleImageField} from '@snek-at/jaen'
+import {SimpleImageField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -287,7 +287,7 @@ export default HomePage
 The ImageField is a more powerful version of the SimpleImageField. In addition to giving the field a name you also have the oppertunity to pass the field an imageClassName as well as an imageStyle property to fulfill your styling requirements. <div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/ImageField)</div>
 
 ```javascript
-import {ImageField} from '@snek-at/jaen'
+import {ImageField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -309,7 +309,7 @@ export default HomePage
 SimplePdfFields as the name implies enables you to embed a PDF hosted on the ipfs.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimplePdfField)</div>
 
 ```javascript
-import {SimplePdfField} from '@snek-at/jaen'
+import {SimplePdfField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -328,7 +328,7 @@ export default HomePage
 Jaen StreamFields enable you to integrate editable blocks and to use as many of them as you like. In order to use this field you are required to build a block. You can find an example of a block below.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/StreamField)</div>
 
 ```javascript
-import {StreamField} from '@snek-at/jaen'
+import {StreamField} from '@jaenjs/jaen'
 import {CardBlock} from '...'
 
 const HomePage: ConnectedPageType = () => {
@@ -353,7 +353,7 @@ export default HomePage
 If you want to link to childpages of a slug the IndexField is your friend. The fixedSlug property is not required. When none is provided the children of the current page are used if you like it is possible to specify the parentpage, the outerElement is the wrapper for all your items and the renderItem property allows you to build cards, teasers, buttons and more to your subpages.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/IndexField)</div>
 
 ```javascript
-import {IndexField} from '@snek-at/jaen'
+import {IndexField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -386,7 +386,7 @@ import {
   ImageField,
   EditableField,
   RichTextField
-} from '@snek-at/jaen'
+} from '@jaenjs/jaen'
 
 type BlockType = {
   title: string

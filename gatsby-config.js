@@ -5,7 +5,10 @@ const siteMetadata = require('./site-metadata')
 module.exports = {
   siteMetadata,
   plugins: [
-    '@snek-at/jaen',
+    '@jaenjs/jaen',
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2'
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -33,7 +36,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     {
-      resolve: '@snek-at/jaen-pages',
+      resolve: '@jaenjs/jaen',
       options: {
         templates: {
           HousePage: path.resolve('src/templates/HousePage/index.tsx'),

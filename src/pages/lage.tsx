@@ -3,14 +3,14 @@
 // Contains all the functionality necessary to define React components
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {fields} from '@snek-at/jaen-pages'
+import {fields} from '@jaenjs/jaen'
 
 //> Components
 import ImageTopSection from '../components/organisms/ImageTopSection'
 import {Footer, Navbar} from '../components/molecules'
 
 //> CSS
-import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
 import {Box} from '@chakra-ui/layout'
 
 import {ResponsiveImage} from '../components/layout/ResponsiveImage'

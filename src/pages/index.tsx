@@ -1,6 +1,6 @@
 //#region > Imports
 // Contains all the functionality necessary to define React components
-import {BlockContainer, fields} from '@snek-at/jaen-pages'
+import {BlockContainer, fields} from '@jaenjs/jaen'
 import PartnerCard from '../components/blocks/PartnerCard'
 
 // import BlogSection from '../../organisms/BlogSection'

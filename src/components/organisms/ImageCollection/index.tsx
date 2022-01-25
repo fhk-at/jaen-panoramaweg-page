@@ -1,5 +1,5 @@
 import {Center, Wrap, WrapItem} from '@chakra-ui/layout'
-import {fields} from '@snek-at/jaen-pages'
+import {fields} from '@jaenjs/jaen'
 import LightBox from '../../LightBox'
 import * as style from './style'
 

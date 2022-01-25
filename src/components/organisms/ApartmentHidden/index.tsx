@@ -1,6 +1,6 @@
 import {Box, Text, Flex} from '@chakra-ui/react'
-import {fields, useOptions} from '@snek-at/jaen-pages'
-import {withRedux} from '@snek-at/jaen-pages'
+import {fields, useOptions} from '@jaenjs/jaen'
+import {withRedux} from '@jaenjs/jaen'
 
 const Rooms = () => {
   const {isEditing} = useOptions()

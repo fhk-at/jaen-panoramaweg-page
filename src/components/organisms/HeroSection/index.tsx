@@ -9,7 +9,7 @@ import {Link} from 'react-scroll'
 // import HeroHidden from '../../molecules/HeroHidden'
 
 import React from 'react'
-import {fields} from '@snek-at/jaen-pages'
+import {fields} from '@jaenjs/jaen'
 import * as style from './style'
 //#region > Components
 

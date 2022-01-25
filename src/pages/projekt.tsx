@@ -10,7 +10,7 @@ import {Footer, Navbar} from '../components/molecules'
 
 //> CSS
 
-import {fields, JaenTemplate} from '@snek-at/jaen-pages'
+import {fields, JaenTemplate} from '@jaenjs/jaen'
 import {Box} from '@chakra-ui/react'
 import {ResponsiveImage} from '../components/layout/ResponsiveImage'
 import {CookieModal} from '../components/molecules'

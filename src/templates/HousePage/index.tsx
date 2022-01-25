@@ -2,8 +2,8 @@
 //> React
 import React from 'react'
 // Contains all the functionality necessary to define React components
-import {fields} from '@snek-at/jaen-pages'
-import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
+import {fields} from '@jaenjs/jaen'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
 
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
@@ -242,7 +242,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         </Container>
         <Box minH="10vh">
           <fields.IndexField
-            onRender={page => {
+            onRender={({page}) => {
               function cleanFieldValues(value: string, type: string) {
                 value = value.slice(3, value.length - 4)
                 if (type === 'price') {
@@ -253,19 +253,21 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               const filter: number[] = []
               const cards = []
               for (const child of page.children) {
-                const fields = child.page.fields || {}
+                let pageId = child?.page?.images[0].id.pageId
+
+                const childfields = child.page.fields || {}
 
                 const richtext =
-                  fields?.apartmentrichtextright?.content?.text ||
+                  childfields?.apartmentrichtextright?.content?.text ||
                   '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
-                const image =
-                  fields?.apartmentrightimg?.content?.src ||
-                  'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-                const size = fields?.apartmentsize?.content?.text || '<p>0</p>'
+                // const image =
+                //   childfields?.apartmentrightimg?.content?.src ||
+                //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+                const size = childfields?.apartmentsize?.content?.text || '<p>0</p>'
                 const rooms =
-                  fields?.apartmentrooms?.content?.text || '<p>1</p>'
+                  childfields?.apartmentrooms?.content?.text || '<p>1</p>'
                 const available =
-                  fields?.apartmentavailable?.content?.option || 'Verfügbar'
+                  childfields?.apartmentavailable?.content?.option || 'Verfügbar'
                 let slug = child?.page?.slug
 
                 const formatedSlug = slug.replace('top', 'Top ')
@@ -305,12 +307,25 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                             mr={['auto', 'auto', '0', '0']}
                             mt={['0', '0', 'auto', 'auto']}
                             mb={['5', '5', 'auto', 'auto']}>
-                            <Image
+                            {/* <Image
                               src={image}
                               alt="apartmentcardimg"
                               maxW={{base: '200px', md: '300px'}}
                               maxH={{base: '150px', md: '200px'}}
-                            />
+                            /> */}
+                            <style.CardStyle>
+                              <fields.ImageField
+                                pageId={pageId}
+                                fieldName="apartmentrightimg"
+                                initValue={{
+                                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                                  alt: 'apartmentcardimg'
+                                }}
+                                borderRadius="25px"
+                                objectFit="fill"
+                                className="responsiveImage"
+                              />
+                            </style.CardStyle>
                             <Badge
                               backgroundColor={
                                 available === 'Verfügbar'

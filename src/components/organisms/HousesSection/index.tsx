@@ -2,16 +2,16 @@
 //> React
 // Contains all the functionality necessary to define React components
 import React from 'react'
-import {fields} from '@snek-at/jaen-pages'
-import {usePages} from '@snek-at/jaen-pages/src/contexts/cms'
-import {SitePages} from '@snek-at/jaen-pages/src/types'
+import {fields} from '@jaenjs/jaen'
+import {usePages} from '@jaenjs/jaen/src/contexts/cms'
+import {SitePages} from '@jaenjs/jaen/src/types'
 // React Router
 // import { Link } from "react-router-dom";
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 //> Components
 //> CSS
-import './index.scss'
+import * as style from './style'
 import {
   Box,
   Container,
@@ -112,14 +112,15 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
       <fields.IndexField
         fieldName="houseindex"
         fixedSlug="SitePage /haus/"
-        onRender={page => {
+        onRender={({page}) => {
           const children = page?.children || []
 
           const cards = []
           for (const child of children) {
-            const img =
-              child?.page?.fields?.houseimg?.content?.src ||
-              'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+            // const img =
+            //   child?.page?.fields?.houseimg?.content?.src ||
+            //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+            let pageId = child?.page?.images[0].id.pageId
             let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'haus ')
@@ -145,7 +146,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                 borderColor="panoramaweg.lightgray"
                 borderRadius="25px">
                 <Flex direction={['column', 'column', 'row', 'row']}>
-                  <Image
+                  {/* <Image
                     alt="housesectionimg"
                     src={img}
                     width="250px"
@@ -153,7 +154,19 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     ml={['auto', 'auto', '0', '0']}
                     mr={['auto', 'auto', '0', '0']}
                     mb={['5', '5', '0', '0']}
-                  />
+                  /> */}
+                  <style.CardStyle>
+                    <fields.ImageField
+                      pageId={pageId}
+                      fieldName="houseimg"
+                      initValue={{
+                        src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                        alt: 'housesectionimg'
+                      }}
+                      objectFit="fill"
+                      className="cardImage"
+                    />
+                  </style.CardStyle>
                   <Box
                     ml={['0', '0', '5', '5']}
                     minW="210px"

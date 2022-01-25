@@ -6,7 +6,7 @@
 // import { Link } from "react-router-dom";
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {useJaenCoreContext} from '@snek-at/jaen'
+import {useJaenCoreContext} from '@jaenjs/jaen/src/contexts/core'
 
 import {
   Box,

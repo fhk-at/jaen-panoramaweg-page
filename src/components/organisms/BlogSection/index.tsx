@@ -7,12 +7,13 @@
 
 //> CSS
 import {Container, Heading, Text, Box, Image, Wrap} from '@chakra-ui/react'
-import {fields} from '@snek-at/jaen-pages'
+import {fields} from '@jaenjs/jaen'
 import {Link} from 'gatsby'
 import './index.scss'
 import {Step, Steps} from 'chakra-ui-steps'
 import {Element} from 'react-scroll'
 import {hasWindow} from '../../../common/utils'
+import * as style from './style'
 
 //> Images
 // import logoImg from "../../../common/img/agency-small.png";
@@ -78,7 +79,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
         <fields.IndexField
           fieldName="blogindex"
           fixedSlug="SitePage /blog/"
-          onRender={page => {
+          onRender={({page}) => {
             function removePTags(value: string) {
               return value.substring(3, value.length - 4)
             }
@@ -88,18 +89,18 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
 
             for (const child of children) {
               const slug = child?.page?.slug
-              const fields = child?.page?.fields
-              console.log(fields)
+              const childfields = child?.page?.fields
+              console.log(childfields)
               const heading = removePTags(
-                fields?.blogheading?.content?.text || '<p>Überschrift</p>'
+                childfields?.blogheading?.content?.text || '<p>Überschrift</p>'
               )
               const text = removePTags(
-                fields?.blogrichtext?.content?.text ||
+                childfields?.blogrichtext?.content?.text ||
                   '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
               )
-              const img =
-                fields?.blogimgleftimg?.content?.src ||
-                'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+              // const img =
+              //   fields?.blogimgleftimg?.content?.src ||
+              //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
 
               cards.push(
                 <Link to={'/blog/' + slug + '/'}>
@@ -109,13 +110,26 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                     borderRadius="25px"
                     boxSizing="border-box"
                     width={['300px', '300px', '425px', '425px']}>
-                    <Image
+                    {/* <Image
                       alt="blogcardimg"
                       src={img}
                       height={['200px', '200px', '285px', '285px']}
                       width={['300px', '300px', '425px', '425px']}
                       borderTopRadius="25px"
-                    />
+                    /> */}
+                    {console.log("hai7hdiuhwiuahdui" + child?.page?.images[0].id.pageId)}
+                    <style.CardStyle>
+                      <fields.ImageField
+                        pageId={child?.page?.images[0].id.pageId}
+                        fieldName="blogimgleftimg"
+                        initValue={{
+                          src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                          alt: 'blogcardimg'
+                        }}
+                        objectFit="fill"
+                        className="cardImage"
+                      />
+                    </style.CardStyle>
                     <Box padding="5">
                       <Heading
                         fontSize={['1.1rem', '1.1rem', '1.5rem', '1.5rem']}>

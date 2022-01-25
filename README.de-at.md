@@ -200,7 +200,7 @@ Der Standardnutzer hierfür ist **snekman** und das Passwort **ciscocisco**.
 
 ### App Settings
 ```javascript
-import {CMSProvider} from '@snek-at/jaen'
+import {CMSProvider} from '@jaenjs/jaen'
 
 import {HomePage} from '...'
 import ImprintPage from '...'
@@ -239,7 +239,7 @@ Es wird empfohlen beschreibende Namen zu nutzen.
 Das SimpleTextField ist einfach zu nutzen. Geben Sie dem Feld einfach einen Namen.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleTextField)</div>
 
 ```javascript
-import {SimpleTextField} from '@snek-at/jaen'
+import {SimpleTextField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -257,7 +257,7 @@ export default HomePage
 Auch das SimpleRichTextField ist einfach zu nutzen, da man dem Feld nur einen Namen geben muss. <div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleRichTextField)</div>
 
 ```javascript
-import {SimpleRichTextField} from '@snek-at/jaen'
+import {SimpleRichTextField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -276,7 +276,7 @@ Zum einbetten von Bildern können Sie das SimpleImageField nutzen. <br />
 Es funktioniert indem ein Bild, das auf der IPFS gespeichert wird, auf der Seite eingebetter wird.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimpleImageField)</div>
 
 ```javascript
-import {SimpleImageField} from '@snek-at/jaen'
+import {SimpleImageField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -296,7 +296,7 @@ export default HomePage
 Zusätzlich zum Namen, den Sie dem SimpleImageField geben müssen, hat das ImageField auch noch die Möglichkeit das Bild zu stylen indem man einen imageClassName oder einen imageStyle hinzufügt. <div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/ImageField)</div>
 
 ```javascript
-import {ImageField} from '@snek-at/jaen'
+import {ImageField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -318,7 +318,7 @@ export default HomePage
 Das SimplePdfField erlaubt es Ihnen eine auf der IPFS gespeicherte PDF-Datei einzubetten.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/SimplePdfField)</div>
 
 ```javascript
-import {SimplePdfField} from '@snek-at/jaen'
+import {SimplePdfField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -337,7 +337,7 @@ export default HomePage
 Das StreamField ermöglicht es Ihnen editierbare Blocks in Ihre Seite einzubauen und diese sooft wie gewünscht wiederzuverwenden. Um dieses Feld zu nutzen müssen Sie einen Block bauen.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/StreamField)</div>
 
 ```javascript
-import {StreamField} from '@snek-at/jaen'
+import {StreamField} from '@jaenjs/jaen'
 import {CardBlock} from '...'
 
 const HomePage: ConnectedPageType = () => {
@@ -362,7 +362,7 @@ export default HomePage
 Wenn Sie einen Link auf die Subseiten Ihrer Seite brauchen können Sie das IndexField verwenden. Der fixedSlug Parameter wird nicht gefordert. Standardmäßig wird die Seite auf der das IndexField ist dafür genutzt. Das outerElement ist HTML-Tags der Ihre Links umgiebt und renderItem erlaubt Ihnen die React-Components, die die Daten oder den Link der Subseiten enthalten, zu bauen.<div align=right>[Wiki 📖](https://github.com/snek-at/jaen/wiki/IndexField)</div>
 
 ```javascript
-import {IndexField} from '@snek-at/jaen'
+import {IndexField} from '@jaenjs/jaen'
 
 const HomePage: ConnectedPageType = () => {
   return (
@@ -395,7 +395,7 @@ import {
   ImageField,
   EditableField,
   RichTextField
-} from '@snek-at/jaen'
+} from '@jaenjs/jaen'
 
 type BlockType = {
   title: string
