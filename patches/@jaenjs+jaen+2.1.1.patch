@@ -1,0 +1,33 @@
+diff --git a/node_modules/@jaenjs/jaen/gatsby-browser.js b/node_modules/@jaenjs/jaen/gatsby-browser.js
+index c96b130..cdba2a7 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-browser.js
++++ b/node_modules/@jaenjs/jaen/gatsby-browser.js
+@@ -1 +1,4 @@
+-module.exports = require('./src/gatsby-wrapper')
++const wrapper = require('./src/gatsby-wrapper')
++
++exports.wrapRootElement = wrapper.wrapRootElement
++exports.wrapPageElement = wrapper.wrapPageElement
+diff --git a/node_modules/@jaenjs/jaen/gatsby-ssr.js b/node_modules/@jaenjs/jaen/gatsby-ssr.js
+index c96b130..cdba2a7 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-ssr.js
++++ b/node_modules/@jaenjs/jaen/gatsby-ssr.js
+@@ -1 +1,4 @@
+-module.exports = require('./src/gatsby-wrapper')
++const wrapper = require('./src/gatsby-wrapper')
++
++exports.wrapRootElement = wrapper.wrapRootElement
++exports.wrapPageElement = wrapper.wrapPageElement
+diff --git a/node_modules/@jaenjs/jaen/package.json b/node_modules/@jaenjs/jaen/package.json
+index c6a3d9f..dc791ff 100644
+--- a/node_modules/@jaenjs/jaen/package.json
++++ b/node_modules/@jaenjs/jaen/package.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "@jaenjs/jaen",
+   "version": "2.1.1",
+-  "main": "src/index.js",
++  "main": "index.js",
+   "types": "src/index.ts",
+   "license": "EUPL-1.2",
+   "bin": {

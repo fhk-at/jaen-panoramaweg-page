@@ -29,7 +29,8 @@
     "clean": "gatsby clean",
     "deploy": "gatsby build && cp CNAME public/ && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "commit": "git-cz --disable-emoji"
+    "commit": "git-cz --disable-emoji",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^2.0.1",
@@ -38,7 +39,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@jaenjs/jaen": "^2.1.1",
-    "@react-icons/all-files": "^4.1.0",
+    "@react-icons/all-files": "4.0.0",
     "@reduxjs/toolkit": "^1.6.1",
     "chakra-ui-steps": "^1.3.0",
     "electron": "^14.0.0",
@@ -58,6 +59,7 @@
     "google-map-react": "^2.1.10",
     "node-sass": "^6.0.1",
     "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
