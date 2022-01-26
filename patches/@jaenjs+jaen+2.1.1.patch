@@ -8,6 +8,48 @@ index c96b130..cdba2a7 100644
 +
 +exports.wrapRootElement = wrapper.wrapRootElement
 +exports.wrapPageElement = wrapper.wrapPageElement
+diff --git a/node_modules/@jaenjs/jaen/gatsby-node.js b/node_modules/@jaenjs/jaen/gatsby-node.js
+index 29ba981..e6b56c1 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-node.js
++++ b/node_modules/@jaenjs/jaen/gatsby-node.js
+@@ -50,6 +50,7 @@ exports.createSchemaCustomization = ({actions}) => {
+       parent: JaenPageId
+       children: [JaenPageId]
+       fields: JSON
++      deleted: Boolean
+     }
+ 
+     type JaenPageId {
+@@ -132,7 +133,8 @@ exports.createPages = async (
+               ...page.pageMetadata
+             },
+             fields: JSON.stringify(fields),
+-            images
++            images,
++            deleted: page.deleted
+           }
+         }
+       })
+@@ -147,7 +149,8 @@ exports.createPages = async (
+           datePublished: createdAt,
+           ...page.pageMetadata
+         },
+-        fields
++        fields,
++        deleted: page.deleted
+       })
+     }
+   }
+@@ -213,7 +216,8 @@ exports.onCreatePage = async ({
+             ...cachedJaenPage?.pageMetadata
+           },
+           images,
+-          fields: JSON.stringify(fields)
++          fields: JSON.stringify(fields),
++          deleted: page.deleted
+         }
+       }
+     }
 diff --git a/node_modules/@jaenjs/jaen/gatsby-ssr.js b/node_modules/@jaenjs/jaen/gatsby-ssr.js
 index c96b130..cdba2a7 100644
 --- a/node_modules/@jaenjs/jaen/gatsby-ssr.js
@@ -31,3 +73,101 @@ index c6a3d9f..dc791ff 100644
    "types": "src/index.ts",
    "license": "EUPL-1.2",
    "bin": {
+diff --git a/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts b/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
+index 781e813..45df527 100644
+--- a/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
++++ b/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
+@@ -27,7 +27,9 @@ export const TreeConverter = (items: Items): TreeData => {
+     while (parent) {
+       yield parent
+ 
+-      parent = allItems[parent].parent
++      console.log("FUCUAHCKASJHCSA",allItems, parent)
++
++      parent = allItems[parent]?.parent
+     }
+   }
+ 
+@@ -44,6 +46,9 @@ export const TreeConverter = (items: Items): TreeData => {
+       const parentIter = genItemParent(items, id)
+       const isExpanded = !nth(parentIter, 3)
+ 
++      // make sure all children are items
++      item.children = item.children.filter(id => id in items)
++
+       yield {
+         ...item,
+         id,
+@@ -58,6 +63,8 @@ export const TreeConverter = (items: Items): TreeData => {
+     tree.items[item.id] = item
+   }
+ 
++  console.log("TREE", tree)
++
+   return tree
+ }
+ 
+diff --git a/node_modules/@jaenjs/jaen/src/contexts/cms.tsx b/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
+index bfb46c7..d4ec198 100644
+--- a/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
++++ b/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
+@@ -67,7 +67,7 @@ export const usePage = (id: string): ResolvedPageType => {
+     .map(child => ({
+       page: nodes[child.id]
+     }))
+-    .filter(e => !e.page.deleted)
++    .filter(e => !e?.page?.deleted)
+ 
+   return resolvedPage
+ }
+@@ -165,7 +165,9 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+               }
+             }
+           }
+-          sitePageRootIds: allSitePage(filter: {parent: {id: {eq: null}}}) {
++          sitePageRootIds: allSitePage(
++            filter: {context: {jaenPageContext: {parent: {id: {eq: null}}, deleted: {eq: null}}}}
++          ) {
+             distinct(field: id)
+           }
+           allFile {
+@@ -183,6 +185,7 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+                   id
+                   slug
+                   template
++                  deleted
+                   parent {
+                     id
+                   }
+@@ -243,10 +246,30 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+             template: jaenPageContext?.template,
+             fields: JSON.parse(jaenPageContext?.fields || '{}'),
+             pageMetadata: jaenPageContext?.pageMetadata,
+-            images: jaenPageContext?.images
++            images: jaenPageContext?.images,
++            deleted: jaenPageContext?.deleted
+           }
+         }
+ 
++        console.log(Object.values(site.allSitePage.nodes))
++
++        /**
++         * 
++        
++        for(const node of Object.values(site.allSitePage.nodes)) {
++          console.log(node)
++          if(node.deleted){
++            if(node.parent?.id) {
++              if(site.allSitePage.nodes[node.parent.id]) {
++                site.allSitePage.nodes[node.parent.id].children = site.allSitePage.nodes[node.parent.id].children.filter(child => child.id !== node.id)
++              }
++            }
++            delete site.allSitePage.nodes[node.id]
++          }
++        }
++
++        */
++
+         return (
+           <CMSContext.Provider
+             value={{
