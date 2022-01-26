@@ -5,6 +5,8 @@ import React from 'react'
 import {fields} from '@jaenjs/jaen'
 import {usePages} from '@jaenjs/jaen/src/contexts/cms'
 import {SitePages} from '@jaenjs/jaen/src/types'
+import {GCImage} from '../../../common/utils'
+import {StaticImage} from 'gatsby-plugin-image'
 // React Router
 // import { Link } from "react-router-dom";
 //> MDB
@@ -120,7 +122,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             // const img =
             //   child?.page?.fields?.houseimg?.content?.src ||
             //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-            let pageId = child?.page?.images[0].id.pageId
+            // let pageId = child?.page?.images[0].id.pageId
             let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'haus ')
@@ -138,7 +140,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             fetchData(grandchildren)
             minPrice = addDot(minPrice)
             maxPrice = addDot(maxPrice)
-
             cards.push(
               <Box
                 padding="5"
@@ -156,7 +157,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     mb={['5', '5', '0', '0']}
                   /> */}
                   <style.CardStyle>
-                    <fields.ImageField
+                    {/* <fields.ImageField
                       pageId={pageId}
                       fieldName="houseimg"
                       initValue={{
@@ -165,6 +166,16 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                       }}
                       objectFit="fill"
                       className="cardImage"
+                    /> */}
+                    <GCImage
+                      gimg={
+                        <StaticImage
+                          className="cardImage"
+                          imgClassName="cardImage"
+                          src={child?.page?.fields?.houseimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
+                          alt="cardImage"
+                        />
+                      }
                     />
                   </style.CardStyle>
                   <Box

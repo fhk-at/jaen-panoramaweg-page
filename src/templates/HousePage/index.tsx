@@ -4,7 +4,8 @@ import React from 'react'
 // Contains all the functionality necessary to define React components
 import {fields} from '@jaenjs/jaen'
 import {JaenTemplate} from '@jaenjs/jaen/src/types'
-
+import {GCImage} from '../../common/utils'
+import {StaticImage} from 'gatsby-plugin-image'
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
 
@@ -253,7 +254,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               const filter: number[] = []
               const cards = []
               for (const child of page.children) {
-                let pageId = child?.page?.images[0].id.pageId
+                // let pageId = child?.page?.images[0].id.pageId
 
                 const childfields = child.page.fields || {}
 
@@ -314,7 +315,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                               maxH={{base: '150px', md: '200px'}}
                             /> */}
                             <style.CardStyle>
-                              <fields.ImageField
+                              {/* <fields.ImageField
                                 pageId={pageId}
                                 fieldName="apartmentrightimg"
                                 initValue={{
@@ -324,6 +325,17 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                                 borderRadius="25px"
                                 objectFit="fill"
                                 className="responsiveImage"
+                              /> */}
+                              {console.log(child?.page)}
+                              <GCImage
+                                gimg={
+                                  <StaticImage
+                                    className="cardImage"
+                                    imgClassName="cardImage"
+                                    src={child?.page?.fields?.apartmentleftimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
+                                    alt="cardImage"
+                                  />
+                                }
                               />
                             </style.CardStyle>
                             <Badge

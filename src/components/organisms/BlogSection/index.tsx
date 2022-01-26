@@ -9,10 +9,11 @@
 import {Container, Heading, Text, Box, Image, Wrap} from '@chakra-ui/react'
 import {fields} from '@jaenjs/jaen'
 import {Link} from 'gatsby'
+import {StaticImage} from 'gatsby-plugin-image'
 import './index.scss'
 import {Step, Steps} from 'chakra-ui-steps'
 import {Element} from 'react-scroll'
-import {hasWindow} from '../../../common/utils'
+import {hasWindow, GCImage} from '../../../common/utils'
 import * as style from './style'
 
 //> Images
@@ -90,7 +91,6 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
             for (const child of children) {
               const slug = child?.page?.slug
               const childfields = child?.page?.fields
-              console.log(childfields)
               const heading = removePTags(
                 childfields?.blogheading?.content?.text || '<p>Überschrift</p>'
               )
@@ -117,9 +117,8 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                       width={['300px', '300px', '425px', '425px']}
                       borderTopRadius="25px"
                     /> */}
-                    {console.log("hai7hdiuhwiuahdui" + child?.page?.images[0].id.pageId)}
                     <style.CardStyle>
-                      <fields.ImageField
+                      {/* <fields.ImageField
                         pageId={child?.page?.images[0].id.pageId}
                         fieldName="blogimgleftimg"
                         initValue={{
@@ -128,6 +127,16 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                         }}
                         objectFit="fill"
                         className="cardImage"
+                      /> */}
+                      <GCImage
+                        gimg={
+                          <StaticImage
+                            className="cardImage"
+                            imgClassName="cardImage"
+                            src={child?.page?.fields?.blogimgleftimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
+                            alt="cardImage"
+                          />
+                        }
                       />
                     </style.CardStyle>
                     <Box padding="5">
