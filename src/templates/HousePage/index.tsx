@@ -1,17 +1,5 @@
 //#region > Imports
 //> React
-import React from 'react'
-// Contains all the functionality necessary to define React components
-import {fields} from '@jaenjs/jaen'
-import {JaenTemplate} from '@jaenjs/jaen/src/types'
-import {GCImage} from '../../common/utils'
-import {StaticImage} from 'gatsby-plugin-image'
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-
-//> Components
-//> CSS
-import {Navbar, Footer} from '../../components/molecules'
 import {
   Box,
   Checkbox,
@@ -33,9 +21,22 @@ import {
   VStack,
   useBreakpointValue
 } from '@chakra-ui/react'
+// Contains all the functionality necessary to define React components
+import {fields} from '@jaenjs/jaen'
+import {JaenTemplate} from '@jaenjs/jaen/src/types'
 import {Link} from 'gatsby'
-import * as style from './style'
+import {StaticImage} from 'gatsby-plugin-image'
+import React from 'react'
+
+import {GCImage} from '../../common/utils'
+//> MDB
+// "Material Design for Bootstrap" is a great UI design framework
+//> Components
+//> CSS
+import {Navbar, Footer} from '../../components/molecules'
 import {CookieModal} from '../../components/molecules'
+import * as style from './style'
+
 //#endregion
 
 //#region > Components
@@ -264,11 +265,13 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                 // const image =
                 //   childfields?.apartmentrightimg?.content?.src ||
                 //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-                const size = childfields?.apartmentsize?.content?.text || '<p>0</p>'
+                const size =
+                  childfields?.apartmentsize?.content?.text || '<p>0</p>'
                 const rooms =
                   childfields?.apartmentrooms?.content?.text || '<p>1</p>'
                 const available =
-                  childfields?.apartmentavailable?.content?.option || 'Verfügbar'
+                  childfields?.apartmentavailable?.content?.option ||
+                  'Verfügbar'
                 let slug = child?.page?.slug
 
                 const formatedSlug = slug.replace('top', 'Top ')
@@ -327,16 +330,6 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                                 className="responsiveImage"
                               /> */}
                               {console.log(child?.page)}
-                              <GCImage
-                                gimg={
-                                  <StaticImage
-                                    className="cardImage"
-                                    imgClassName="cardImage"
-                                    src={child?.page?.fields?.apartmentleftimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
-                                    alt="cardImage"
-                                  />
-                                }
-                              />
                             </style.CardStyle>
                             <Badge
                               backgroundColor={

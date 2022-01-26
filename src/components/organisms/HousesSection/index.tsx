@@ -1,19 +1,6 @@
 //#region > Imports
 //> React
 // Contains all the functionality necessary to define React components
-import React from 'react'
-import {fields} from '@jaenjs/jaen'
-import {usePages} from '@jaenjs/jaen/src/contexts/cms'
-import {SitePages} from '@jaenjs/jaen/src/types'
-import {GCImage} from '../../../common/utils'
-import {StaticImage} from 'gatsby-plugin-image'
-// React Router
-// import { Link } from "react-router-dom";
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-//> Components
-//> CSS
-import * as style from './style'
 import {
   Box,
   Container,
@@ -26,10 +13,24 @@ import {
   Button,
   Progress
 } from '@chakra-ui/react'
-
+import {fields} from '@jaenjs/jaen'
+import {usePages} from '@jaenjs/jaen/src/contexts/cms'
+import {SitePages} from '@jaenjs/jaen/src/types'
 import {GiResize} from '@react-icons/all-files/gi/GiResize'
 import {IconContext} from '@react-icons/all-files/lib'
 import {navigate} from 'gatsby'
+import {StaticImage} from 'gatsby-plugin-image'
+import React from 'react'
+
+import {GCImage} from '../../../common/utils'
+// React Router
+// import { Link } from "react-router-dom";
+//> MDB
+// "Material Design for Bootstrap" is a great UI design framework
+//> Components
+//> CSS
+import * as style from './style'
+
 //#endregion
 
 interface Props {
@@ -167,16 +168,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                       objectFit="fill"
                       className="cardImage"
                     /> */}
-                    <GCImage
-                      gimg={
-                        <StaticImage
-                          className="cardImage"
-                          imgClassName="cardImage"
-                          src={child?.page?.fields?.houseimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
-                          alt="cardImage"
-                        />
-                      }
-                    />
                   </style.CardStyle>
                   <Box
                     ml={['0', '0', '5', '5']}

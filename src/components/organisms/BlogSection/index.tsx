@@ -4,16 +4,16 @@
 // import React from "react";
 // React Router
 // import { Link } from "react-router-dom";
-
 //> CSS
 import {Container, Heading, Text, Box, Image, Wrap} from '@chakra-ui/react'
 import {fields} from '@jaenjs/jaen'
+import {Step, Steps} from 'chakra-ui-steps'
 import {Link} from 'gatsby'
 import {StaticImage} from 'gatsby-plugin-image'
-import './index.scss'
-import {Step, Steps} from 'chakra-ui-steps'
 import {Element} from 'react-scroll'
+
 import {hasWindow, GCImage} from '../../../common/utils'
+import './index.scss'
 import * as style from './style'
 
 //> Images
@@ -128,16 +128,6 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                         objectFit="fill"
                         className="cardImage"
                       /> */}
-                      <GCImage
-                        gimg={
-                          <StaticImage
-                            className="cardImage"
-                            imgClassName="cardImage"
-                            src={child?.page?.fields?.blogimgleftimg?.content.src || "https://i.ibb.co/J2jzkBx/placeholder.jpg"}
-                            alt="cardImage"
-                          />
-                        }
-                      />
                     </style.CardStyle>
                     <Box padding="5">
                       <Heading
