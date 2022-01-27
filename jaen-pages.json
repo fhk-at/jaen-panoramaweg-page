@@ -2,8 +2,8 @@
   "pages": {
     "SitePage /": {
       "context": {
-        "createdAt": "2022-01-27T09:43:55.346Z",
-        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFdWHyak18RPQHOUDGoFIKCygie2G0AALcCwACzWSRU49rKQgR3jpQIwQ"
+        "createdAt": "2022-01-27T14:17:58.187Z",
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFfmHyqjLk-ezRjlU_spuz1llHVPE6AAIWDAACzWSRU86d6tuP7-tNIwQ"
       },
       "migrations": [
         {
@@ -17,6 +17,10 @@
         {
           "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFaWHyaW8e6seO5JPAHBAyY32UylWXAALQCwACzWSRUyIG9JQOwiTWIwQ",
           "createdAt": "2022-01-27T09:43:55.346Z"
+        },
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFeWHyqZWcqzah7KWM0KZNP6CddCVKAAIRDAACzWSRU9FL3utMJmU5IwQ",
+          "createdAt": "2022-01-27T14:17:58.187Z"
         }
       ]
     },
@@ -561,6 +565,30 @@
         {
           "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFI2HyVWqfjSGWA7jte-YcVzX9AsNhAAJ9CwACzWSRU-MiSBdrWVonIwQ",
           "createdAt": "2022-01-27T08:18:28.167Z"
+        }
+      ]
+    },
+    "SitePage /lage/": {
+      "context": {
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFemHyqZU35gVwaotlKlrZ91fJYgtaAAISDAACzWSRU8qKiaW-RxOiIwQ",
+        "createdAt": "2022-01-27T14:17:58.187Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFemHyqZU35gVwaotlKlrZ91fJYgtaAAISDAACzWSRU8qKiaW-RxOiIwQ",
+          "createdAt": "2022-01-27T14:17:58.187Z"
+        }
+      ]
+    },
+    "SitePage /projekt/": {
+      "context": {
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFe2HyqZVL6iLuOP84wMvZNLAfcTc1AAITDAACzWSRU8odkQlulBrVIwQ",
+        "createdAt": "2022-01-27T14:17:58.187Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIFe2HyqZVL6iLuOP84wMvZNLAfcTc1AAITDAACzWSRU8odkQlulBrVIwQ",
+          "createdAt": "2022-01-27T14:17:58.187Z"
         }
       ]
     }
