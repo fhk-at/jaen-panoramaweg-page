@@ -255,7 +255,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               const filter: number[] = []
               const cards = []
               for (const child of page.children) {
-                // let pageId = child?.page?.images[0].id.pageId
+                let pageId = child?.page?.id
 
                 const childfields = child.page.fields || {}
 
@@ -318,8 +318,8 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                               maxH={{base: '150px', md: '200px'}}
                             /> */}
                             <style.CardStyle>
-                              {/* <fields.ImageField
-                                pageId={pageId}
+                              <fields.ImageField
+                                pageId={child?.page?.id}
                                 fieldName="apartmentrightimg"
                                 initValue={{
                                   src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
@@ -328,8 +328,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                                 borderRadius="25px"
                                 objectFit="fill"
                                 className="responsiveImage"
-                              /> */}
-                              {console.log(child?.page)}
+                              />
                             </style.CardStyle>
                             <Badge
                               backgroundColor={

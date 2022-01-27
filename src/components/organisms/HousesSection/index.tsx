@@ -123,7 +123,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             // const img =
             //   child?.page?.fields?.houseimg?.content?.src ||
             //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-            // let pageId = child?.page?.images[0].id.pageId
             let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'haus ')
@@ -137,7 +136,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             numFlats = 0
             apartmentTypes = []
             heading = head
-
+            console.log(child)
             fetchData(grandchildren)
             minPrice = addDot(minPrice)
             maxPrice = addDot(maxPrice)
@@ -158,8 +157,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     mb={['5', '5', '0', '0']}
                   /> */}
                   <style.CardStyle>
-                    {/* <fields.ImageField
-                      pageId={pageId}
+                    <fields.ImageField
+                      pageId={child?.page?.id}
                       fieldName="houseimg"
                       initValue={{
                         src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
@@ -167,7 +166,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                       }}
                       objectFit="fill"
                       className="cardImage"
-                    /> */}
+                    />
                   </style.CardStyle>
                   <Box
                     ml={['0', '0', '5', '5']}

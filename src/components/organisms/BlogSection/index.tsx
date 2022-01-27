@@ -118,8 +118,8 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                       borderTopRadius="25px"
                     /> */}
                     <style.CardStyle>
-                      {/* <fields.ImageField
-                        pageId={child?.page?.images[0].id.pageId}
+                      <fields.ImageField
+                        pageId={child?.page?.id}
                         fieldName="blogimgleftimg"
                         initValue={{
                           src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
@@ -127,7 +127,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                         }}
                         objectFit="fill"
                         className="cardImage"
-                      /> */}
+                      />
                     </style.CardStyle>
                     <Box padding="5">
                       <Heading
