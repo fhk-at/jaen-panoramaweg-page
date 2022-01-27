@@ -1,4 +1,28 @@
 {
-  "pages": {},
-  "snekFinder": {}
+  "pages": {
+    "SitePage /": {
+      "context": {
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIES2HyNrvKfhBeAYMF8eXjQxAsqTXhAAKhCgACzWSRUxIsmG7NavWqIwQ",
+        "createdAt": "2022-01-27T06:07:46.525Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIES2HyNrvKfhBeAYMF8eXjQxAsqTXhAAKhCgACzWSRUxIsmG7NavWqIwQ",
+          "createdAt": "2022-01-27T06:07:46.525Z"
+        }
+      ]
+    }
+  },
+  "snekFinder": {
+    "context": {
+      "createdAt": "2022-01-27T06:07:46.525Z",
+      "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIESmHyNqTtjUAi5ste5FPib3rwdUDnAAKgCgACzWSRU-_k7Hj-tYAWIwQ"
+    },
+    "migrations": [
+      {
+        "createdAt": "2022-01-27T06:07:46.525Z",
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIESmHyNqTtjUAi5ste5FPib3rwdUDnAAKgCgACzWSRU-_k7Hj-tYAWIwQ"
+      }
+    ]
+  }
 }
