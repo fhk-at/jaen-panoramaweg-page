@@ -599,6 +599,18 @@
           "createdAt": "2022-01-27T14:17:58.187Z"
         }
       ]
+    },
+    "SitePage /kontakt/": {
+      "context": {
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIHp2JGCFi_IidPiJ-MDz-DJ-MbWiOGAALZDwAC3bQxUrHc8OIGNm8PIwQ",
+        "createdAt": "2022-03-31T20:00:23.411Z"
+      },
+      "migrations": [
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIHp2JGCFi_IidPiJ-MDz-DJ-MbWiOGAALZDwAC3bQxUrHc8OIGNm8PIwQ",
+          "createdAt": "2022-03-31T20:00:23.411Z"
+        }
+      ]
     }
   },
   "snekFinder": {
