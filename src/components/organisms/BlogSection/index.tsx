@@ -47,8 +47,8 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
           options={[
             'Finanzierung',
             'Baustart',
-            'Platzhalter1',
-            'Platzhalter2',
+            'Baustufe 1',
+            'Baustufe 2',
             'Fertigstellung'
           ]}
           initValue={'Finanzierung'}
