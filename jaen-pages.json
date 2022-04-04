@@ -2,8 +2,8 @@
   "pages": {
     "SitePage /": {
       "context": {
-        "createdAt": "2022-03-31T22:52:54.641Z",
-        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIHuGJGMVypB5Ax4ntTE2B8uCuL7utrAALwDwAC3bQxUra_wRi4uY-7IwQ"
+        "createdAt": "2022-04-04T05:51:57.394Z",
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIIPmJKh79Qdj8rSgtgkD6stchWA_p3AAJzCwACaitYUnD6tDqXLgiJIwQ"
       },
       "migrations": [
         {
@@ -29,6 +29,10 @@
         {
           "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIHtmJGMMgKXiDHv8HoZrYW6vYWxWc7AALuDwAC3bQxUnvCGM7Al_41IwQ",
           "createdAt": "2022-03-31T22:52:54.641Z"
+        },
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIIPGJKh4ZapbffVa8AAdh1oljRddLlPgACcQsAAmorWFKJiuKLdGeduiME",
+          "createdAt": "2022-04-04T05:51:57.394Z"
         }
       ]
     },
