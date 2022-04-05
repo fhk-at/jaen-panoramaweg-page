@@ -2,8 +2,8 @@
   "pages": {
     "SitePage /": {
       "context": {
-        "createdAt": "2022-04-05T05:38:34.931Z",
-        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL2mJL1hyXfkN7k7lOBa0aDW-ZBfSlAAJaCwAC9bBYUsghr-7fLueoIwQ"
+        "createdAt": "2022-04-05T05:39:56.481Z",
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL4GJL1mtfWQog0pQGmaLM2GRTBaC6AAJhCwAC9bBYUuMa-_vzN1sRIwQ"
       },
       "migrations": [
         {
@@ -61,6 +61,10 @@
         {
           "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL12JL1dsSLz66Vc6q0MlYW38ZlFzuAAJXCwAC9bBYUh-WrYivRAKZIwQ",
           "createdAt": "2022-04-05T05:38:34.931Z"
+        },
+        {
+          "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL3WJL1ixsvIp3__YPWJOvXVAYuvPuAAJdCwAC9bBYUjQvO4WXE6OoIwQ",
+          "createdAt": "2022-04-05T05:39:56.481Z"
         }
       ]
     },
@@ -1339,8 +1343,8 @@
   },
   "snekFinder": {
     "context": {
-      "createdAt": "2022-04-05T05:38:34.931Z",
-      "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL2WJL1hoj5JNjJUf0No7-MlPP6Iy9AAJZCwAC9bBYUmsrnj5wimyYIwQ"
+      "createdAt": "2022-04-05T05:39:56.481Z",
+      "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL32JL1mrIhhnm1gge-l5gS0FQDfVJAAJgCwAC9bBYUngTTWAKSEigIwQ"
     },
     "migrations": [
       {
@@ -1458,6 +1462,10 @@
       {
         "createdAt": "2022-04-05T05:38:34.931Z",
         "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL1mJL1Y15_46o5zoCJOLNN2qzej4VAAJWCwAC9bBYUtf8JvnvzDtDIwQ"
+      },
+      {
+        "createdAt": "2022-04-05T05:39:56.481Z",
+        "fileUrl": "https://osg.snek.at/storage/BQACAgQAAxkDAAIL3GJL1ibo0gT7jZazEfORPBD1plgEAAJcCwAC9bBYUkP1p9aiQGiwIwQ"
       }
     ]
   }
