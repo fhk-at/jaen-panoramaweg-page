@@ -123,6 +123,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             // const img =
             //   child?.page?.fields?.houseimg?.content?.src ||
             //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+            let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'Häuser ')
             let headPart = head.substring(1).replace("sued","Süd").replace("nord","Nord")
