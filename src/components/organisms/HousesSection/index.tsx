@@ -126,7 +126,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             let slug = child?.page?.slug || ''
             let head = slug
             head = slug.replace('haus', 'Häuser ')
-            let headPart = head.substring(1).replace("sued","Süd").replace("nord","Nord")
+            let headPart = head.substring(1).replace("Sued","Süd")
             head = head.charAt(0).toUpperCase() + headPart
             const grandchildren = child?.page?.children || []
             minPrice = 0
