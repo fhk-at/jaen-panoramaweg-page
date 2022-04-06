@@ -80,7 +80,14 @@ const IndexPage = () => {
             />
           }
         />
-        <MapSection />
+        <Center marginBottom="20">
+          <StaticImage
+            src="../images/content/map.jpg"
+            alt="Panoramaweg Karte"
+            style={{width: '100%', height: 'auto'}}
+            imgStyle={{objectFit: 'contain'}}
+          />
+        </Center>
         <HousesSection
           househead={
             <fields.TextField
