@@ -91,10 +91,10 @@ const ApartmentPage: JaenTemplate = () => {
 
   function format(value: string[]) {
     if (value.length > 1) {
-      value[0] = value[0].replace('haus', 'haus ')
+      value[0] = value[0].replace('haus', 'Häuser ')
       value[1] = value[1].replace('top', 'top ')
       for (let i = 0; i < value.length; i++) {
-        value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1)
+        value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1).replace("sued", "Süd").replace("nord","Nord")
       }
     }
     return value
