@@ -135,16 +135,6 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           </Text>
           <Flex direction={flex}>
             {houseimage}
-            <Container
-              maxW={['300px', '300px', '35vw', '35vw']}
-              ml={['auto', 'auto', '10', '10']}
-              mr={['auto', 'auto', '0', '0']}
-              fontSize="1.1rem">
-              <fields.TextField
-                fieldName="houserichtext"
-                initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
-              />
-            </Container>
           </Flex>
         </Container>
 

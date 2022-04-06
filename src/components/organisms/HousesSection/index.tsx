@@ -123,10 +123,10 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             // const img =
             //   child?.page?.fields?.houseimg?.content?.src ||
             //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-            let slug = child?.page?.slug || ''
             let head = slug
-            head = slug.replace('haus', 'haus ')
-            head = head.charAt(0).toUpperCase() + head.substring(1)
+            head = slug.replace('haus', 'Häuser ')
+            let headPart = head.substring(1).replace("sued","Süd").replace("nord","Nord")
+            head = head.charAt(0).toUpperCase() + headPart
             const grandchildren = child?.page?.children || []
             minPrice = 0
             maxPrice = 0
