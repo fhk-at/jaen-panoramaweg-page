@@ -259,123 +259,125 @@ const HousePage: JaenTemplate = (): JSX.Element => {
 
                 const childfields = child?.page?.fields || {}
 
-                const richtext =
-                  childfields?.apartmentrichtextright?.content?.text ||
-                  '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
-                // const image =
-                //   childfields?.apartmentrightimg?.content?.src ||
-                //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
-                const size =
-                  childfields?.apartmentsize?.content?.text || '<p>0</p>'
-                const rooms =
-                  childfields?.apartmentrooms?.content?.text || '<p>1</p>'
-                const available =
-                  childfields?.apartmentavailable?.content?.option ||
-                  'Verfügbar'
-                let slug = child?.page?.slug
+                if(child?.page){
+                  const richtext =
+                    childfields?.apartmentrichtextright?.content?.text ||
+                    '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>'
+                  // const image =
+                  //   childfields?.apartmentrightimg?.content?.src ||
+                  //   'https://i.ibb.co/J2jzkBx/placeholder.jpg'
+                  const size =
+                    childfields?.apartmentsize?.content?.text || '<p>0</p>'
+                  const rooms =
+                    childfields?.apartmentrooms?.content?.text || '<p>1</p>'
+                  const available =
+                    childfields?.apartmentavailable?.content?.option ||
+                    'Verfügbar'
+                  let slug = child?.page?.slug
 
-                const formatedSlug = slug.replace('top', 'Top ')
-                const cleanedSize = cleanFieldValues(size, 'size')
-                const cleanedRooms = cleanFieldValues(rooms, 'rooms')
-                const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
-                const link =
-                  typeof window !== 'undefined' &&
-                  window.location.pathname + slug + '/'
-                findMinMax(cleanedRooms, cleanedSize)
+                  const formatedSlug = slug.replace('top', 'Top ')
+                  const cleanedSize = cleanFieldValues(size, 'size')
+                  const cleanedRooms = cleanFieldValues(rooms, 'rooms')
+                  const cleanedRichtext = cleanFieldValues(richtext, 'richtext')
+                  const link =
+                    typeof window !== 'undefined' &&
+                    window.location.pathname + slug + '/'
+                  findMinMax(cleanedRooms, cleanedSize)
+  
+                  if (
+                    parseInt(cleanedSize) < filters.sizeFilter ||
+                    parseInt(cleanedRooms) < filters.roomFilter ||
+                    (filters.availableFilter && available === 'Verkauft')
+                  ) {
+                    filter.push(cards.length)
+                  }
 
-                if (
-                  parseInt(cleanedSize) < filters.sizeFilter ||
-                  parseInt(cleanedRooms) < filters.roomFilter ||
-                  (filters.availableFilter && available === 'Verkauft')
-                ) {
-                  filter.push(cards.length)
-                }
-
-                cards.push(
-                  <>
-                    <Link to={link}>
-                      <Box
-                        width={['90%', '90%', '580px', '580px']}
-                        border="1px"
-                        borderColor="panoramaweg.lightgray"
-                        padding="5"
-                        borderRadius="25px"
-                        justifyContent="center"
-                        alignContent="center"
-                        ml={['auto', 'auto', '0', '0']}
-                        mr={['auto', 'auto', '0', '0']}>
-                        <Flex direction={['column', 'column', 'row', 'row']}>
-                          <VStack
-                            spacing="0"
-                            ml={['auto', 'auto', '0', '0']}
-                            mr={['auto', 'auto', '0', '0']}
-                            mt={['0', '0', 'auto', 'auto']}
-                            mb={['5', '5', 'auto', 'auto']}>
-                            {/* <Image
-                              src={image}
-                              alt="apartmentcardimg"
-                              maxW={{base: '200px', md: '300px'}}
-                              maxH={{base: '150px', md: '200px'}}
-                            /> */}
-                            <style.CardStyle>
-                              <fields.ImageField
-                                pageId={child?.page?.id}
-                                fieldName="apartmentrightimg"
-                                initValue={{
-                                  src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                                  alt: 'apartmentcardimg'
-                                }}
+                  cards.push(
+                    <>
+                      <Link to={link}>
+                        <Box
+                          width={['90%', '90%', '580px', '580px']}
+                          border="1px"
+                          borderColor="panoramaweg.lightgray"
+                          padding="5"
+                          borderRadius="25px"
+                          justifyContent="center"
+                          alignContent="center"
+                          ml={['auto', 'auto', '0', '0']}
+                          mr={['auto', 'auto', '0', '0']}>
+                          <Flex direction={['column', 'column', 'row', 'row']}>
+                            <VStack
+                              spacing="0"
+                              ml={['auto', 'auto', '0', '0']}
+                              mr={['auto', 'auto', '0', '0']}
+                              mt={['0', '0', 'auto', 'auto']}
+                              mb={['5', '5', 'auto', 'auto']}>
+                              {/* <Image
+                                src={image}
+                                alt="apartmentcardimg"
+                                maxW={{base: '200px', md: '300px'}}
+                                maxH={{base: '150px', md: '200px'}}
+                              /> */}
+                              <style.CardStyle>
+                                <fields.ImageField
+                                  pageId={child?.page?.id}
+                                  fieldName="apartmentrightimg"
+                                  initValue={{
+                                    src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
+                                    alt: 'apartmentcardimg'
+                                  }}
+                                  borderRadius="25px"
+                                  objectFit="fill"
+                                  className="responsiveImage"
+                                />
+                              </style.CardStyle>
+                              <Badge
+                                backgroundColor={
+                                  available === 'Verfügbar'
+                                    ? 'panoramaweg.green'
+                                    : '#f61a42'
+                                }
+                                width={{base: '200px', md: '300px'}}
+                                height="30px"
+                                color="white"
+                                textTransform="none"
+                                textAlign="center"
+                                fontSize="1.1rem"
+                                pt="0.6">
+                                {available}
+                              </Badge>
+                            </VStack>
+                            <Container size="lg">
+                              <Heading>{formatedSlug}</Heading>
+  
+                              <Text>Wohnungsgröße: {cleanedSize}m²</Text>
+                              <Progress
+                                value={parseInt(cleanedSize)}
+                                max={maxSize}
+                                colorScheme="greenwhite"
                                 borderRadius="25px"
-                                objectFit="fill"
-                                className="responsiveImage"
+                                size="sm"
+                                width="100%"
                               />
-                            </style.CardStyle>
-                            <Badge
-                              backgroundColor={
-                                available === 'Verfügbar'
-                                  ? 'panoramaweg.green'
-                                  : '#f61a42'
-                              }
-                              width={{base: '200px', md: '300px'}}
-                              height="30px"
-                              color="white"
-                              textTransform="none"
-                              textAlign="center"
-                              fontSize="1.1rem"
-                              pt="0.6">
-                              {available}
-                            </Badge>
-                          </VStack>
-                          <Container size="lg">
-                            <Heading>{formatedSlug}</Heading>
-
-                            <Text>Wohnungsgröße: {cleanedSize}m²</Text>
-                            <Progress
-                              value={parseInt(cleanedSize)}
-                              max={maxSize}
-                              colorScheme="greenwhite"
-                              borderRadius="25px"
-                              size="sm"
-                              width="100%"
-                            />
-                            <Text>Zimmer: {cleanedRooms}</Text>
-                            <Progress
-                              value={parseInt(cleanedRooms)}
-                              max={maxRooms}
-                              colorScheme="greenwhite"
-                              borderRadius="25px"
-                              size="sm"
-                              width="100%"
-                            />
-                            <Text mt="1" noOfLines={4}>
-                              {cleanedRichtext}
-                            </Text>
-                          </Container>
-                        </Flex>
-                      </Box>
-                    </Link>
-                  </>
-                )
+                              <Text>Zimmer: {cleanedRooms}</Text>
+                              <Progress
+                                value={parseInt(cleanedRooms)}
+                                max={maxRooms}
+                                colorScheme="greenwhite"
+                                borderRadius="25px"
+                                size="sm"
+                                width="100%"
+                              />
+                              <Text mt="1" noOfLines={4}>
+                                {cleanedRichtext}
+                              </Text>
+                            </Container>
+                          </Flex>
+                        </Box>
+                      </Link>
+                    </>
+                  )
+                }
               }
               return (
                 <Wrap spacing="5" justify="center" mt="5" mb="10">
