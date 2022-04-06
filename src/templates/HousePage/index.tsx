@@ -257,7 +257,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               for (const child of page.children) {
                 let pageId = child?.page?.id
 
-                const childfields = child.page.fields || {}
+                const childfields = child?.page?.fields || {}
 
                 const richtext =
                   childfields?.apartmentrichtextright?.content?.text ||
